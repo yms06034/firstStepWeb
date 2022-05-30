@@ -1,12 +1,1 @@
-$color--black: #000;
-$color--white: #fff;
-
-body {
-  background-color: $color--black;
-  h1 {
-    color: $color--white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-}
+@import "../../node_modules/bootstrap-scss/bootstrap.scss";
