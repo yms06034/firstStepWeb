@@ -14,6 +14,22 @@
 				<input type="button" class="p_btn" value="#유럽"/>
 				<input type="button" class="p_btn" value="#북미/중남미"/>
 			</div>
+			
+			<div class="p_search">
+				<input type="text" placeholder="검색하세요"/>
+				<button type="submit">버튼</button>
+			</div>
+
+			<div class="Info_liOrder">
+				<select>
+					<option>인기순</option>
+					<option>조회수순</option>
+				</select>
+			</div>
+			<button type="submit">글쓰기</button>
+			
+			
+			
 		</article>
 	</form>
 </template>
