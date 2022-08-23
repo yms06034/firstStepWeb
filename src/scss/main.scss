@@ -1,12 +1,25 @@
+// Default variable overrides
+$primary: #F3B66D;
+
+// Require
+@import "../../node_modules/bootstrap-scss/functions";
+@import "../../node_modules/bootstrap-scss/variables";
+@import "../../node_modules/bootstrap-scss/mixins";
+
 @import "../../node_modules/bootstrap-scss/bootstrap.scss";
 
+// article btn center
 article{
 	margin: auto;
-	text-align: center; /* 텍스트 가운데 정렬 */
+	text-align: center; 
 	.p_btn{
 		margin-right: 5px;
+		&:last-child {
+			margin: 0;
+		}
 	}
-	.p_btn:last-child{
-		margin: 0;
-	}	
+}
+
+a:hover {
+	text-decoration: none;
 }
