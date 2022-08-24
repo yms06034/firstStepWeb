@@ -18,45 +18,18 @@ article{
 			margin: 0;
 		}
 	}
-	.p_search{
-		margin-top: 10px;
-		margin-right: 10px;
-		display: inline-block;
-	}
-	.infoOrder{
-		display: inline-block;
-		margin-right: 10px;
-	}
-	.infoList{
-		margin-top: 10px;
-	}
-	.info2{
-		display: inline-block;
-		flex-direction: column;
-	}
-	.infoProfile{
-		display: inline-block;
-		margin-bottom: 20px;
-		margin-right: 10px;
-		height: 50px;
-	}
-	.infoUserNm{
-		display: inline-block;
-		margin-top: 20px;
-		margin-right: 10px;
-		height: 25px;
-	}
-	.infoRegDt{
-		height: 25px;
-	}
-	
 }
 
+// css 초기화
 a:hover {
 	text-decoration: none;
-	.p_btn:last-child{
-		margin: 0;
-	}
-	
-	
+}
+
+.p_btn:last-child{
+	margin: 0;
+}
+.p_search{
+	margin-top: 10px;
+	margin-right: 100px;
+	display: inline-block;
 }
