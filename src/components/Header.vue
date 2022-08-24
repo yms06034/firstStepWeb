@@ -1,17 +1,19 @@
 <template>
   <header>
     <Search />
-    <div class="nav nav-pills center">
-      <div 
-        v-for="nav in navigations"
-        :key="nav.name"
-        class="nav-item">
-        <RouterLink 
-          :to="nav.href"
-          active-class="active"
-          class="nav-link">
-          {{ nav.name }}
-        </RouterLink>
+    <div id="top-navbar--wrap">
+      <div class="nav nav-pills center">
+        <div 
+          v-for="nav in navigations"
+          :key="nav.name"
+          class="nav-item">
+          <RouterLink 
+            :to="nav.href"
+            active-class="a_active"
+            class="nav-link h_btn">
+            {{ nav.name }}
+          </RouterLink>
+        </div>
       </div>
     </div>
   </header>
@@ -55,7 +57,7 @@ export default {
 
 <style lang="scss" scope>
 header {
-  height: 130px;
+  height: 120px;
   padding: 0 40px;
   display: flex;
   align-items: center;
@@ -65,7 +67,20 @@ header {
     margin-right: 40px;
   }
   .center {
-    justify-content: center
+    justify-content: center;
+  }
+  .h_btn {
+    margin-right: 50px;
+    color: #000;
+    &:hover {
+      color: #000;
+      font-weight: bold;
+    } 
+  }
+  .a_active {
+    background-color: none;
+    font-weight: bold;
   }
 }
 </style>
+  
