@@ -15,31 +15,40 @@
 				<input type="button" class="p_btn" value="#북미/중남미"/>
 			</div>
 			
-			<div class="p_search">
-				<input type="text" placeholder="검색하세요"/>
-				<button type="submit">버튼</button>
-			</div>
+			<div class="searchWrapper">
+				<div class="p_search">
+					<input type="text" placeholder="검색하세요"/>
+					<button type="submit">버튼</button>
+				</div>
 
-			<div class="infoOrder">
-				<select>
-					<option>인기순</option>
-					<option>조회수순</option>
-				</select>
+				<div class="infoOrder">
+					<select class="otOrder">
+						<option>인기순</option>
+						<option>조회수순</option>
+					</select>
+				</div>
+				<button type="submit">글쓰기</button>
 			</div>
-			<button type="submit">글쓰기</button>
-			
 			<section class="infoList">
-				<div v-for="item in List" :key="item">
-					<div>
-						<div class="infoProfile">{{item.img}}</div>
-						<div class="info2">
-							<div class="infoUserNm">{{item.name}}</div>
-							<div class="infoRegDt">{{item.time}}</div>
+				<div v-for="item in List" :key="item" class="listLayout">
+					<div class="contentFrom">
+						<div>
+							<div class="iconWrapper">
+								<div class="circle"></div>
+							</div>
+							<div class="info2">
+								<div class="infoUserNm">{{ item.name }}</div>
+								<div class="infoRegDt">{{ item.time }}</div>
+							</div>
+						</div>
+						<div class="infoText">
+							<div class="infoTitle">{{ item.title }}</div>
+							<div class="infoContent">{{ item.content }}</div>
 						</div>
 					</div>
-					<div class="infoTitle">{{item.title}}</div>
-					<div class="infoContent">{{item.content}}</div>
-					<span>123123</span>
+					<div class="preView">
+						<div class="preImg"></div>
+					</div>
 				</div>
 			</section>
 		</article>
@@ -53,7 +62,6 @@ export default {
 			List : [
 				{
 					id : 1
-					,img : 'img1'
 					,name : 'kana'
 					,time : 'time1'
 					,title : '부산'
@@ -61,7 +69,6 @@ export default {
 				},
 				{
 					id : 2
-					,img : 'img2'
 					,name : 'momo'
 					,time : 'time2'
 					,title : '서울'
@@ -69,7 +76,6 @@ export default {
 				},
 				{
 					id : 3
-					,img : 'img3'
 					,name : 'sina'
 					,time : 'time3'
 					,title : '뉴욕'
@@ -77,7 +83,6 @@ export default {
 				},
 				{
 					id : 4
-					,img : 'img4'
 					,name : 'kana'
 					,time : 'time4'
 					,title : '도쿄'
@@ -93,7 +98,6 @@ export default {
 				},
 				{
 					id : 6
-					,img : 'img6'
 					,name : 'han'
 					,time : 'time6'
 					,title : '런던'
@@ -101,7 +105,6 @@ export default {
 				},
 				{
 					id : 7
-					,img : 'img7'
 					,name : 'emma'
 					,time : 'time7'
 					,title : 'LA'
@@ -109,7 +112,6 @@ export default {
 				},
 				{
 					id : 8
-					,img : 'img8'
 					,name : 'sam'
 					,time : 'time8'
 					,title : '로마'
@@ -117,7 +119,6 @@ export default {
 				},
 				{
 					id : 9
-					,img : 'img9'
 					,name : 'simon'
 					,time : 'time9'
 					,title : '시드니'
@@ -125,7 +126,6 @@ export default {
 				},
 				{
 					id : 10
-					,img : 'img10'
 					,name : 'poll'
 					,time : 'time10'
 					,title : '베를린'
@@ -137,7 +137,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scope>
+<style lang="scss" scoped>
 	@import "~/scss/main";
 	.infoOrder{
 		display: inline-block;
@@ -157,11 +157,56 @@ export default {
 	}
 	.infoUserNm{
 		display: inline-block;
-		margin-top: 20px;
 		margin-right: 10px;
 		height: 25px;
 	}
 	.infoRegDt{
 		height: 25px;
+	}
+	.infoText{
+		display: flex;
+		flex-direction: column;
+	}
+	.infoTitle{
+		float: left;
+	}
+	.infoContent{
+		float: left;
+	}
+	.listLayout{
+		margin-bottom: 10px;
+		border-top: 1px solid gray;
+		border-bottom: 1px solid gray;
+	}
+	.circle{
+		margin: 0 auto;
+		width: 10px;
+		height: 10px;
+		border: 15px solid rgb(163, 151, 198);
+		border-radius: 50%;
+	}
+	.iconWrapper{
+		display: inline-block;
+		margin: 0 auto;
+		padding: 5px;
+		max-width: 1170px;
+	}
+	.searchWrapper{
+		text-align: center;
+	}
+	.otOrder{
+		margin-left: 20px;
+	}
+	.contentFrom{
+		display: inline-block;
+		width : auto;
+		height: auto;
+		border: 5px solid red;
+	}
+	.preView{
+		display: inline-block;
+		width : 150px;
+		height: 100px;
+		border: 5px solid red;
 	}
 </style>
