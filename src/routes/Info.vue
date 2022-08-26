@@ -30,6 +30,7 @@
 				<button type="submit">글쓰기</button>
 			</div>
 			<section class="infoList">
+				
 				<div v-for="item in List" :key="item" class="listLayout">
 					<div class="contentFrom">
 						<div>
@@ -47,7 +48,9 @@
 						</div>
 					</div>
 					<div class="preView">
-						<div class="preImg"></div>
+						<div class="preImg">
+							<img class="imgThumnail" src="http://127.0.0.1:5500/src/images/images.jpeg" alt="imfoTestImg" />
+						</div>
 					</div>
 				</div>
 			</section>
@@ -198,15 +201,24 @@ export default {
 		margin-left: 20px;
 	}
 	.contentFrom{
+		margin-bottom: 5px;
 		display: inline-block;
 		width : auto;
 		height: auto;
-		border: 5px solid red;
+		border: 2px solid red;
 	}
 	.preView{
+		margin-top: 5px;
 		display: inline-block;
+		overflow: hidden;
+		align-content: center;
+		justify-content: center;
 		width : 150px;
 		height: 100px;
-		border: 5px solid red;
+		border: 2px solid red;
+	}
+	.img_thumnail{
+		max-width: 100%;
+		max-height: 100%;
 	}
 </style>
