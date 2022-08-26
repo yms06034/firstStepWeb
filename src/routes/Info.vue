@@ -30,17 +30,14 @@
 				<button type="submit">글쓰기</button>
 			</div>
 			<section class="infoList">
-				<div 
-					v-for="item in List" 
-					:key="item" 
-					class="listLayout">
+				<div v-for="item in List" :key="item" class="listLayout">
 					<div class="contentFrom">
-						<div>
+						<div class="topInfo">
 							<div class="iconWrapper">
-								<div class="circle"></div>
+								<img class="circle" src="https://img.hankyung.com/photo/201811/01.18376762.1.jpg" alt="iconImg"/>
 							</div>
 							<!-- 닉네임 & 게시물 등록일 -->
-							<div class="info2">
+							<div class="infoUsr">
 								<div class="infoUserNm">{{ item.name }}</div>
 								<div class="infoRegDt">{{ item.time }}</div>
 							</div>
@@ -152,9 +149,11 @@ export default {
 		margin-right: 10px;
 	}
 	.infoList{
-		margin-top: 10px;
+		width: 1100px;
+		margin: auto;
 	}
-	.info2{
+	.infoUsr{
+		margin-left: 50px;
 		display: inline-block;
 		flex-direction: column;
 	}
@@ -170,15 +169,25 @@ export default {
 	}
 	.infoRegDt{
 		height: 25px;
+		font-size: 10px;
 	}
 	.infoText{
+		position: absolute;
+		transform: translate(0px, 70px);
+		clear: left;
+		float: left;
 		display: flex;
 		flex-direction: column;
 	}
 	.infoTitle{
+		margin-left: 10px;
+		text-align: left;
 		float: left;
+		margin-bottom: 7px;
 	}
 	.infoContent{
+		margin-left: 10px;
+		text-align: left;
 		float: left;
 	}
 	.listLayout{
@@ -188,20 +197,21 @@ export default {
 		padding: 20px 0;
 	}
 	.circle{
-		margin: 0 auto;
-		width: 10px;
-		height: 10px;
-		border: 15px solid rgb(163, 151, 198);
+		width: 30px;
+		height: 30px;
+		border: 15px;
 		border-radius: 50%;
 	}
 	.iconWrapper{
-		display: inline-block;
+		position: absolute;
 		margin: 0 auto;
 		padding: 5px;
 		max-width: 1170px;
 	}
 	.searchWrapper{
 		text-align: center;
+		margin-bottom: 20px;
+		border-bottom: 1px solid gray;
 	}
 	.otOrder{
 		margin-left: 20px;
@@ -209,8 +219,6 @@ export default {
 	.contentFrom{
 		display: table-cell;
 		width : 100%;
-		border: 2px solid red;
-		padding-right: 30px;
 	}
 	.preView{
 		margin-top: 5px;
@@ -219,10 +227,14 @@ export default {
 		justify-content: center;
 		width : 150px;
 		height: 100px;
-		border: 2px solid red;
 	}
 	.img_thumnail{
 		max-width: 100%;
 		max-height: 100%;
+	}
+	.topInfo{
+		float: left;
+		position: relative;
+		margin-bottom: 7px;
 	}
 </style>
