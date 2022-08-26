@@ -30,26 +30,31 @@
 				<button type="submit">글쓰기</button>
 			</div>
 			<section class="infoList">
-				
-				<div v-for="item in List" :key="item" class="listLayout">
+				<div 
+					v-for="item in List" 
+					:key="item" 
+					class="listLayout">
 					<div class="contentFrom">
 						<div>
 							<div class="iconWrapper">
 								<div class="circle"></div>
 							</div>
+							<!-- 닉네임 & 게시물 등록일 -->
 							<div class="info2">
 								<div class="infoUserNm">{{ item.name }}</div>
 								<div class="infoRegDt">{{ item.time }}</div>
 							</div>
 						</div>
+						<!-- title & content -->
 						<div class="infoText">
 							<div class="infoTitle">{{ item.title }}</div>
 							<div class="infoContent">{{ item.content }}</div>
 						</div>
 					</div>
+					<!-- Thumnail_img -->
 					<div class="preView">
 						<div class="preImg">
-							<img class="imgThumnail" src="http://127.0.0.1:5500/src/images/images.jpeg" alt="imfoTestImg" />
+							<img class="imgThumnail" src="https://i.pinimg.com/236x/f3/d9/e4/f3d9e4f1bf5a65f188467b7a5b7a0771.jpg" alt="imfoTestImg" />
 						</div>
 					</div>
 				</div>
@@ -177,9 +182,10 @@ export default {
 		float: left;
 	}
 	.listLayout{
-		margin-bottom: 10px;
-		border-top: 1px solid gray;
+		display: table;
+		overflow: hidden;
 		border-bottom: 1px solid gray;
+		padding: 20px 0;
 	}
 	.circle{
 		margin: 0 auto;
@@ -201,16 +207,14 @@ export default {
 		margin-left: 20px;
 	}
 	.contentFrom{
-		margin-bottom: 5px;
-		display: inline-block;
-		width : auto;
-		height: auto;
+		display: table-cell;
+		width : 100%;
 		border: 2px solid red;
+		padding-right: 30px;
 	}
 	.preView{
 		margin-top: 5px;
-		display: inline-block;
-		overflow: hidden;
+		display: table-cell;
 		align-content: center;
 		justify-content: center;
 		width : 150px;
