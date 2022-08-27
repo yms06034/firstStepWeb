@@ -1,5 +1,5 @@
 <template>
-  <form>
+  <form @:submit.prevent>
     <article>
       <h1 class="top_title">TRAVEL REVIEW</h1>
       <!-- Top Btn -->
@@ -19,15 +19,15 @@
         </div>
       </div> -->
       <div class='top_btn'>
-				<input type="button" class="re_btn" value="# All" />
-				<input type="button" class="re_btn" value="# 제주도" />
-				<input type="button" class="re_btn" value="# 국내여행"/>
-				<input type="button" class="re_btn" value="# 해외여행"/>
-				<input type="button" class="re_btn" value="# 일본"/>
-				<input type="button" class="re_btn" value="# 데이트코스"/> 
-				<input type="button" class="re_btn" value="# 애견패션"/>
-				<input type="button" class="re_btn" value="# 카페"/>
-				<input type="button" class="re_btn" value="# 맛집탐방"/>
+				<button type="button" class="re_btn"># All</button>
+				<button type="button" class="re_btn"># 제주도</button>
+				<button type="button" class="re_btn"># 국내여행</button>
+				<button type="button" class="re_btn"># 해외여행</button>
+				<button type="button" class="re_btn"># 일본</button>
+				<button type="button" class="re_btn"># 데이트코스</button>
+				<button type="button" class="re_btn"># 애견패션</button>
+				<button type="button" class="re_btn"># 카페</button>
+				<button type="button" class="re_btn"># 맛집탐방</button>
 			</div>
     </article>
   </form>

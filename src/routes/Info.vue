@@ -1,33 +1,31 @@
 <template>
-	<form>
+	<form @:submit.prevent>
 		<article>
 			<div>
 				<h1>TRAVEL INFORMATION</h1>
 			</div>
 			<div>
-				<input type="button" class="p_btn" value="#All"/>
-				<input type="button" class="p_btn" value="#국내/제주"/>
-				<input type="button" class="p_btn" value="#동남아"/>
-				<input type="button" class="p_btn" value="#일본"/>
-				<input type="button" class="p_btn" value="#남태평양"/>
-				<input type="button" class="p_btn" value="#극동러시아/중국"/>
-				<input type="button" class="p_btn" value="#유럽"/>
-				<input type="button" class="p_btn" value="#북미/중남미"/>
+				<button type="button" class="p_btn"># All</button>
+				<button type="button" class="p_btn"># 국내/제주</button>
+				<button type="button" class="p_btn"># 동남아</button>
+				<button type="button" class="p_btn"># 일본</button>
+				<button type="button" class="p_btn"># 남태평양</button>
+				<button type="button" class="p_btn"># 극동러시아/중국</button>
+				<button type="button" class="p_btn"># 유럽</button>
+				<button type="button" class="p_btn"># 북미/중남미</button>
 			</div>
-			
 			<div class="searchWrapper">
 				<div class="p_search">
-					<input type="text" placeholder="검색하세요"/>
-					<button type="submit">버튼</button>
+					<input class="searchBar" type="text" placeholder="검색하세요"/>
+					<button type="button">버튼</button>
 				</div>
-
-				<div class="infoOrder">
+				<!-- <div class="infoOrder"> -->
 					<select class="otOrder">
-						<option>인기순</option>
-						<option>조회수순</option>
+						<option value="fm">인기순</option>
+						<option value="views">조회수순</option>
 					</select>
-				</div>
-				<button type="submit">글쓰기</button>
+				<!-- </div> -->
+				<button class="postBtn" type="submit">글쓰기</button>
 			</div>
 			<section class="infoList">
 				<div v-for="item in List" :key="item" class="listLayout">
@@ -70,7 +68,7 @@ export default {
 					,name : 'kana'
 					,time : 'time1'
 					,title : '부산'
-					,content : '부산 여행'
+					,content : 'Vue (pronounced /vjuː/, like view) is a JavaScript framework for building user interfaces. It builds on top of standard HTML, CSS and JavaScript, and provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be it simple or complex.'
 				},
 				{
 					id : 2
@@ -189,6 +187,8 @@ export default {
 		margin-left: 10px;
 		text-align: left;
 		float: left;
+		word-break:break-all;
+		word-wrap:break-word;
 	}
 	.listLayout{
 		display: table;
@@ -215,6 +215,8 @@ export default {
 	}
 	.otOrder{
 		margin-left: 20px;
+		display: inline-block;
+		margin-right: 10px;
 	}
 	.contentFrom{
 		display: table-cell;
