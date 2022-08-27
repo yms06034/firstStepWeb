@@ -10,6 +10,7 @@ article {
     margin: auto;
     text-align: center;
     .p_btn {
+        padding: 5px;
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
         margin-right: 10px;
@@ -41,7 +42,50 @@ a:hover {
 .p_search {
     margin-top: 10px;
     margin-left: 20px;
+    margin-bottom: 20px;
     display: inline-block;
+    border-bottom: 2px solid black;
+}
+
+.postBtn {
+    padding: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    margin-right: 10px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-left: -3px;
+    border: 1px solid gray;
+}
+
+select {
+    appearance: none;
+    -moz-appearance: none;
+    /* Firefox */
+    -webkit-appearance: none;
+    /* Safari and Chrome */
+}
+
+
+/* IE 기본 스타일 제거 */
+
+select::-ms-expand {
+    display: none;
+    /* IE 10, 11 */
+}
+
+
+/* webkit solution */
+
+::-webkit-input-placeholder {
+    text-align: left;
+}
+
+
+/* mozilla solution */
+
+input:-moz-placeholder {
+    text-align: left;
 }
 
 button,
