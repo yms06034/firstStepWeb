@@ -2,9 +2,9 @@
 	<form @:submit.prevent>
 		<article>
 			<div>
-				<h1>TRAVEL INFORMATION</h1>
+				<h1 class="top_title">TRAVEL INFORMATION</h1>
 			</div>
-			<div>
+			<div class="top_btn">
 				<button type="button" class="p_btn"># All</button>
 				<button type="button" class="p_btn"># 국내/제주</button>
 				<button type="button" class="p_btn"># 동남아</button>
@@ -36,8 +36,10 @@
 							</div>
 							<!-- 닉네임 & 게시물 등록일 -->
 							<div class="infoUsr">
-								<div class="infoUserNm">{{ item.name }}</div>
-								<div class="infoRegDt">{{ item.time }}</div>
+								<em class="infoUserNm">
+									<a class="infoUserNm_f" href="javascript:void(0)">{{ item.name }}</a>
+								</em>
+								<span class="infoRegDt">{{ item.time }}</span>
 							</div>
 						</div>
 						<!-- title & content -->
@@ -65,74 +67,73 @@ export default {
 			List : [
 				{
 					id : 1
-					,name : 'kana'
-					,time : 'time1'
+					,name : '귀여운 발랑이'
+					,time : '6시간 전'
 					,title : '부산'
 					,content : 'Vue (pronounced /vjuː/, like view) is a JavaScript framework for building user interfaces. It builds on top of standard HTML, CSS and JavaScript, and provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be it simple or complex.'
 				},
 				{
 					id : 2
-					,name : 'momo'
-					,time : 'time2'
-					,title : '서울'
-					,content : '서울 여행'
+					,name : '귀여운 발랑이'
+					,time : '6시간 전'
+					,title : '부산'
+					,content : 'Vue (pronounced /vjuː/, like view) is a JavaScript framework for building user interfaces. It builds on top of standard HTML, CSS and JavaScript, and provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be it simple or complex.'
 				},
 				{
 					id : 3
-					,name : 'sina'
-					,time : 'time3'
-					,title : '뉴욕'
-					,content : '뉴욕 여행'
+					,name : '귀여운 발랑이'
+					,time : '6시간 전'
+					,title : '부산'
+					,content : 'Vue (pronounced /vjuː/, like view) is a JavaScript framework for building user interfaces. It builds on top of standard HTML, CSS and JavaScript, and provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be it simple or complex.'
 				},
 				{
 					id : 4
-					,name : 'kana'
-					,time : 'time4'
-					,title : '도쿄'
-					,content : '도쿄 여행'
+					,name : '귀여운 발랑이'
+					,time : '6시간 전'
+					,title : '부산'
+					,content : 'Vue (pronounced /vjuː/, like view) is a JavaScript framework for building user interfaces. It builds on top of standard HTML, CSS and JavaScript, and provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be it simple or complex.'
 				},
 				{
 					id : 5
-					,img : 'img5'
-					,name : 'ana'
-					,time : 'time5'
-					,title : '파리'
-					,content : '파리 여행'
+					,name : '귀여운 발랑이'
+					,time : '6시간 전'
+					,title : '부산'
+					,content : 'Vue (pronounced /vjuː/, like view) is a JavaScript framework for building user interfaces. It builds on top of standard HTML, CSS and JavaScript, and provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be it simple or complex.'
 				},
 				{
 					id : 6
-					,name : 'han'
-					,time : 'time6'
-					,title : '런던'
-					,content : '런던 여행'
+					,name : '귀여운 발랑이'
+					,time : '6시간 전'
+					,title : '부산'
+					,content : 'Vue (pronounced /vjuː/, like view) is a JavaScript framework for building user interfaces. It builds on top of standard HTML, CSS and JavaScript, and provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be it simple or complex.'
 				},
 				{
 					id : 7
-					,name : 'emma'
-					,time : 'time7'
-					,title : 'LA'
-					,content : 'LA 여행'
+					,name : '귀여운 발랑이'
+					,time : '6시간 전'
+					,title : '부산'
+					,content : 'Vue (pronounced /vjuː/, like view) is a JavaScript framework for building user interfaces. It builds on top of standard HTML, CSS and JavaScript, and provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be it simple or complex.'
 				},
 				{
 					id : 8
-					,name : 'sam'
-					,time : 'time8'
-					,title : '로마'
-					,content : '로마 여행'
+					,name : '귀여운 발랑이'
+					,time : '6시간 전'
+					,title : '부산'
+					,content : 'Vue (pronounced /vjuː/, like view) is a JavaScript framework for building user interfaces. It builds on top of standard HTML, CSS and JavaScript, and provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be it simple or complex.'
 				},
 				{
 					id : 9
-					,name : 'simon'
-					,time : 'time9'
-					,title : '시드니'
-					,content : '시드니 여행'
+					,name : '귀여운 발랑이'
+					,time : '6시간 전'
+					,title : '부산'
+					,content : 'Vue (pronounced /vjuː/, like view) is a JavaScript framework for building user interfaces. It builds on top of standard HTML, CSS and JavaScript, and provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be it simple or complex.'
 				},
 				{
 					id : 10
-					,name : 'poll'
-					,time : 'time10'
-					,title : '베를린'
-					,content : '베를린 여행'
+					,name : '귀여운 발랑이'
+					,time : '6시간 전'
+					,title : '부산'
+					,content : 'Vue (pronounced /vjuː/, like view) is a JavaScript framework for building user interfaces. It builds on top of standard HTML, CSS and JavaScript, and provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be it simple or complex.'
 				}
 			]
 		}
@@ -142,18 +143,18 @@ export default {
 
 <style lang="scss" scoped>
 	@import "~/scss/main";
+
 	.infoOrder{
 		display: inline-block;
 		margin-right: 10px;
 	}
 	.infoList{
-		width: 1100px;
+		width: 900px;
 		margin: auto;
 	}
 	.infoUsr{
-		margin-left: 50px;
-		display: inline-block;
-		flex-direction: column;
+		float: left;
+		text-align: left;
 	}
 	.infoProfile{
 		display: inline-block;
@@ -161,52 +162,66 @@ export default {
 		height: 50px;
 	}
 	.infoUserNm{
-		display: inline-block;
-		margin-right: 10px;
-		height: 25px;
+		display: block;
+		height: 11px;
+		line-height: 15px;
+		font-size: 15px;
+		.infoUserNm_f {
+			color: black;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 	}
 	.infoRegDt{
-		height: 25px;
-		font-size: 10px;
+		// line-height: 10px;
+		font-size: 12px;
+		color: #959595;
 	}
 	.infoText{
-		position: absolute;
-		transform: translate(0px, 70px);
-		clear: left;
-		float: left;
-		display: flex;
-		flex-direction: column;
+		display: block;
 	}
 	.infoTitle{
-		margin-left: 10px;
 		text-align: left;
 		float: left;
-		margin-bottom: 7px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: block;
+		width: 600px;
+		font-size: 17px;
+		font-weight: 700;
+		word-wrap: break-word;
 	}
 	.infoContent{
-		margin-left: 10px;
 		text-align: left;
 		float: left;
-		word-break:break-all;
-		word-wrap:break-word;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: block;
+		width: 600px;
+		margin-top: 10px;
+		font-size: 13px;
+		color: #666;
+		line-height: 20px;
+		word-wrap: break-word;
 	}
 	.listLayout{
 		display: table;
 		overflow: hidden;
-		border-bottom: 1px solid gray;
-		padding: 20px 0;
+		border-bottom: 1px solid #eeeeef;
+		padding: 25px 0 23px;
+		width: 100%;
 	}
 	.circle{
-		width: 30px;
-		height: 30px;
-		border: 15px;
+		width: 33px;
+		height: 33px;
+		// border: 15px;
 		border-radius: 50%;
 	}
 	.iconWrapper{
-		position: absolute;
-		margin: 0 auto;
-		padding: 5px;
-		max-width: 1170px;
+		position: relative;
+		margin-right: 10px;
+		float: left;
 	}
 	.searchWrapper{
 		text-align: center;
@@ -220,15 +235,26 @@ export default {
 	}
 	.contentFrom{
 		display: table-cell;
-		width : 100%;
+		position: relative;
+		padding-right: 30px;
 	}
 	.preView{
-		margin-top: 5px;
+		// margin-top: 5px;
 		display: table-cell;
-		align-content: center;
-		justify-content: center;
-		width : 150px;
-		height: 100px;
+		// align-content: center;
+		// justify-content: center;
+		width : 167px;
+		height: 167px;
+		vertical-align: top;
+		.preImg {
+			overflow: hidden;
+			display: block;
+			position: relative;
+			z-index: 10;
+			width: 167px;
+			height: 167px;
+			text-align: center;
+		}
 	}
 	.img_thumnail{
 		max-width: 100%;
@@ -237,6 +263,6 @@ export default {
 	.topInfo{
 		float: left;
 		position: relative;
-		margin-bottom: 7px;
+		margin-bottom: 15px;
 	}
 </style>

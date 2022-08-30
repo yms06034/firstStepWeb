@@ -2,9 +2,9 @@
 	<form @:submit.prevent>
 		<article>
 			<div>
-				<h1>Community</h1>
+				<h1 class="top_title">Community</h1>
 			</div>
-			<div>
+			<div class="top_btn">
 				<button type="button" class="p_btn"># All</button>
 				<button type="button" class="p_btn"># 게임</button>
 				<button type="button" class="p_btn"># 스포츠</button>

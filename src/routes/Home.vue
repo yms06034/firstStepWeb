@@ -1,7 +1,7 @@
 <template>
   <h1>Home</h1>
-    <div class="about">{{connectData}}</div>
-  <h1>{{connectData}}</h1>
+  <div class="about">{{ connectData }}</div>
+  <h1>{{ connectData }}</h1>
 </template>
 <script>
 

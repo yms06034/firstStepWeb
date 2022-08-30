@@ -5,34 +5,40 @@ $primary: #F3B66D;
 @import "../../node_modules/bootstrap-scss/variables";
 @import "../../node_modules/bootstrap-scss/mixins";
 @import "../../node_modules/bootstrap-scss/bootstrap.scss";
+
 // article btn center
 article {
-    margin: auto;
-    text-align: center;
-    .p_btn {
-        padding: 5px;
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
-        margin-right: 10px;
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
-        margin-left: -3px;
-        border: 1px solid gray;
-        background-color: rgba(0, 0, 0, 0);
-        color: black;
-        &:last-child {
-            margin: 0;
-        }
+  margin: auto;
+  text-align: center;
+  .top_title {
+    margin-bottom: 30px;
+  }
+  .top_btn {
+    margin-bottom: 50px;
+  }
+  .p_btn {
+    border: 1px solid #EBEBEB;
+    padding: 7px 10px;
+    border-radius: 10px;
+    margin-right: 10px;
+    &:last-child {
+      margin-right:0;
     }
-    .p_btn:hover {
-        background-color: #F3B66D;
-        color: white;
+    &:hover {
+      // font-weight: bold;
+      cursor: pointer;
+      background-color: $primary;
+      border: 1px solid $primary;
+      // font-weight: bold;
+      color: white;
     }
+  }
 }
 
 // css 초기화
 a:hover {
     text-decoration: none;
+    cursor: pointer;
 }
 
 .p_btn:last-child {
