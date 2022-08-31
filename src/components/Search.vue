@@ -55,7 +55,7 @@ export default {
 .logo {
   font-family: 'Roboto', 'sans-serif';
   font-size: 25px;
-  color: $primary;
+  color: $primary !important;
   text-decoration: none;
   font-weight: bold;
   &:hover {

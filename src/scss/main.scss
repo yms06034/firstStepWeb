@@ -10,30 +10,32 @@ $primary: #F3B66D;
 article {
   margin: auto;
   text-align: center;
+  font-family: 'Roboto', sans-serif;
   .top_title {
     margin-bottom: 30px;
+    font-weight: bold;
   }
   .top_btn {
     margin-bottom: 50px;
-  }
-  .p_btn {
-    border: 1px solid #EBEBEB;
-    padding: 7px 10px;
-    border-radius: 10px;
-    margin-right: 10px;
-    &:last-child {
-      margin-right:0;
-    }
-    &:hover {
-      // font-weight: bold;
-      cursor: pointer;
-      background-color: $primary;
-      border: 1px solid $primary;
-      // font-weight: bold;
-      color: white;
+    .p_btn {
+      border: 1px solid #EBEBEB;
+      padding: 8px 10px;
+      border-radius: 10px;
+      margin-right: 10px;
+      font-size: 15px;
+      &:last-child {
+        margin-right:0;
+      }
+      &:hover {
+        cursor: pointer;
+        background-color: $primary;
+        border: 1px solid $primary;
+        color: white;
+      }
     }
   }
 }
+
 
 // css 초기화
 a:hover {

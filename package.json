@@ -45,6 +45,7 @@
     "bootstrap": "^3.4.1",
     "bootstrap-scss": "^4.6.1",
     "vue": "^3.2.36",
+    "vue-backtotop": "^1.6.1",
     "vue-router": "^4.1.3"
   }
 }
