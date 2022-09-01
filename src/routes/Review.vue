@@ -629,13 +629,13 @@
                 <div class="icon">
                   <ul class="i_area">
                     <li class="i_heart">
-                      <img class="i_img" src="https://i.ibb.co/3YWXDSp/heart.png" alt="" />
+                      <img class="i_img" src="https://i.ibb.co/3YWXDSp/heart.png" alt="heart_icon" />
                     </li>
                     <li class="count">
                       <font>{{ con.heart_count }}</font>
                     </li>
                     <li class="i_chat">
-                      <img class="i_img" src="https://i.ibb.co/StXq4pQ/chat.png" alt="" />
+                      <img class="i_img" src="https://i.ibb.co/StXq4pQ/chat.png" alt="chat_icon" />
                     </li>
                     <li class="count">
                       <font>{{ con.chat_count }}</font>

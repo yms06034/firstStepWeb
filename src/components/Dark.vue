@@ -86,6 +86,9 @@ body {
            .infoContent {
             color: #d9d9d9;
            }
+           a {
+            color: #d9d9d9;
+           }
         }
     }
 }

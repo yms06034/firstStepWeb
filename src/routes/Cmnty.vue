@@ -18,9 +18,9 @@
 
 			<section>
 				<div>
-					<select class="cmuListOrder">
+					<!-- <select class="cmuListOrder">
 						<option value="order">정렬</option>
-					</select>
+					</select> -->
 				</div>
 			</section>
 			<section>
@@ -30,13 +30,20 @@
 					</thead>
 					<tbody>
 						<tr v-for="item in List" :key="item" class="trCls">
-							<td>{{ item.no }}</td>
-							<td>{{ item.category }}</td>
-							<td class="title">{{ item.title }}</td>
-							<td>{{ item.regId }}</td>
-							<td>{{ item.regDate }}</td>
-							<td>{{ item.views }}</td>
-							<td>{{ item.likes }}</td>
+							<td class="num">{{ item.no }}</td>
+							<td class="title">
+								<span class="category">{{ item.category }}</span>
+								<a href="javascript:void(0)">{{ item.title }}</a>
+							</td>
+							<td class="name">
+								<div>
+									<img class="profileimg" src="https://i.pinimg.com/236x/72/4e/f4/724ef4e3c2bbd2dda183e187593f75db.jpg" alt="profile_img" />
+									<span>{{ item.regId }}</span>
+								</div>
+							</td>
+							<td class="date">{{ item.regDate }}</td>
+							<td class="view">{{ item.views }}</td>
+							<td class="like">{{ item.likes }}</td>
 						</tr>
 					</tbody>
 				</table>
@@ -49,7 +56,7 @@
 	export default{
 		data() {
 			return {
-				header: ["번호","","제목","글쓴이","작성일","조회수","추천수"] ,
+				header: ["번호","제목","글쓴이","작성일","조회수","추천수"] ,
 				List:[
 					{
 						no : 10
@@ -159,19 +166,34 @@
 }
 
 table {
-	width: 1260px;
+	width: 900px;
 	margin: 0 auto;
 	border : 1px solid #eeeeef;
+	font-size: 12px;
 	th {
 		padding : 12px;
-		border-top: 1px solid  gray;
-		border-bottom: 1px solid gray;
+		border-top: 1px solid  #eeeeef;
+		border-bottom: 1px solid #eeeeef;
 	}
 	tr{
-		border-bottom: 1px solid gray;
-		.title{
-			width: 500px;
+		border-bottom: 1px solid #eeeeef;
+		td {
+			line-height: 50px;
 		}
+		.title {
+			text-align: left;
+			width: 450px;
+		}
+		.category {
+			margin-right: 18px;
+			color: #666;
+		}
+		.profileimg {
+		width: 33px;
+		height: 33px;
+		border-radius: 50%;
+		margin-right: 10px;
+	}
 	}
 }
 </style>

@@ -38,10 +38,15 @@ article {
 
 
 // css 초기화
-a:hover {
+a {
+  text-decoration: none;
+  color: $black;
+  a:hover {
     text-decoration: none;
     cursor: pointer;
+  }
 }
+
 
 .p_btn:last-child {
     margin: 0;
