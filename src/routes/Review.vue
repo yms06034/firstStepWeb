@@ -1,7 +1,7 @@
 <template>
   <form @:submit.prevent>
     <article>
-      <div class="cntbody">
+      <div class="cntbody"> 
         <!-- title -->
         <h1 class="top_title">TRAVEL REVIEW</h1>
         <!-- 상단 버튼 -->
@@ -15,6 +15,25 @@
           <button type="button" class="p_btn"># 애견패션</button>
           <button type="button" class="p_btn"># 카페</button>
           <button type="button" class="p_btn"># 맛집탐방</button>
+        </div>
+        <!-- Search -->
+        <div class="searchWrapper">
+          <div class="p_search">
+            <input class="searchBar" type="text" placeholder="검색하세요"/>
+            <button class="reviewSearch_btn" type="button">
+              <img src="https://i.ibb.co/8zBPjtr/ant-design-search-outlined.png" alt="Search_btn" />
+            </button>
+          </div>
+        </div>
+        <!-- Weekly Ranking -->
+        <h4>주간 Weekly Ranking</h4>
+        <div style="display:inline-block;">
+          <ul>
+            <li style="float:left;">image</li>
+            <li style="float:left;">image</li>
+            <li style="float:left;">image</li>
+            <li style="float:left;">image</li>
+          </ul>
         </div>
         <!-- Content -->
         <div 
@@ -878,6 +897,33 @@ export default {
   margin: 0 auto;
   .top_title {
   margin-bottom: 30px;
+  }
+  .searchWrapper {
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+  .p_search {
+    width: 375px;
+    border-bottom: 2px solid black;
+    .searchBar {
+      width: 355px;
+      text-align: left;
+      margin-bottom: 3px;
+      }
+    .reviewSearch_btn {
+      position: absolute;
+      right: 5px;
+      top: 50%;
+      transform: translateY(-70%);
+    }
+    }
+  }
+  h4 {
+    font-weight: bold;
+    text-align: left !important;
+    padding-left: 18px;
+    margin-bottom: 30px;
   }
   .reviewitems {
     .reviewcol{

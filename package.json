@@ -44,6 +44,8 @@
     "axios": "^0.27.2",
     "bootstrap": "^3.4.1",
     "bootstrap-scss": "^4.6.1",
+    "core-js": "^3.6.5",
+    "swiper": "^6.4.6",
     "vue": "^3.2.36",
     "vue-backtotop": "^1.6.1",
     "vue-router": "^4.1.3"

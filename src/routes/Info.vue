@@ -227,6 +227,14 @@ export default {
 		text-align: center;
 		margin-bottom: 20px;
 		border-bottom: 1px solid gray;
+		.p_search {
+			margin-top: 10px;
+			margin-left: 20px;
+			margin-bottom: 20px;
+			display: inline-block;
+			border-bottom: 2px solid black;
+			text-align: center;
+		}
 	}
 	.otOrder{
 		margin-left: 20px;

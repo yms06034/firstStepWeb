@@ -22,7 +22,6 @@
 						<option value="order">정렬</option>
 					</select>
 				</div>
-
 			</section>
 			<section>
 				<table>
@@ -31,6 +30,11 @@
 					</thead>
 					<tbody>
 						<tr v-for="line in ranking" :key="line">
+							<td v-for="item in line" :key="item">{{ item.number }}</td>
+							<td></td>
+							<td v-for="item in line" :key="item">{{ item.title }}</td>
+							<td v-for="item in line" :key="item">{{ item }}</td>
+							<td v-for="item in line" :key="item">{{ item }}</td>
 							<td v-for="item in line" :key="item">{{ item }}</td>
 						</tr>
 					</tbody>
@@ -46,12 +50,11 @@
 			return {
 				header: ["번호","","제목","글쓴이","작성일","조회수","추천수"] ,
 				ranking:[
-						[6,"# 게임","띠부","admin","04:20",100, 1000],
-						[5,"# 게임","띠부","admin","04:20",100, 1000],
-						[4,"# 게임","띠부","admin","04:20",100, 1000],
-						[3,"# 게임","띠부","admin","04:20",100, 1000],
-						[2,"# 게임","띠부","admin","04:20",100, 1000],
-						[1,"# 게임","띠부","admin","04:20",100, 1000],
+					{
+						number: '3',
+						title:'띠뿌띠뿌',
+						
+					}
 				]
 			}
 		},
@@ -60,26 +63,27 @@
 
 <style lang="scss" scoped>
 	@import "~/scss/main";
-	.cmuListOrder{
-		width: 700px;
-		margin: auto;
-		float: left;
-		margin-bottom: 10px;
+
+.cmuListOrder{
+	width: 700px;
+	margin: auto;
+	float: left;
+	margin-bottom: 10px;
+}
+table{
+width: 1260px;
+margin: 0 auto;
+border : 1px solid #eeeeef;
+	th {
+		padding : 12px;
+		border-top: 1px solid  gray;
 	}
-	table{
-				width: 1260px;
-				margin: 0 auto;
-				border : 1px solid #eeeeef;
-				}
-	table th{
-			padding : 12px;
-			border-top: 1px solid  gray;
-	}
-	table thead{
+	thead {
 		border-bottom: 1px solid gray;
 	}
-	table td{
-			padding : 12px;
-			border-bottom: 1px solid gray;
+	td {
+		padding : 12px;
+		border-bottom: 1px solid gray;
 	}
+}
 </style>

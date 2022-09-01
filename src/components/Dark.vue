@@ -105,7 +105,7 @@ body {
     min-width: 46px;
     min-height: 30px;
     background-color: $mode-toggle-bg;
-    border: 0;
+    border: 2px solid #fff;
     border-radius: 24px;
     outline: 0;
     overflow: hidden;
@@ -156,9 +156,8 @@ body {
 body.dark-mode {
     .mode-toggle {
         background-color: lighten($mode-toggle-bg, 5%);
-
         .toggle {
-            transform: translateX(22px);
+            transform: translateX(20px);
 
             #dark-mode {
                 &:before {
@@ -167,6 +166,7 @@ body.dark-mode {
                   height: 23px;
                   background-image: url('https://i.ibb.co/BZFQZQb/ion-moon.png');
                   background-repeat: no-repeat;
+                  top: -0.5px;
                 }
             }
         }
