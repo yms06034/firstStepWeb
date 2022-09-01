@@ -26,17 +26,17 @@
 			<section>
 				<table>
 					<thead>
-							<th v-for = "item in header" :key="item">{{ item }}</th>
+							<th v-for = "item in header" :key="item" class="thCls">{{ item }}</th>
 					</thead>
 					<tbody>
-						<tr>
-							<td v-for="item in List" :key="item">{{ item.no }}</td>
-							<td v-for="item in List" :key="item">{{ item.category }}</td>
-							<td v-for="item in List" :key="item">{{ item.title }}</td>
-							<td v-for="item in List" :key="item">{{ item.regId }}</td>
-							<td v-for="item in List" :key="item">{{ item.regDate }}</td>
-							<td v-for="item in List" :key="item">{{ item.views }}</td>
-							<td v-for="item in List" :key="item">{{ item.likes }}</td>
+						<tr v-for="item in List" :key="item" class="trCls">
+							<td>{{ item.no }}</td>
+							<td>{{ item.category }}</td>
+							<td class="title">{{ item.title }}</td>
+							<td>{{ item.regId }}</td>
+							<td>{{ item.regDate }}</td>
+							<td>{{ item.views }}</td>
+							<td>{{ item.likes }}</td>
 						</tr>
 					</tbody>
 				</table>
@@ -59,7 +59,89 @@
 						, regDate : "04-22"
 						, views : 100
 						, likes : 120
+					},
+					{
+						no : 9
+						, category : "# 게임"
+						, title : "띠부띠부"
+						, regId : "admin"
+						, regDate : "04-22"
+						, views : 100
+						, likes : 120
+					},
+					{
+						no : 8
+						, category : "# 게임"
+						, title : "띠부띠부"
+						, regId : "admin"
+						, regDate : "04-22"
+						, views : 100
+						, likes : 120
+					},
+					{
+						no : 7
+						, category : "# 게임"
+						, title : "띠부띠부"
+						, regId : "admin"
+						, regDate : "04-22"
+						, views : 100
+						, likes : 120
+					},
+					{
+						no : 6
+						, category : "# 게임"
+						, title : "띠부띠부"
+						, regId : "admin"
+						, regDate : "04-22"
+						, views : 100
+						, likes : 120
+					},
+					{
+						no : 5
+						, category : "# 게임"
+						, title : "띠부띠부"
+						, regId : "admin"
+						, regDate : "04-22"
+						, views : 100
+						, likes : 120
+					},
+					{
+						no : 4
+						, category : "# 게임"
+						, title : "띠부띠부"
+						, regId : "admin"
+						, regDate : "04-22"
+						, views : 100
+						, likes : 120
+					},
+					{
+						no : 3
+						, category : "# 게임"
+						, title : "띠부띠부"
+						, regId : "admin"
+						, regDate : "04-22"
+						, views : 100
+						, likes : 120
+					},
+					{
+						no : 2
+						, category : "# 게임"
+						, title : "띠부띠부"
+						, regId : "admin"
+						, regDate : "04-22"
+						, views : 100
+						, likes : 120
+					},
+					{
+						no : 1
+						, category : "# 게임"
+						, title : "띠부띠부"
+						, regId : "admin"
+						, regDate : "04-22"
+						, views : 100
+						, likes : 120
 					}
+
 				]
 			}
 		},
@@ -75,34 +157,20 @@
 	float: left;
 	margin-bottom: 10px;
 }
+
 table {
-width: 1260px;
-margin: 0 auto;
-border : 1px solid #eeeeef;
+	width: 1260px;
+	margin: 0 auto;
+	border : 1px solid #eeeeef;
 	th {
 		padding : 12px;
 		border-top: 1px solid  gray;
-	}
-	thead {
-	table{
-		width: 1260px;
-		margin: 0 auto;
-		border : 1px solid #eeeeef;
-		th{
-			padding : 12px;
-			border-top: 1px solid  gray;
-			}
-		thead{
-			border-bottom: 1px solid gray;
-			}
-		td{
-			padding : 12px;
-			border-bottom: 1px solid gray;
-			}
-		}
-	td {
-		padding : 12px;
 		border-bottom: 1px solid gray;
+	}
+	tr{
+		border-bottom: 1px solid gray;
+		.title{
+			width: 500px;
 		}
 	}
 }
