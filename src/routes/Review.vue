@@ -27,13 +27,64 @@
         </div>
         <!-- Weekly Ranking -->
         <h4>주간 Weekly Ranking</h4>
-        <div style="display:inline-block;">
-          <ul>
-            <li style="float:left;">image</li>
-            <li style="float:left;">image</li>
-            <li style="float:left;">image</li>
-            <li style="float:left;">image</li>
-          </ul>
+        <div class='bodyt'>
+          <swiper
+          :slides-per-view="3"
+          :space-between="50"
+          :pagination="{ clickable: true }"
+          @swiper="onSwiper"
+          @slideChange="onSlideChange">
+          <swiper-slide>
+            <div class="contant">
+              <img class="weekly_img" src="https://i.pinimg.com/236x/85/67/be/8567beb5e679c6482121d506ee421119.jpg" alt="Weekly_1" />
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="contant">
+              <img class="weekly_img" src="https://i.pinimg.com/236x/85/67/be/8567beb5e679c6482121d506ee421119.jpg" alt="Weekly_2" />
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="contant">
+              <img class="weekly_img" src="https://i.pinimg.com/236x/85/67/be/8567beb5e679c6482121d506ee421119.jpg" alt="Weekly_3" />
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="contant">
+              <img class="weekly_img" src="https://i.pinimg.com/236x/85/67/be/8567beb5e679c6482121d506ee421119.jpg" alt="Weekly_4" />
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="contant">
+              <img class="weekly_img" src="https://i.pinimg.com/236x/85/67/be/8567beb5e679c6482121d506ee421119.jpg" alt="Weekly_5" />
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="contant">
+              <img class="weekly_img" src="https://i.pinimg.com/236x/85/67/be/8567beb5e679c6482121d506ee421119.jpg" alt="Weekly_6" />
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="contant">
+              <img class="weekly_img" src="https://i.pinimg.com/236x/85/67/be/8567beb5e679c6482121d506ee421119.jpg" alt="Weekly_7" />
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="contant">
+              <img class="weekly_img" src="https://i.pinimg.com/236x/85/67/be/8567beb5e679c6482121d506ee421119.jpg" alt="Weekly_8" />
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="contant">
+              <img class="weekly_img" src="https://i.pinimg.com/236x/85/67/be/8567beb5e679c6482121d506ee421119.jpg" alt="Weekly_9" />
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="contant">
+              <img class="weekly_img" src="https://i.pinimg.com/236x/85/67/be/8567beb5e679c6482121d506ee421119.jpg" alt="Weekly_10" />
+            </div>
+          </swiper-slide>
+        </swiper>
         </div>
         <!-- Content -->
         <div 
@@ -869,7 +920,35 @@
 </template>
 
 <script>
+// Import Swiper Vue.js components
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import SwiperCore, { Navigation, Pagination, A11y } from "swiper";
+
+// Import Swiper styles
+import '../../node_modules/swiper/swiper.min.css';
+import '../../node_modules/swiper/swiper-bundle.css'
+import '../../node_modules/swiper/components/navigation/navigation.scss'
+import '../../node_modules/swiper/components/pagination/pagination.scss'
+
+SwiperCore.use([Navigation, Pagination, A11y]);
+
 export default {
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
+  setup() {
+    const onSwiper = (swiper) => {
+      console.log(swiper);
+    };
+    const onSlideChange = () => {
+      // console.log('slide change');
+    };
+    return {
+      onSwiper,
+      onSlideChange,
+    };
+  },
   data() {
     return {
       // row 
@@ -888,6 +967,7 @@ export default {
   }
 }
 </script>
+
 
 <style lang="scss" scope>
 @import "~/scss/main";
@@ -924,6 +1004,18 @@ export default {
     text-align: left !important;
     padding-left: 18px;
     margin-bottom: 30px;
+  }
+  .bodyt {
+    .swiper-wrapper {
+      width: 300px;
+    }
+    .weekly_img {
+      width: 250px;
+      height: 250px;
+    }
+    .contant {
+      width: 250px !important;
+    }
   }
   .reviewitems {
     .reviewcol{

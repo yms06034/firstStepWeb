@@ -23,20 +23,22 @@
 						<option value="dis-order">미정렬</option>
 					</select>
 				</div>
-				<div class="search-selector">
-					<span>
-						<select>
-							<option value="tit-n-con">제목+내용</option>
-							<option value="title">제목</option>
-							<option value="content">내용</option>
-							<option value="writter">글쓴이</option>
-						</select>
-					</span>
+				<div class="search_input">
+					<div class="search-selector">
+						<span>
+							<select>
+								<option value="tit-n-con">제목+내용</option>
+								<option value="title">제목</option>
+								<option value="content">내용</option>
+								<option value="writter">글쓴이</option>
+							</select>
+						</span>
+					</div>
+					<div class="cmnty-search">
+						<input class="searchBar" type="text" placeholder="검색하세요"/>
+					</div>
+					<button class="postBtn" type="submit">글쓰기</button>
 				</div>
-				<div class="cmnty-search">
-					<input class="searchBar" type="text" placeholder="검색하세요"/>
-				</div>
-				<button class="postBtn" type="submit">글쓰기</button>
 			</section>
 
 			<section>
@@ -191,15 +193,18 @@
 		border: 1px solid #EBEBEB;
 		padding: 6px 8px;
 		border-radius: 10px;
-		margin-right: 10px;
 		font-size: 15px;
 		display: inline-block;
 		margin-bottom: 10px;
 		width: 300px;
+		margin-right: 20px;
 		.searchBar{
 			text-align: left;
 			width: 280px;
 		}
+	}
+	.search_input {
+		float: right;
 	}
 	.search-selector{
 		display: inline-block;
