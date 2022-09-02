@@ -200,7 +200,7 @@
 		margin-right: 20px;
 		.searchBar{
 			text-align: left;
-			width: 280px;
+			width: 285px;
 		}
 	}
 	.search_input {
@@ -240,7 +240,7 @@ table {
 		height: 33px;
 		border-radius: 50%;
 		margin-right: 10px;
-	}
+		}
 	}
 }
 </style>
