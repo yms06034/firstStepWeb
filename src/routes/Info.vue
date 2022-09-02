@@ -15,9 +15,8 @@
 				<button type="button" class="p_btn"># 북미/중남미</button>
 			</div>
 			<div class="searchWrapper">
-				<div class="p_search">
+				<div class="info-search">
 					<input class="searchBar" type="text" placeholder="검색하세요"/>
-					<button type="button">버튼</button>
 				</div>
 				<!-- <div class="infoOrder"> -->
 					<select class="otOrder">
@@ -227,13 +226,18 @@ export default {
 		text-align: center;
 		margin-bottom: 20px;
 		border-bottom: 1px solid gray;
-		.p_search {
+		.info-search {
 			margin-top: 10px;
 			margin-left: 20px;
 			margin-bottom: 20px;
 			display: inline-block;
 			border-bottom: 2px solid black;
 			text-align: center;
+			width: 370px;
+			.searchBar{
+				text-align: left;
+				width: 350px;
+			}
 		}
 	}
 	.otOrder{

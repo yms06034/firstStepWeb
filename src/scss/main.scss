@@ -5,61 +5,49 @@ $primary: #F3B66D;
 @import "../../node_modules/bootstrap-scss/variables";
 @import "../../node_modules/bootstrap-scss/mixins";
 @import "../../node_modules/bootstrap-scss/bootstrap.scss";
-
 // article btn center
 article {
-  margin: auto;
-  text-align: center;
-  font-family: 'Roboto', sans-serif;
-  .top_title {
-    margin-bottom: 30px;
-    font-weight: bold;
-  }
-  .top_btn {
-    margin-bottom: 40px;
-    .p_btn {
-      border: 1px solid #EBEBEB;
-      padding: 6px 8px;
-      border-radius: 10px;
-      margin-right: 10px;
-      font-size: 15px;
-      &:last-child {
-        margin-right:0;
-      }
-      &:hover {
-        cursor: pointer;
-        background-color: $primary;
-        border: 1px solid $primary;
-        color: white;
-      }
+    margin: auto;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    .top_title {
+        margin-bottom: 30px;
+        font-weight: bold;
     }
-  }
+    .top_btn {
+        margin-bottom: 40px;
+        .p_btn {
+            border: 1px solid #EBEBEB;
+            padding: 6px 8px;
+            border-radius: 10px;
+            margin-right: 10px;
+            font-size: 15px;
+            &:last-child {
+                margin-right: 0;
+            }
+            &:hover {
+                cursor: pointer;
+                background-color: $primary;
+                border: 1px solid $primary;
+                color: white;
+            }
+        }
+    }
 }
-
 
 // css 초기화
 a {
-  text-decoration: none;
-  color: $black;
-  a:hover {
     text-decoration: none;
-    cursor: pointer;
-  }
+    color: $black;
+    a:hover {
+        text-decoration: none;
+        cursor: pointer;
+    }
 }
-
 
 .p_btn:last-child {
     margin: 0;
 }
-
-// .p_search {
-//   margin-top: 10px;
-//   margin-left: 20px;
-//   margin-bottom: 20px;
-//   display: inline-block;
-//   border-bottom: 2px solid black;
-//   text-align: center;
-// }
 
 .postBtn {
     padding: 5px;
