@@ -182,7 +182,6 @@
 		display: inline-block;
 	.div-cmnty-order{
 		float: left;
-		margin-right: 250px;
 	}
 	.cmnty-list-order{
 		width: 50px;
