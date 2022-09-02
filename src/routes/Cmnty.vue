@@ -15,18 +15,34 @@
 				<button type="button" class="p_btn"># 취미/생활</button>
 				<button type="button" class="p_btn"># 기타</button>
 			</div>
-			
-			<section>
-				<div>
-					<!-- <select class="cmuListOrder">
+
+			<section class="section-cmnty-order">
+				<div class="div-cmnty-order">
+					<select class="cmnty-list-order">
 						<option value="order">정렬</option>
-					</select> -->
+						<option value="dis-order">미정렬</option>
+					</select>
 				</div>
+				<div class="search-selector">
+					<span>
+						<select>
+							<option value="tit-n-con">제목+내용</option>
+							<option value="title">제목</option>
+							<option value="content">내용</option>
+							<option value="writter">글쓴이</option>
+						</select>
+					</span>
+				</div>
+				<div class="cmnty-search">
+					<input class="searchBar" type="text" placeholder="검색하세요"/>
+				</div>
+				<button class="postBtn" type="submit">글쓰기</button>
 			</section>
+
 			<section>
 				<table>
 					<thead>
-							<th v-for = "item in header" :key="item" class="thCls">{{ item }}</th>
+							<th v-for="item in header" :key="item" class="thCls">{{ item }}</th>
 					</thead>
 					<tbody>
 						<tr v-for="item in List" :key="item" class="trCls">
@@ -158,11 +174,37 @@
 <style lang="scss" scoped>
 	@import "~/scss/main";
 
-.cmuListOrder{
-	width: 700px;
-	margin: auto;
-	float: left;
-	margin-bottom: 10px;
+.section-cmnty-order{
+		width: 900px;
+		margin: 0 auto;
+		display: inline-block;
+	.div-cmnty-order{
+		float: left;
+		margin-right: 250px;
+	}
+	.cmnty-list-order{
+		width: 50px;
+		margin: 0 auto;
+		margin-top: 10px;
+	}
+	.cmnty-search{
+		border: 1px solid #EBEBEB;
+		padding: 6px 8px;
+		border-radius: 10px;
+		margin-right: 10px;
+		font-size: 15px;
+		display: inline-block;
+		margin-bottom: 10px;
+		width: 300px;
+		.searchBar{
+			text-align: left;
+			width: 280px;
+		}
+	}
+	.search-selector{
+		display: inline-block;
+		margin-right: 20px;
+	}
 }
 
 table {
