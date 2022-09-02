@@ -5,8 +5,6 @@ import ReviewComponent from './Review'
 import CmntyComponent from './Cmnty'
 import NoticeComponent from './Notice'
 
-
-
 export default createRouter({
     history: createWebHashHistory(),
     routes: [

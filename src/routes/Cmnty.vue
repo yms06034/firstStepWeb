@@ -15,7 +15,7 @@
 				<button type="button" class="p_btn"># 취미/생활</button>
 				<button type="button" class="p_btn"># 기타</button>
 			</div>
-
+			
 			<section>
 				<div>
 					<!-- <select class="cmuListOrder">
