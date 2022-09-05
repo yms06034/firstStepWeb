@@ -235,10 +235,10 @@ table {
 			color: #666;
 		}
 		.profileimg {
-		width: 33px;
-		height: 33px;
-		border-radius: 50%;
-		margin-right: 10px;
+			width: 33px;
+			height: 33px;
+			border-radius: 50%;
+			margin-right: 10px;
 		}
 	}
 }
