@@ -35,7 +35,7 @@ export default {
         // },
         {
           name: '여행정보',
-          href: '/info'
+          href: '/info',
         },
         {
           name: '여행실사후기',

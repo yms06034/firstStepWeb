@@ -29,61 +29,95 @@
         <h4>주간 Weekly Ranking</h4>
         <div class='bodyt'>
           <swiper
-          :slides-per-view="3"
-          :space-between="50"
-          :pagination="{ clickable: true }"
+          :slides-per-view="6"
+          :space-between="30"
+          :navigation='true'
           @swiper="onSwiper"
           @slideChange="onSlideChange">
-          <swiper-slide>
-            <div class="contant">
-              <img class="weekly_img" src="https://i.pinimg.com/236x/85/67/be/8567beb5e679c6482121d506ee421119.jpg" alt="Weekly_1" />
-            </div>
-          </swiper-slide>
-          <swiper-slide>
-            <div class="contant">
-              <img class="weekly_img" src="https://i.pinimg.com/236x/85/67/be/8567beb5e679c6482121d506ee421119.jpg" alt="Weekly_2" />
-            </div>
-          </swiper-slide>
-          <swiper-slide>
-            <div class="contant">
-              <img class="weekly_img" src="https://i.pinimg.com/236x/85/67/be/8567beb5e679c6482121d506ee421119.jpg" alt="Weekly_3" />
-            </div>
-          </swiper-slide>
-          <swiper-slide>
-            <div class="contant">
-              <img class="weekly_img" src="https://i.pinimg.com/236x/85/67/be/8567beb5e679c6482121d506ee421119.jpg" alt="Weekly_4" />
-            </div>
-          </swiper-slide>
-          <swiper-slide>
-            <div class="contant">
-              <img class="weekly_img" src="https://i.pinimg.com/236x/85/67/be/8567beb5e679c6482121d506ee421119.jpg" alt="Weekly_5" />
-            </div>
-          </swiper-slide>
-          <swiper-slide>
-            <div class="contant">
-              <img class="weekly_img" src="https://i.pinimg.com/236x/85/67/be/8567beb5e679c6482121d506ee421119.jpg" alt="Weekly_6" />
-            </div>
-          </swiper-slide>
-          <swiper-slide>
-            <div class="contant">
-              <img class="weekly_img" src="https://i.pinimg.com/236x/85/67/be/8567beb5e679c6482121d506ee421119.jpg" alt="Weekly_7" />
-            </div>
-          </swiper-slide>
-          <swiper-slide>
-            <div class="contant">
-              <img class="weekly_img" src="https://i.pinimg.com/236x/85/67/be/8567beb5e679c6482121d506ee421119.jpg" alt="Weekly_8" />
-            </div>
-          </swiper-slide>
-          <swiper-slide>
-            <div class="contant">
-              <img class="weekly_img" src="https://i.pinimg.com/236x/85/67/be/8567beb5e679c6482121d506ee421119.jpg" alt="Weekly_9" />
-            </div>
-          </swiper-slide>
-          <swiper-slide>
-            <div class="contant">
-              <img class="weekly_img" src="https://i.pinimg.com/236x/85/67/be/8567beb5e679c6482121d506ee421119.jpg" alt="Weekly_10" />
-            </div>
-          </swiper-slide>
+            <swiper-slide>
+              <div class="contant">
+                <p class="user_name">@yxxhzzi</p>
+                <img class="user_img" src="https://i.pinimg.com/236x/72/4e/f4/724ef4e3c2bbd2dda183e187593f75db.jpg" alt="user_img_1" />
+                <img class="weekly_img" src="https://i.pinimg.com/236x/95/d0/07/95d00790cd0a347d9a63fd62c278a982.jpg" alt="Weekly_1" />
+              </div>
+            </swiper-slide>
+            <swiper-slide>
+              <div class="contant">
+                <p class="user_name">@kkh1120</p>
+                <img class="user_img" src="https://i.pinimg.com/236x/fd/52/ff/fd52ff75e986955465c02b080bdd817d.jpg" alt="user_img_2" />
+                <img class="weekly_img" src="https://i.pinimg.com/236x/a4/fe/e4/a4fee42124348f87eb2bc7be23088315.jpg" alt="Weekly_2" />
+              </div>
+            </swiper-slide>
+            <swiper-slide>
+              <div class="contant">
+                <p class="user_name">@bee__ss</p>
+                <img class="user_img" src="https://i.pinimg.com/236x/ce/d4/23/ced423acb6d1c1e3751b7739e7baa441.jpg" alt="user_img_3" />
+                <img class="weekly_img" src="https://i.pinimg.com/236x/0e/db/0e/0edb0eb326bb2228313f6694f532f3d6.jpg" alt="Weekly_3" />
+              </div>
+            </swiper-slide>
+            <swiper-slide>
+              <div class="contant">
+                <p class="user_name">@o_ob_jun</p>
+                <img class="user_img" src="https://i.pinimg.com/236x/e4/10/7e/e4107e8131adae5c338d07bcab047a09.jpg" alt="user_img_4" />
+                <img class="weekly_img" src="https://i.pinimg.com/236x/6a/1f/7b/6a1f7b9b5d44e5dc6f1a627885e78214.jpg" alt="Weekly_4" />
+              </div>
+            </swiper-slide>
+            <swiper-slide>
+              <div class="contant">
+                <p class="user_name">@5dong2</p>
+                <img class="user_img" src="https://i.pinimg.com/236x/9c/fe/c1/9cfec1f98ff271a6fb6b63d7b29e58c6.jpg" alt="user_img_5" />
+                <img class="weekly_img" src="https://i.pinimg.com/236x/85/67/be/8567beb5e679c6482121d506ee421119.jpg" alt="Weekly_5" />
+              </div>
+            </swiper-slide>
+            <swiper-slide>
+              <div class="contant">
+                <p class="user_name">@suuu.ssuu</p>
+                <img class="user_img" src="https://i.pinimg.com/236x/20/1f/96/201f96f5bbf9c84347fa7101bd0ae885.jpg" alt="user_img_6" />
+                <img class="weekly_img" src="https://i.pinimg.com/236x/60/65/99/606599c718bc91ef7ea526e3cb6a0a19.jpg" alt="Weekly_6" />
+              </div>
+            </swiper-slide>
+            <swiper-slide>
+              <div class="contant">
+                <p class="user_name">@lilgaean</p>
+                <img class="user_img" src="https://i.pinimg.com/236x/90/a0/a2/90a0a2021fd9dcb4ecd72ebf0418a577.jpg" alt="user_img_7" />
+                <img class="weekly_img" src="https://i.pinimg.com/564x/7c/71/d3/7c71d3bcbc24d5ae5817328b3899ef1d.jpg" alt="Weekly_7" />
+              </div>
+            </swiper-slide>
+            <swiper-slide>
+              <div class="contant">
+                <p class="user_name">@frogdok</p>
+                <img class="user_img" src="https://i.pinimg.com/236x/fa/15/3f/fa153f88fc6476a33bcb4858d32d72da.jpg" alt="user_img_8" />
+                <img class="weekly_img" src="https://i.pinimg.com/236x/61/70/41/61704181409d0d430b6f8361ca269daa.jpg" alt="Weekly_8" />
+              </div>
+            </swiper-slide>
+            <swiper-slide>
+              <div class="contant">
+                <p class="user_name">@_hj1114</p>
+                <img class="user_img" src="https://i.pinimg.com/236x/32/3c/b6/323cb68bc3e34415f2b65e2dc39a4e1f.jpg" alt="user_img_9" />
+                <img class="weekly_img" src="https://i.pinimg.com/236x/92/a1/b3/92a1b360c92d9dac1bda23a7d6413569.jpg" alt="Weekly_9" />
+              </div>
+            </swiper-slide>
+            <swiper-slide>
+              <div class="contant">
+                <p class="user_name">@moldpak_</p>
+                <img class="user_img" src="https://i.pinimg.com/236x/9e/2a/e1/9e2ae1d23f5cfa361b30001c76d0314f.jpg" alt="user_img_10" />
+                <img class="weekly_img" src="https://i.pinimg.com/236x/18/87/dc/1887dc83db3e1682fb16682c287204fa.jpg" alt="Weekly_10" />
+              </div>
+            </swiper-slide>
+            <swiper-slide>
+              <div class="contant">
+                <p class="user_name">@moldpak_</p>
+                <img class="user_img" src="https://i.pinimg.com/236x/d2/50/5f/d2505f6fc4bdf5227d3c079f52e6cf81.jpg" alt="user_img_11" />
+                <img class="weekly_img" src="https://i.pinimg.com/236x/76/ba/51/76ba51737c96e511cebc40710c42c371.jpg" alt="Weekly_11" />
+              </div>
+            </swiper-slide>
+            <swiper-slide>
+              <div class="contant">
+                <p class="user_name">@miing.9</p>
+                <img class="user_img" src="https://i.pinimg.com/236x/f9/72/34/f9723413b2ca2d7a4752ca3b7621328f.jpg" alt="user_img_12" />
+                <img class="weekly_img" src="https://i.pinimg.com/236x/b1/b5/8e/b1b58e1c382772c89bed0bb5c67bdb45.jpg" alt="Weekly_12" />
+              </div>
+            </swiper-slide>
         </swiper>
         </div>
         <!-- Content -->
@@ -973,7 +1007,7 @@ export default {
 @import "~/scss/main";
 
 .cntbody {
-  width: 1260px;
+  width: 1400px;
   margin: 0 auto;
   .top_title {
   margin-bottom: 30px;
@@ -1002,22 +1036,67 @@ export default {
   h4 {
     font-weight: bold;
     text-align: left !important;
-    padding-left: 18px;
+    padding-left: 54px;
     margin-bottom: 30px;
   }
+  // Weekly swiper scss
   .bodyt {
+    width: 1290px;
+    margin: auto;
     .swiper-wrapper {
-      width: 300px;
-    }
-    .weekly_img {
-      width: 250px;
-      height: 250px;
     }
     .contant {
-      width: 250px !important;
+      width: 185px;
+      height: 245px;
+      overflow: hidden;
+      border-radius: 10px;
+      .user_name {
+        position: absolute;
+        left: 8px;
+        bottom: 8px;
+        z-index: 10;
+        color: #fff;
+        font-size: 14px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-weight: bold;
+      }
+      .user_img {
+        width: 43px;
+        height: 43px;
+        position: absolute;
+        border: 2px solid #fff;
+        border-radius: 50px;
+        right: 13px;
+        top: 8px;        
+      }
+      .weekly_img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+      border: 22px solid #fff;
+      border-radius: 50px;
+      // opacity: .7;
+    }
+    .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+      border: 22px solid #fff;
+      border-radius: 50px;
+      // opacity: .7;
+    }
+    .swiper-button-prev:after, .swiper-button-next:after {
+      font-size: 15px;
+      color: #000;
+      font-weight: bold;
     }
   }
   .reviewitems {
+    width: 1260px;
+    margin: auto;
+    margin-top: 50px;
     .reviewcol{
       width: 25%;
       display: inline-block;

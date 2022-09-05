@@ -34,15 +34,19 @@ article {
         }
     }
 }
+* { margin: 0; padding: 0; }
+p {
+  margin: 0;
+}
 
 // css 초기화
 a {
+  text-decoration: none;
+  color: $black;
+  a:hover {
     text-decoration: none;
-    color: $black;
-    a:hover {
-        text-decoration: none;
-        cursor: pointer;
-    }
+    cursor: pointer;
+  }
 }
 
 .p_btn:last-child {
