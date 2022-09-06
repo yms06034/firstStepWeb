@@ -89,6 +89,13 @@ body {
            a {
             color: #d9d9d9;
            }
+           option {
+            color: black;
+           }
+            .cntbody .review_top_sort_wbtn .review_sort_area .review_sort {
+                color: #fff;
+                background: url('https://i.ibb.co/HCV097b/dashicons-arrow-down1.png') no-repeat 105% 30%;
+            }
         }
     }
 }

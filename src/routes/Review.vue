@@ -1,33 +1,12 @@
 <template>
-  <form @:submit.prevent>
+  <form @:submit.prevent="onSubmit">
     <article>
       <div class="cntbody"> 
         <!-- title -->
         <h1 class="top_title">TRAVEL REVIEW</h1>
-        <!-- 상단 버튼 -->
-        <div class='top_btn'>
-          <button type="button" class="p_btn"># All</button>
-          <button type="button" class="p_btn"># 제주도</button>
-          <button type="button" class="p_btn"># 국내여행</button>
-          <button type="button" class="p_btn"># 해외여행</button>
-          <button type="button" class="p_btn"># 일본</button>
-          <button type="button" class="p_btn"># 데이트코스</button>
-          <button type="button" class="p_btn"># 애견패션</button>
-          <button type="button" class="p_btn"># 카페</button>
-          <button type="button" class="p_btn"># 맛집탐방</button>
-        </div>
-        <!-- Search -->
-        <div class="searchWrapper">
-          <div class="p_search">
-            <input class="searchBar" type="text" placeholder="검색하세요"/>
-            <button class="reviewSearch_btn" type="button">
-              <img src="https://i.ibb.co/8zBPjtr/ant-design-search-outlined.png" alt="Search_btn" />
-            </button>
-          </div>
-        </div>
         <!-- Weekly Ranking -->
         <h4>주간 Weekly Ranking</h4>
-        <div class='bodyt'>
+        <div class='week_rank_area'>
           <swiper
           :slides-per-view="6"
           :space-between="30"
@@ -120,7 +99,43 @@
             </swiper-slide>
         </swiper>
         </div>
-        <!-- Content -->
+        <!-- 상단 버튼 -->
+        <div class='top_btn'>
+          <button type="button" class="p_btn"># All</button>
+          <button type="button" class="p_btn"># 제주도</button>
+          <button type="button" class="p_btn"># 국내여행</button>
+          <button type="button" class="p_btn"># 해외여행</button>
+          <button type="button" class="p_btn"># 일본</button>
+          <button type="button" class="p_btn"># 데이트코스</button>
+          <button type="button" class="p_btn"># 애견패션</button>
+          <button type="button" class="p_btn"># 카페</button>
+          <button type="button" class="p_btn"># 맛집탐방</button>
+        </div>
+        <!-- Search -->
+        <div class="searchWrapper">
+          <div class="p_search">
+            <input class="searchBar" type="text" placeholder="검색하세요"/>
+            <button class="reviewSearch_btn" type="button">
+              <img src="https://i.ibb.co/8zBPjtr/ant-design-search-outlined.png" alt="Search_btn" />
+            </button>
+          </div>
+        </div>
+        <!-- Sort & writing btn area -->
+        <div class="review_top_sort_wbtn">
+          <div class="review_sort_area">
+            <select class="review_sort">
+              <option 
+                v-for="list in Lists" 
+                :key="list.value">
+                {{ list.text }}
+              </option>
+            </select>
+          </div>
+          <div class="review_wbtn">
+            <button class="wbtn" type="submit">글쓰기</button>
+          </div>
+        </div>
+        <!-- Content area -->
         <div 
           v-for="con in contents" 
           :key="con"
@@ -140,13 +155,13 @@
                 <div class="icon">
                   <ul class="i_area">
                     <li class="i_heart">
-                      <img class="i_img" src="https://i.ibb.co/3YWXDSp/heart.png" alt="" />
+                      <img class="i_img" src="https://i.ibb.co/3YWXDSp/heart.png" alt="hearticon" />
                     </li>
                     <li class="count">
                       <font>{{ con.heart_count }}</font>
                     </li>
                     <li class="i_chat">
-                      <img class="i_img" src="https://i.ibb.co/StXq4pQ/chat.png" alt="" />
+                      <img class="i_img" src="https://i.ibb.co/StXq4pQ/chat.png" alt="chaticon" />
                     </li>
                     <li class="count">
                       <font>{{ con.chat_count }}</font>
@@ -996,6 +1011,20 @@ export default {
           name: "gorgeous_sh_",
           title: "너무너무 귀엽쥬~"
         }
+      ],
+      Lists: [
+        {
+          text: "인기순",
+          value: "0"
+        },
+        {
+          text: "최신순",
+          value: "1"
+        },
+        {
+          text: "조회순",
+          value: "2"
+        }
       ]
     }
   }
@@ -1010,11 +1039,11 @@ export default {
   width: 1400px;
   margin: 0 auto;
   .top_title {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   }
   .searchWrapper {
   text-align: center;
-  margin-bottom: 30px;
+  // margin-bottom: 30px;
   position: relative;
   display: inline-block;
   .p_search {
@@ -1040,9 +1069,10 @@ export default {
     margin-bottom: 30px;
   }
   // Weekly swiper scss
-  .bodyt {
+  .week_rank_area {
     width: 1290px;
     margin: auto;
+    margin-bottom: 80px;
     .swiper-wrapper {
     }
     .contant {
@@ -1093,10 +1123,32 @@ export default {
       font-weight: bold;
     }
   }
+  .review_top_sort_wbtn {
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    .review_sort_area {
+      .review_sort {
+        font-weight: bold;
+        width: 80px;
+        color: $black;
+        background: url('https://i.ibb.co/4NQn15W/dashicons-arrow-down.png') no-repeat 105% 30%;
+      }
+    }
+    .review_wbtn{
+      margin: 0 90px 0 20px;
+      .wbtn {
+        border: 1px solid #EBEBEB;
+        border-radius: 10px;
+        padding: 8px 13px;
+        font-size: 15px;
+      }
+    }
+  }
   .reviewitems {
     width: 1260px;
     margin: auto;
-    margin-top: 50px;
     .reviewcol{
       width: 25%;
       display: inline-block;
