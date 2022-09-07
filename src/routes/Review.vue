@@ -6,13 +6,13 @@
         <h1 class="top_title">TRAVEL REVIEW</h1>
         <!-- Weekly Ranking -->
         <h4>주간 Weekly Ranking</h4>
-        <div class='week_rank_area'>
+        <div class="week_rank_area">
           <swiper
-          :slides-per-view="6"
-          :space-between="30"
-          :navigation='true'
-          @swiper="onSwiper"
-          @slideChange="onSlideChange">
+            :slides-per-view="6"
+            :space-between="30"
+            :navigation="true"
+            @swiper="onSwiper"
+            @slideChange="onSlideChange">
             <swiper-slide>
               <div class="contant">
                 <p class="user_name">@yxxhzzi</p>
@@ -97,7 +97,7 @@
                 <img class="weekly_img" src="https://i.pinimg.com/236x/b1/b5/8e/b1b58e1c382772c89bed0bb5c67bdb45.jpg" alt="Weekly_12" />
               </div>
             </swiper-slide>
-        </swiper>
+          </swiper>
         </div>
         <!-- 상단 버튼 -->
         <div class='top_btn'>
@@ -131,9 +131,12 @@
               </option>
             </select>
           </div>
-          <div class="review_wbtn">
-            <button class="wbtn" type="submit">글쓰기</button>
-          </div>
+          <RouterLink
+            to="Review_Post">          
+            <div class="review_wbtn">
+              <button class="wbtn" type="submit">글쓰기</button>
+            </div>
+          </RouterLink>
         </div>
         <!-- Content area -->
         <div 
@@ -1034,6 +1037,11 @@ export default {
 
 <style lang="scss" scope>
 @import "~/scss/main";
+
+a:hover {
+  text-decoration: none;
+  color: $black;
+}
 
 .cntbody {
   width: 1400px;
