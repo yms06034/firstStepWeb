@@ -30,6 +30,7 @@
                   id="postTitle"
                   placeholder="태그 : 쉼표(,)를 이용하여 복수 등록" />
               </div>
+              <!-- Text Editor Area -->
             </div>
           </div>
         </div>
@@ -86,11 +87,12 @@ export default {
 
 .wrt_container {
   padding: 30px 0;
+  margin: 0 auto;
+  width: 950px;
   .wrt_col {
     display: flex;
     .wrt_bg {
       padding: 0;
-      max-width: 930px;
       margin: 0 auto;
       overflow-x: hidden;
       font-size: 12px;
@@ -111,6 +113,7 @@ export default {
             // height: 48px;
             border-right: 1px solid #f1f1f1;
             color: #999;
+            text-align: left;
             .wrt_c {
               color: #999;
             }
@@ -129,7 +132,7 @@ export default {
             text-align: left;
             border-top: 1px solid #f1f1f1;
             padding: 0 12px;
-            width: 900px;
+            width: 100%;
           }
         }
       }
