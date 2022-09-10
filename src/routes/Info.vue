@@ -10,7 +10,7 @@
 				<button type="button" class="p_btn"># 동남아</button>
 				<button type="button" class="p_btn"># 일본</button>
 				<button type="button" class="p_btn"># 남태평양</button>
-				<button type="button" class="p_btn"># 극동러시아/중국</button>
+				<button type="button" class="p_btn"># 중앙아시아/중국</button>
 				<button type="button" class="p_btn"># 유럽</button>
 				<button type="button" class="p_btn"># 북미/중남미</button>
 			</div>
