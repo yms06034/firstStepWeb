@@ -21,7 +21,7 @@
         </section>
         <section class="info-post-first-second-wrap">
           <div class="info-post-content">
-            <textarea name="content" cols="100" rows="10" spellcheck="false" wrap="hard"></textarea>
+            <textarea name="content" class="content" cols="115" rows="10" spellcheck="false" wrap="hard"></textarea>
           </div>
         </section>
         <section class="info-post-file">
