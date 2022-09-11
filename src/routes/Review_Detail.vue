@@ -75,7 +75,7 @@ div {
             .user_name {
               font-size: 17px;
               font-weight: bold;
-              letter-spacing: -.35px;
+              letter-spacing: -.32px;
             }
           }
         }
