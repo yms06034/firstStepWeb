@@ -31,6 +31,31 @@
                   placeholder="태그 : 쉼표(,)를 이용하여 복수 등록" />
               </div>
               <!-- Text Editor Area -->
+              <editor api-key="6d76q584pnvmmzqx4wgfra5fv901ohapji308ne3uxelr9cf" />
+              <section class="review-post-file">
+                <div class="review_file">
+                  <label for="upload-file" class="file_upload" aria-placeholder="파일 선택">{{ fileName }}</label>
+                  <label class="file_btn" for="custom-file">업로드</label>
+                  <input 
+                    type="file" 
+                    accept="image/*" 
+                    id="custom-file" 
+                    class="file_upload_hidden"
+                    multiple="multiple" 
+                    @change="handelFileChange" />
+                  <span>* 파일 크기 제한: 10MB (확장자 : *.jpeg, *.jpg, *.png,*.gif)</span>
+                </div>
+              </section>
+              <section class="review-post-section">
+                <div class="review_post_btn">
+                  <button type="submit">임시저장</button>
+                  <button type="submit">불러오기</button>
+                  <button type="submit">미리보기</button>
+                </div>
+                <div class="file-save">
+                  <button class="post-btn" type="submit">등록</button>
+                </div>
+              </section>
             </div>
           </div>
         </div>
@@ -40,9 +65,16 @@
 </template>
 
 <script>
+import Editor from "@tinymce/tinymce-vue";
+
 export default {
+    name: "App",
+  components: {
+	editor: Editor,
+  },
   data() {
     return {
+      fileName: "파일 선택",
       cates: [
       {
         text: "제주도",
@@ -78,12 +110,38 @@ export default {
       },
     ]
     }
+  },
+  methods: {
+    handelFileChange(e) {
+      this.fileName = e.target.files[0].name;
+    },
   }
 }
 </script>
 
 <style lang="scss" scope>
 @import "~/scss/main";
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #999;
+  margin-top: 60px;
+  .tox {
+    .tox-menubar {
+      display: none;
+    }
+    .tox-statusbar {
+      display: none;
+    }
+  }
+  .tox-tinymce {
+    border: 1px solid #e5e5e5;
+    height: 400px !important;
+  }
+}
 
 .wrt_container {
   padding: 30px 0;
@@ -133,6 +191,67 @@ export default {
             border-top: 1px solid #f1f1f1;
             padding: 0 12px;
             width: 100%;
+          }
+        }
+        .review-post-file {
+          text-align: left;
+          background-color: #F3F3F3;
+          .review_file {
+            // display: inline;
+            padding: 15px 10px 15px 10px;
+            font-size: 14px;
+            label {
+              margin-bottom: 0 !important;
+            }
+            .file_upload {
+              width: 250px;
+              background-color: #DFDFDF;
+              padding: 5px;
+              border-radius: 5px;
+              margin-right: 10px;
+            }
+            .file_btn {
+              background-color: $primary;
+              color: #fff;
+              padding: 5px 8px;
+              cursor: pointer;
+              border-radius: 5px;
+              margin-right: 16px;
+            }
+            .file_upload_hidden {
+              position: absolute;
+              width: 1px;
+              height: 1px;
+              padding: 0;
+              margin: -1px;
+              overflow: hidden;
+              clip:rect(0,0,0,0);
+              border: 0;
+            }        
+          }
+        }
+        .review-post-section {
+          display: flex;
+          // align-items: center;
+          justify-content: space-between;
+          padding: 12px;
+          align-items: center;
+          .review_post_btn {
+            display: inline-block;
+            button {
+              margin-right: 20px;
+              font-size: 13px;
+              color: #F37171;
+              font-weight: bold;
+            }
+          }
+          .file-save {
+            display: inline-block;
+            font-size: 13px;
+            background-color: $primary;
+            padding: 5px 30px;
+            color: $white;
+            border-radius: 5px;
           }
         }
       }

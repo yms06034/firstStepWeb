@@ -41,6 +41,7 @@
     "webpack-dev-server": "^4.0.0-beta.0"
   },
   "dependencies": {
+    "@tinymce/tinymce-vue": "^4.0.7",
     "@tiptap/starter-kit": "^2.0.0-beta.192",
     "@tiptap/vue-3": "^2.0.0-beta.97",
     "axios": "^0.27.2",
