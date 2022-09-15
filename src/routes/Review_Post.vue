@@ -7,7 +7,7 @@
             <div class="wrt_wrap">
               <div class="wrt_hd">
                 <select 
-                  name="category_reviwe"
+                  name="category_review"
                   class="wrt_hd_sel">
                   <option class="wrt_c" value>분류</option>
                   <option 
