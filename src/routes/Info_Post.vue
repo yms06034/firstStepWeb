@@ -1,152 +1,251 @@
 <template>
   <form>
     <article>
-      <section class="info-post-main-wrap">
-        <section class="info-post-first-sub-wrap">
-          <div class="info-post-option">
-            <select>
-              <option value="">분류</option>
-              <option value="Korea"># 국내/제주</option>
-              <option value="E_S_Asia"># 동남아</option>
-              <option value="Japan"># 일본</option>
-              <option value="S_"># 남태평양</option>
-              <option value="M_Asia"># 중앙아시아/중국</option>
-              <option value="Eu"># 유럽</option>
-              <option value="America"># 북미/중남미</option>
-            </select>
+      <div class="wrt_container">
+        <div class="wrt_col">
+          <div class="wrt_bg">
+            <div class="wrt_wrap">
+              <div class="wrt_hd">
+                <select name="category_info" class="wrt_hd_sel">
+                  <option class="wrt_c" value>분류</option>
+                  <option 
+                    class="wrt_ch"
+                    v-for="cate in cates"
+                    :key="cate.value">
+                    {{ cate.text }}
+                  </option>
+                </select>
+                <input 
+                  class="wrt_hd_title"
+                  type="text" 
+                  name="title" 
+                  id="postTitle"
+                  placeholder="제목" />
+              </div>
+              <!-- Text Editor Area -->
+              <editor api-key="6d76q584pnvmmzqx4wgfra5fv901ohapji308ne3uxelr9cf" />
+              <section class="info-post-file">
+                <div class="info_file">
+                  <label for="upload-file" class="file_upload" aria-placeholder="파일 선택">{{ fileName }}</label>
+                  <label class="file_btn" for="custom-file">업로드</label>
+                  <input 
+                    type="file" 
+                    accept="image/*" 
+                    id="custom-file" 
+                    class="file_upload_hidden"
+                    multiple="multiple" 
+                    @change="handelFileChange" />
+                  <span>* 파일 크기 제한: 10MB (확장자 : *.jpeg, *.jpg, *.png,*.gif)</span>
+                </div>
+              </section>
+              <section class="info-post-section">
+                <div class="info_post_btn">
+                  <button type="submit">임시저장</button>
+                  <button type="submit">불러오기</button>
+                  <button type="submit">미리보기</button>
+                </div>
+                <div class="file-save">
+                  <button class="post-btn" type="submit">등록</button>
+                </div>
+              </section>
+            </div>
           </div>
-          <div class="info-post-title">
-            <input type="text" placeholder="제목" />
-          </div>
-        </section>
-        <section class="info-post-first-second-wrap">
-          <div class="info-post-content">
-            <textarea name="content" class="content" cols="115" rows="10" spellcheck="false" wrap="hard"></textarea>
-          </div>
-        </section>
-        <section class="info-post-file">
-          <div>
-            <input type="file" id="custom-file" class="custom-file" @change="handelFileChange"/>
-            <label for="upload-file" class="upload-file">{{ fileName }}</label>
-            <label class="file-btn" for="custom-file">업로드</label>
-            <span>* 파일 크기 제한: 10MB (확장자 : *.jpeg, *.jpg, *.png,*.gif)</span>
-          </div>
-        </section>
-        <section class="info-post-section">
-          <div class="tmp-Strg">
-            <button type="submit">임시저장</button>
-          </div>
-          <div class="file-imp">
-            <button type="submit">불러오기</button>
-          </div>
-          <div class="file-previe">
-            <button type="submit">미리보기</button>
-          </div>
-          <div class="file-save">
-            <button class="post-btn" type="submit">등록</button>
-          </div>
-        </section>
-      </section>
-    </article>
+        </div>
+      </div>
+		</article>
   </form>
 </template>
 <script>
+import Editor from "@tinymce/tinymce-vue";
+
 export default {
+    name: "App",
+  components: {
+	editor: Editor,
+  },
   data() {
     return {
       fileName: "파일 선택",
-    };
+      cates: [
+      {
+        text: "제주도",
+        value: "20"
+      },
+      {
+        text: "국내여행",
+        value: "21"
+      },
+      {
+        text: "해외여행",
+        value: "22"
+      },
+      {
+        text: "일본",
+        value: "23"
+      },
+      {
+        text: "데이트코스",
+        value: "24"
+      },
+      {
+        text: "애견팬션",
+        value: "25"
+      },
+      {
+        text: "카페",
+        value: "26"
+      },
+      {
+        text: "맛집탐방",
+        value: "27"
+      },
+    ]
+    }
   },
   methods: {
     handelFileChange(e) {
       this.fileName = e.target.files[0].name;
     },
-  },
-};
+  }
+}
 </script>
 <style lang="scss" scoped>
-.info-post-main-wrap {
-  width: 900px;
-  margin: auto;
-  .info-post-first-sub-wrap {
-    height: 30px;
-    width: 900px;
-    display: flex;
-    .info-post-option {
-      text-align: center;
-      display: inline-block;
-      border: 1px solid gray;
-    }
-    .info-post-title {
-      text-align: center;
-      display: inline-block;
-      width: 785px;
-      border: 1px solid gray;
-    }
-  }
-  .info-post-first-second-wrap {
-    .info-post-content {
-      border: 1px solid gray;
-			.content{
-				text-align: left;
-				resize: none;
-				word-wrap: break-word;
-			}
-    }
-  }
-  .info-post-file {
-    display: flex;
-    border: 1px solid gray;
-    .custom-file {
+@import "~/scss/main";
+
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #999;
+  margin-top: 60px;
+  .tox {
+    .tox-menubar {
       display: none;
     }
-    .file-btn {
-      margin-left: 10px;
-      margin-right: 10px;
-      padding: 6px 25px;
-      background-color: #ff6600;
-      border-radius: 4px;
-      color: white;
-      cursor: pointer;
-    }
-    .upload-file {
-      border: 1px solid gray;
-      background-color: gray;
+    .tox-statusbar {
+      display: none;
     }
   }
-  .info-post-section {
-		height: 45px;
-    border: 1px solid gray;
-    .tmp-Strg {
-			margin-top: 10px;
-      display: inline-block;
-			margin-right: 20px;
-			float: left;
-    }
-    .file-imp {
-			margin-top: 10px;
-      display: inline-block;
-			margin-right: 20px;
-			float: left;
-    }
-    .file-previe {
-			margin-top: 10px;
-      display: inline-block;
-			margin-right: 20px;
-			float: left;
-    }
-    .file-save {
-			margin-top: 5px;
-      display: inline-block;
-			margin-left: 550px;
-			.post-btn{
-				margin-left: 10px;
-				margin-right: 10px;
-				padding: 4px 20px;
-				background-color: #ff6600;
-				border-radius: 4px;
-				color: white;
-			}
+  .tox-tinymce {
+    border: 1px solid #e5e5e5;
+    height: 400px !important;
+  }
+}
+
+.wrt_container {
+  padding: 30px 0;
+  margin: 0 auto;
+  width: 950px;
+  .wrt_col {
+    display: flex;
+    .wrt_bg {
+      padding: 0;
+      margin: 0 auto;
+      overflow-x: hidden;
+      font-size: 12px;
+      letter-spacing: -0 0.03em;
+      background: transparent;
+      line-height: 1.5;
+      .wrt_wrap {
+        border: 1px solid #e5e5e5;
+        background: #fff;
+        &::before {
+          content: "";
+          display: table;
+        }
+        .wrt_hd {
+          display: table;
+          .wrt_hd_sel {
+            width: 100px;
+            // height: 48px;
+            border-right: 1px solid #f1f1f1;
+            color: #999;
+            text-align: left;
+            .wrt_c {
+              color: #999;
+            }
+            .wrt_ch {
+              color: $black;
+            }
+          }
+          .wrt_hd_title {
+            height: 48px;
+            text-align: left;
+            padding: 0 12px;
+            width: 800px;
+          }
+          .wrt_hd_tag {
+            height: 48px;
+            text-align: left;
+            border-top: 1px solid #f1f1f1;
+            padding: 0 12px;
+            width: 100%;
+          }
+        }
+        .info-post-file {
+          text-align: left;
+          background-color: #F3F3F3;
+          .info_file {
+            // display: inline;
+            padding: 15px 10px 15px 10px;
+            font-size: 14px;
+            label {
+              margin-bottom: 0 !important;
+            }
+            .file_upload {
+              width: 250px;
+              background-color: #DFDFDF;
+              padding: 5px;
+              border-radius: 5px;
+              margin-right: 10px;
+            }
+            .file_btn {
+              background-color: $primary;
+              color: #fff;
+              padding: 5px 8px;
+              cursor: pointer;
+              border-radius: 5px;
+              margin-right: 16px;
+            }
+            .file_upload_hidden {
+              position: absolute;
+              width: 1px;
+              height: 1px;
+              padding: 0;
+              margin: -1px;
+              overflow: hidden;
+              clip:rect(0,0,0,0);
+              border: 0;
+            }        
+          }
+        }
+        .info-post-section {
+          display: flex;
+          // align-items: center;
+          justify-content: space-between;
+          padding: 12px;
+          align-items: center;
+          .info_post_btn {
+            display: inline-block;
+            button {
+              margin-right: 20px;
+              font-size: 13px;
+              color: #F37171;
+              font-weight: bold;
+            }
+          }
+          .file-save {
+            display: inline-block;
+            font-size: 13px;
+            background-color: $primary;
+            padding: 5px 30px;
+            color: $white;
+            border-radius: 5px;
+          }
+        }
+      }
     }
   }
 }
