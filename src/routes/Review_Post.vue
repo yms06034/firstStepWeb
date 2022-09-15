@@ -67,8 +67,9 @@
 <script>
 import Editor from "@tinymce/tinymce-vue";
 
+
 export default {
-    name: "App",
+  name: "App",
   components: {
 	editor: Editor,
   },
@@ -108,7 +109,7 @@ export default {
         text: "맛집탐방",
         value: "27"
       },
-    ]
+      ],
     }
   },
   methods: {
@@ -121,27 +122,6 @@ export default {
 
 <style lang="scss" scope>
 @import "~/scss/main";
-
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #999;
-  margin-top: 60px;
-  .tox {
-    .tox-menubar {
-      display: none;
-    }
-    .tox-statusbar {
-      display: none;
-    }
-  }
-  .tox-tinymce {
-    border: 1px solid #e5e5e5;
-    height: 400px !important;
-  }
-}
 
 .wrt_container {
   padding: 30px 0;
@@ -193,6 +173,18 @@ export default {
             width: 100%;
           }
         }
+        .tox {
+          .tox-menubar {
+            display: none;
+          }
+          .tox-statusbar {
+            display: none;
+          }
+        }
+        .tox-tinymce {
+          border: 1px solid #e5e5e5;
+          height: 400px !important;
+        }
         .review-post-file {
           text-align: left;
           background-color: #F3F3F3;
@@ -209,6 +201,7 @@ export default {
               padding: 5px;
               border-radius: 5px;
               margin-right: 10px;
+              color: #999;
             }
             .file_btn {
               background-color: $primary;
