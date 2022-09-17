@@ -35,7 +35,7 @@
               <section class="review-post-file">
                 <div class="review_file">
                   <label for="upload-file" class="file_upload" aria-placeholder="파일 선택">{{ fileName }}</label>
-                  <label class="file_btn" for="custom-file">업로드_1</label>
+                  <label class="file_btn" for="custom-file">업로드</label>
                   <input 
                     type="file" 
                     accept="image/*" 
