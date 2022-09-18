@@ -30,7 +30,7 @@
                   id="postTitle"
                   placeholder="태그 : 쉼표(,)를 이용하여 복수 등록" />
               </div>
-              <!-- Text Editor Area -->
+              <!-- Text Editor Area / VueQuill 09.18 -->
               <editor api-key="6d76q584pnvmmzqx4wgfra5fv901ohapji308ne3uxelr9cf" />
               <section class="review-post-file">
                 <div class="review_file">
