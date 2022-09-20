@@ -31,7 +31,10 @@
                   placeholder="태그 : 쉼표(,)를 이용하여 복수 등록" />
               </div>
               <!-- Text Editor Area / VueQuill 09.18 -->
-              <editor api-key="6d76q584pnvmmzqx4wgfra5fv901ohapji308ne3uxelr9cf" />
+              <QuillEditor 
+                theme="snow"
+                :modules="modules"
+                toolbar="full" />
               <section class="review-post-file">
                 <div class="review_file">
                   <label for="upload-file" class="file_upload" aria-placeholder="파일 선택">{{ fileName }}</label>
@@ -65,13 +68,14 @@
 </template>
 
 <script>
-import Editor from "@tinymce/tinymce-vue";
+import { QuillEditor } from '@vueup/vue-quill'
+import '@vueup/vue-quill/dist/vue-quill.snow.css';
 
 
 export default {
   name: "App",
   components: {
-	editor: Editor,
+  QuillEditor
   },
   data() {
     return {
@@ -119,6 +123,7 @@ export default {
   }
 }
 </script>
+
 
 <style lang="scss" scope>
 @import "~/scss/main";
