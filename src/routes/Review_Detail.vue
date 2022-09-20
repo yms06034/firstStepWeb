@@ -15,8 +15,43 @@
                   </div>
                   <div class="user_profile_name">
                     <p class="user_name">gorgeous_sh_</p>
+                    <span class="user_up_time">6시간 전</span>
                   </div>
                 </a>
+              </div>
+              <div class="r_d_social_user_img">
+                <swiper
+                  :slides-per-view="1"
+                  :space-between="30"
+                  :navigation="true"
+                  :pagination="{ type: 'fraction' }"
+                  @swiper="onSwiper"
+                  @slideChange="onSlideChange">
+                  <swiper-slide>
+                    <div class="r_d_social_user_img">
+                      <img 
+                        class="user_img" 
+                        src="https://i.pinimg.com/564x/c3/b2/fa/c3b2fa206fd2d092ce555d537441f98e.jpg" 
+                        alt="test_1" />
+                    </div>
+                  </swiper-slide>
+                  <swiper-slide>
+                    <div class="r_d_social_user_img">
+                      <img 
+                        class="user_img" 
+                        src="https://i.pinimg.com/564x/c3/b2/fa/c3b2fa206fd2d092ce555d537441f98e.jpg" 
+                        alt="test_1" />
+                    </div>
+                  </swiper-slide>
+                  <swiper-slide>
+                    <div class="r_d_social_user_img">
+                      <img 
+                        class="user_img" 
+                        src="https://i.pinimg.com/564x/c3/b2/fa/c3b2fa206fd2d092ce555d537441f98e.jpg" 
+                        alt="test_1" />
+                    </div>
+                  </swiper-slide>
+                </swiper>
               </div>
             </div>
           </div>
@@ -27,13 +62,42 @@
 </template>
 
 <script>
+// Import Swiper Vue.js components
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import SwiperCore, { Navigation, Pagination, A11y } from "swiper";
+
+// Import Swiper styles
+import '../../node_modules/swiper/swiper.min.css';
+import '../../node_modules/swiper/swiper-bundle.css'
+import '../../node_modules/swiper/components/navigation/navigation.scss'
+import '../../node_modules/swiper/components/pagination/pagination.scss'
+
+SwiperCore.use([Navigation, Pagination, A11y]);
+
 export default {
-  
+  components: {
+    Swiper,
+    SwiperSlide
+  },
+  setup() {
+    const onSwiper = (swiper) => {
+      console.log(swiper);
+    };
+    const onSlideChange = () => {
+      // console.log('slide change');
+    };
+    return {
+      onSwiper,
+      onSlideChange,
+      modules: [Pagination]
+    };
+  }
 }
 </script>
 
 <style lang="scss" scpoe>
 @import "~/scss/main";
+
 a:hover {
   color: #000 !important;
   text-decoration: none !important;
@@ -47,8 +111,7 @@ div {
   .r_d_content {
     margin: 0 auto;
     padding-bottom: 200px;
-    max-width: 800px;
-    background-color: #fff;
+    max-width: 730px;
     .r_d_social_post_detail {
       padding-bottom: 40px;
       .r_d_social_user_state {
@@ -71,13 +134,23 @@ div {
           }
           .user_profile_name {
             margin-left: 15px;
-            padding-top: 5px;
             .user_name {
               font-size: 17px;
               font-weight: bold;
               letter-spacing: -.32px;
             }
+            .user_up_time {
+              float: left;
+              font-size: 13px;
+              color: $time;
+            }
           }
+        }
+      }
+      .r_d_social_user_img {
+        .user_img {
+          width: 100%;
+          height: auto;
         }
       }
     }
