@@ -13,6 +13,7 @@
                       alt="user_profile_img" 
                       class="profile_img" />
                   </div>
+                  <!-- a tag structural change -->
                   <div class="user_profile_name">
                     <p class="user_name">gorgeous_sh_</p>
                     <span class="user_up_time">6시간 전</span>
@@ -97,6 +98,37 @@ export default {
 
 <style lang="scss" scpoe>
 @import "~/scss/main";
+
+.swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+  border: 22px solid #fff;
+  border-radius: 50px;
+  // opacity: .7;
+}
+.swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+  border: 22px solid #fff;
+  border-radius: 50px;
+  // opacity: .7;
+}
+.swiper-button-prev:after, .swiper-button-next:after {
+  font-size: 15px;
+  color: #000;
+  font-weight: bold;
+}
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+  width: 50px;
+  height: 30px;
+  top:0 ;
+  bottom: 0 !important;
+  margin-left: 92%;
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000; opacity: .3;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: bold;
+}
 
 a:hover {
   color: #000 !important;

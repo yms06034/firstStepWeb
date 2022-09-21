@@ -118,8 +118,9 @@ export default {
   },
   methods: {
     handelFileChange(e) {
-      this.fileName = e.target.files[0].name;
+      this.fileName = e.target.files[0].name
     },
+    imageDrop:true,
   }
 }
 </script>
