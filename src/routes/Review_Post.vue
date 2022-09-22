@@ -129,6 +129,10 @@ export default {
 <style lang="scss" scope>
 @import "~/scss/main";
 
+.ql-editor {
+  height: 400px;
+}
+
 .wrt_container {
   padding: 30px 0;
   margin: 0 auto;

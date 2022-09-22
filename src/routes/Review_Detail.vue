@@ -29,31 +29,41 @@
                   @swiper="onSwiper"
                   @slideChange="onSlideChange">
                   <swiper-slide>
-                    <div class="r_d_social_user_img">
-                      <img 
-                        class="user_img" 
-                        src="https://i.pinimg.com/564x/c3/b2/fa/c3b2fa206fd2d092ce555d537441f98e.jpg" 
-                        alt="test_1" />
-                    </div>
+                    <img 
+                      class="user_img" 
+                      src="https://i.pinimg.com/564x/c3/b2/fa/c3b2fa206fd2d092ce555d537441f98e.jpg" 
+                      alt="test_1" />
                   </swiper-slide>
                   <swiper-slide>
-                    <div class="r_d_social_user_img">
-                      <img 
-                        class="user_img" 
-                        src="https://i.pinimg.com/564x/c3/b2/fa/c3b2fa206fd2d092ce555d537441f98e.jpg" 
-                        alt="test_1" />
-                    </div>
+                    <img 
+                      class="user_img" 
+                      src="https://i.pinimg.com/564x/c3/b2/fa/c3b2fa206fd2d092ce555d537441f98e.jpg" 
+                      alt="test_1" />
                   </swiper-slide>
                   <swiper-slide>
-                    <div class="r_d_social_user_img">
-                      <img 
-                        class="user_img" 
-                        src="https://i.pinimg.com/564x/c3/b2/fa/c3b2fa206fd2d092ce555d537441f98e.jpg" 
-                        alt="test_1" />
-                    </div>
+                    <img 
+                      class="user_img" 
+                      src="https://i.pinimg.com/564x/c3/b2/fa/c3b2fa206fd2d092ce555d537441f98e.jpg" 
+                      alt="test_1" />
                   </swiper-slide>
                 </swiper>
               </div>
+              <table class="r_d_info">
+                <tbody class="r_d_info_tb">
+                  <tr class="r_d_info_tr">
+                    <th class="r_d_info_dest">여행지</th>
+                    <td class="r_d_info_adres">경기도 화성시 송상면 고정리</td>
+                  </tr>
+                  <tr class="r_d_info_tr">
+                    <th class="r_d_info_dest">팬션</th>
+                    <td class="r_d_info_adres">OO 애견팬션</td>
+                  </tr>
+                  <tr class="r_d_info_tr">
+                    <th class="r_d_info_dest">인원&가격</th>
+                    <td class="r_d_info_adres">2인 / 1박 - 45000원</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
@@ -151,6 +161,19 @@ div {
         .user_state {
           display: flex;
           align-content: center;
+            .user_profile_name {
+              margin-left: 15px;
+              .user_name {
+                font-size: 17px;
+                font-weight: bold;
+                letter-spacing: -.32px;
+              }
+              .user_up_time {
+                float: left;
+                font-size: 13px;
+                color: $time;
+              }
+            }
           .user_profile_img {
             overflow: hidden;
             position: relative;
@@ -164,25 +187,40 @@ div {
               object-fit: cover;
             }
           }
-          .user_profile_name {
-            margin-left: 15px;
-            .user_name {
-              font-size: 17px;
-              font-weight: bold;
-              letter-spacing: -.32px;
-            }
-            .user_up_time {
-              float: left;
-              font-size: 13px;
-              color: $time;
-            }
-          }
         }
       }
       .r_d_social_user_img {
         .user_img {
           width: 100%;
           height: auto;
+          border-radius: 5px;
+        }
+      }
+      .r_d_info {
+        margin-top: 15px;
+        width: 100%;
+        border-top: 0px solid #eee;
+        border-bottom: 1px solid #eee;
+        border-collapse: collapse;
+        .r_d_info_tb {
+          border-top: 1px solid #eee;
+          border-right: 1px solid #eee;
+          .r_d_info_tr {
+            border-bottom: 1px solid #eee;
+            .r_d_info_dest {
+              background: #f7f7f7;
+              color: #777;
+              padding: 10px 25px;
+              border-top: 1px solid #eee;
+              width: 200px;
+            }
+            .r_d_info_adres {
+              color: #333;
+              border-bottom: 0px solid #eee;
+              padding: 10px 20px;
+              border-top: 1px solid #eee;
+            }
+          }
         }
       }
     }
