@@ -35,6 +35,22 @@
 						</div>
 					</div>
 			</section>
+			<section class="detail-reply-container">
+				<div class="detail-reply-main-wrap" v-for="reply in postReplysList" :key="reply">
+					<ui class="detail-reply-list">
+						<li id="{{ reply.id }}">
+							<div class="reply-info">
+								<div class="iconWrapper">
+									<img class="circle" src="https://img.hankyung.com/photo/201811/01.18376762.1.jpg" alt="iconImg"/>
+								</div>
+							</div>
+							<div class="reply-title">
+								<p>{{ reply.replyContent}} </p>
+							</div>
+						</li>
+					</ui>
+				</div>
+			</section>
 		</article>
 	</form>
 </template>
@@ -141,6 +157,14 @@ export default {
 			.book-mark-btn{
 				margin-right: 10px;
 			}
+		}
+	}
+}
+.detail-reply-container{
+	.detail-reply-main-wrap{
+		.detail-reply-list{
+			list-style: none;
+			padding-left: 0px;
 		}
 	}
 }
