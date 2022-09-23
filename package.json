@@ -54,6 +54,7 @@
     "swiper": "^6.8.4",
     "vue": "^3.2.36",
     "vue-backtotop": "^1.6.1",
-    "vue-router": "^4.1.3"
+    "vue-router": "^4.1.3",
+    "vue-scroll-behavior": "^0.3.0"
   }
 }
