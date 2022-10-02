@@ -91,6 +91,29 @@ export default {
 					,replyContent : 'replyContent3'
 					,replyTime : '09.14 20:27:50'
 				}
+			],
+			postReReplysList : [
+				{
+					id : 1
+					,replyGroup : 1
+					,userNM : 'momo1'
+					,replyContent : 'replyContent1'
+					,replyTime : '09.10 20:27:50'
+				},
+				{
+					id : 2
+					,replyGroup : 1
+					,userNM : 'sana2'
+					,replyContent : 'replyContent2'
+					,replyTime : '09.12 20:27:50'
+				},
+				{
+					id : 1
+					,replyGroup : 2
+					,userNM : 'shasha3'
+					,replyContent : 'replyContent3'
+					,replyTime : '09.14 20:27:50'
+				}
 			]
 		}
 	}
