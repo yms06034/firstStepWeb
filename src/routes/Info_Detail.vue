@@ -43,6 +43,7 @@
 								<div class="iconWrapper">
 									<img class="circle" src="https://img.hankyung.com/photo/201811/01.18376762.1.jpg" alt="iconImg"/>
 								</div>
+								<span>{{ reply.userNM }}</span>
 							</div>
 							<div class="reply-title">
 								<p>{{ reply.replyContent}} </p>
@@ -75,8 +76,43 @@ export default {
 				{
 					id : 1
 					,userNM : 'momo'
-					,replyContent : 'i love vue.js'
+					,replyContent : 'replyContent1'
 					,replyTime : '09.10 20:27:50'
+				},
+				{
+					id : 2
+					,userNM : 'sana'
+					,replyContent : 'replyContent2'
+					,replyTime : '09.12 20:27:50'
+				},
+				{
+					id : 1
+					,userNM : 'shasha'
+					,replyContent : 'replyContent3'
+					,replyTime : '09.14 20:27:50'
+				}
+			],
+			postReReplysList : [
+				{
+					id : 1
+					,replyGroup : 1
+					,userNM : 'momo1'
+					,replyContent : 'replyContent1'
+					,replyTime : '09.10 20:27:50'
+				},
+				{
+					id : 2
+					,replyGroup : 1
+					,userNM : 'sana2'
+					,replyContent : 'replyContent2'
+					,replyTime : '09.12 20:27:50'
+				},
+				{
+					id : 1
+					,replyGroup : 2
+					,userNM : 'shasha3'
+					,replyContent : 'replyContent3'
+					,replyTime : '09.14 20:27:50'
 				}
 			]
 		}
@@ -161,10 +197,26 @@ export default {
 	}
 }
 .detail-reply-container{
+	margin: auto;
+	width: 900px;
 	.detail-reply-main-wrap{
+		border-top: 1px solid gray;
+		height: 45px;
+		margin-top: 10px;
 		.detail-reply-list{
+			text-align: center;
 			list-style: none;
 			padding-left: 0px;
+			.iconWrapper{
+				position: relative;
+				margin-right: 10px;
+				float: left;
+			}
+			.circle{
+				width: 33px;
+				height: 33px;
+				border-radius: 50%;
+			}
 		}
 	}
 }
