@@ -64,6 +64,13 @@
                   </tr>
                 </tbody>
               </table>
+              <div class="r_d_social_btn">
+                <div class="btn_bind">
+                  <a href="#" class="btn_like" aria-label="좋아요"></a>
+                  <a href="#" class="btn_commit" aria-label="댓글"></a>
+                </div>
+                <a href="#" class="r_d_social-share"></a>
+              </div>
             </div>
           </div>
         </div>

@@ -30,7 +30,7 @@
                   id="postTitle"
                   placeholder="태그 : 쉼표(,)를 이용하여 복수 등록" />
               </div>
-              <!-- Text Editor Area / VueQuill 09.18 -->
+              <!-- Text Editor Area -->
               <QuillEditor 
                 theme="snow"
                 :modules="modules"
