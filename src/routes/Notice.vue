@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p class="container">Hello World</p>
+    <p class="container">Notice</p>
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
 <style lang="scss" scoped>
 @import "~/scss/main";
 p {
-  font-size: 20px;
+  font-size: 30px;
   font-weight: bold;
   color: yellowgreen;
 }
