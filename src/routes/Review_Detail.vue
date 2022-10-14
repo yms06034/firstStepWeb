@@ -1,5 +1,5 @@
 <template>
-  <form>
+  <form @submit.prevent="onSubmit">
     <article>
       <div class="r_d_container">
         <div class="r_d_content">
@@ -65,11 +65,25 @@
                 </tbody>
               </table>
               <div class="r_d_social_btn">
-                <div class="btn_bind">
-                  <a href="#" class="btn_like" aria-label="좋아요"></a>
-                  <a href="#" class="btn_commit" aria-label="댓글"></a>
+                <div id="btn_bind" class="btn_bind">
+                  <button type="submit" href="javascript:void(0)" class="btn_like" aria-label="좋아요" @click="btn_likeClick()">
+                    <img 
+                      class="btn_like_img"
+                      src="https://i.ibb.co/tQzVN2D/bi-heart.png" 
+                      alt="like_btn" />
+                  </button>
+                  <div ref="clicker_like" class="btn_like_counter"></div>
+                  <button type="submit" href="javascript:void(0)" class="btn_commit" aria-label="댓글">
+                    <img 
+                      class="btn_commit_img" 
+                      src="https://i.ibb.co/2dcrNFv/bi-chat.png" 
+                      alt="commit_btn" />
+                  </button>
+                  <div ref="clicker_commit" class="btn_commit_counter">13</div>
                 </div>
-                <a href="#" class="r_d_social-share"></a>
+                <a href="javascript:void(0)" class="r_d_social-share">
+                  <img src="https://i.ibb.co/PC5VFCm/fluent-share-ios-28-filled.png" alt="btn_share_img" />
+                </a>
               </div>
             </div>
           </div>
@@ -109,6 +123,21 @@ export default {
       onSlideChange,
       modules: [Pagination]
     };
+  },
+  el: '#btn_bind',
+  data() {
+    return{
+      counter: 0,
+    }
+  },
+  methods: {
+    btn_likeClick() {
+      const clickCounter = this.$refs.clicker_like;
+
+      clickCounter.textContent = `${++this.counter}`;
+
+      clickCounter.classList.add('act')
+    }
   }
 }
 </script>
@@ -148,7 +177,7 @@ export default {
 }
 
 a:hover {
-  color: #000 !important;
+  color: inherit !important;
   text-decoration: none !important;
 }
 div {
@@ -226,6 +255,34 @@ div {
               border-bottom: 0px solid #eee;
               padding: 10px 20px;
               border-top: 1px solid #eee;
+            }
+          }
+        }
+      }
+      .r_d_social_btn {
+        display: flex;
+        justify-content: space-between;
+        margin: 13px 8px 0;
+        .btn_bind {
+          display: flex;
+          .btn_like {
+            color: #ADADAD; 
+            margin-right: 10px;           
+            &:hover {
+              color: #ADADAD !important;
+            }
+            .btn_like_img {
+              margin-right: 8px;
+            }
+          }
+          .btn_commit {
+            color: #ADADAD;
+            margin-bottom: 1px;
+            &:hover {
+              color: #ADADAD !important;
+            }
+            .btn_commit_img {
+              margin: 0 8px 3px 0;
             }
           }
         }
