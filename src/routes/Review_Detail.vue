@@ -133,10 +133,10 @@ export default {
   methods: {
     btn_likeClick() {
       const clickCounter = this.$refs.clicker_like;
-
+      
       clickCounter.textContent = `${++this.counter}`;
 
-      clickCounter.classList.add('act')
+      clickCounter.classList.add('activa')
     }
   }
 }
