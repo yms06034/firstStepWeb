@@ -136,7 +136,7 @@ export default {
       
       clickCounter.textContent = `${++this.counter}`;
 
-      clickCounter.classList.add('activa')
+      clickCounter.classList.add('act')
     }
   }
 }
