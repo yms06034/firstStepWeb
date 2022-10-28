@@ -64,6 +64,7 @@
                   </tr>
                 </tbody>
               </table>
+              <!-- 좋아요 & 댓글 & 공유 버튼 -->
               <div class="r_d_social_btn">
                 <div id="btn_bind" class="btn_bind">
                   <button type="submit" href="javascript:void(0)" class="btn_like" aria-label="좋아요" @click="btn_likeClick()">
@@ -85,11 +86,28 @@
                   <img src="https://i.ibb.co/PC5VFCm/fluent-share-ios-28-filled.png" alt="btn_share_img" />
                 </a>
               </div>
+              <!-- Text Content -->
+              <div class="r_d_text_area">
+                <p>애견 팬션 미친듯이 좋네요~~ 다들 애견팬션 꼭 여기로 <br />오세요 정말이지 좋아요~~ 💕</p>
+              </div>
+              <!-- Text Delete Modify button -->
+              <div class="r_d_text_buttom">
+                <button class="btn_modify">수정</button>
+                <button class="btn_delete">삭제</button>
+              </div>
+            </div>
+            <!-- Comments Area -->
+            <div class="r_d_comments_area">
+              <div>
+                <input 
+                  class="r_d_text_input"
+                  type="text" />
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </article>
+    </article> 
   </form>
 </template>
 
@@ -191,7 +209,7 @@ div {
     padding-bottom: 200px;
     max-width: 730px;
     .r_d_social_post_detail {
-      padding-bottom: 40px;
+      padding-bottom: 30px;
       .r_d_social_user_state {
         padding: 12px 0;
         .user_state {
@@ -263,6 +281,7 @@ div {
         display: flex;
         justify-content: space-between;
         margin: 13px 8px 0;
+        margin-bottom: 20px;
         .btn_bind {
           display: flex;
           .btn_like {
@@ -274,6 +293,10 @@ div {
             .btn_like_img {
               margin-right: 8px;
             }
+
+          }
+          .btn_like_counter {
+            margin-right: 10px;
           }
           .btn_commit {
             color: #ADADAD;
@@ -282,9 +305,42 @@ div {
               color: #ADADAD !important;
             }
             .btn_commit_img {
-              margin: 0 8px 3px 0;
+              margin: 0 10px 3px 0;
             }
           }
+        }
+      }
+      .r_d_text_area {
+        text-align: left;
+        line-height: 25px;
+        font-size: 16px;
+        margin: 0 8px;
+        padding-bottom: 25px;
+      }
+      .r_d_text_buttom {
+        text-align: right;
+        border-top: 1px solid #D4D4D4;
+        .btn_modify {
+          padding: 5px 15px;
+          border: 1px solid #EBEBEB;
+          border-radius: 5px;
+          font-size: 14px;
+        }
+        .btn_delete {
+          padding: 5px 15px;
+          border: 1px solid #EBEBEB;
+          border-radius: 5px;
+          margin: 10px 0 0 0;
+          margin-left: 10px;
+          font-size: 14px;
+        }
+      }
+    }
+    .r_d_comments_area {
+      div {
+        .r_d_text_input {
+          border: 1px solid #EBEBEB;
+          width: 100%;
         }
       }
     }
