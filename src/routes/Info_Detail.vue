@@ -36,18 +36,26 @@
 					</div>
 			</section>
 			<section class="detail-reply-container">
-				<div class="detail-reply-main-wrap" v-for="reply in postReplysList" :key="reply">
+				<div class="detail-reply-main-wrap">
 					<ui class="detail-reply-list">
-						<li id="{{ reply.id }}">
-							<div class="reply-info">
+						<li id="{{ reply.id }}" v-for="reply in postReplysList" :key="reply">
+							<div class="reply-bind">
+								<div class="reply-info">
+									<div class="iconWrapper">
+										<img class="circle" src="https://img.hankyung.com/photo/201811/01.18376762.1.jpg" alt="iconImg"/>
+										<span class="reply-userNm"> {{ reply.userNM }} </span>
+									</div>
+								</div>
+								<div class="reply-title"> {{ reply.replyContent}} </div>
+								<div class="reply-time"> {{ reply.replyTime }} </div>
+							</div>
+							<!-- <span class="reply-info">
 								<div class="iconWrapper">
 									<img class="circle" src="https://img.hankyung.com/photo/201811/01.18376762.1.jpg" alt="iconImg"/>
 								</div>
-								<span>{{ reply.userNM }}</span>
-							</div>
-							<div class="reply-title">
-								<p>{{ reply.replyContent}} </p>
-							</div>
+								<span><p>{{ reply.userNM }}</p></span>
+							</span> -->
+							<!-- <span class="reply-title">{{ reply.replyContent}}</span> -->
 						</li>
 					</ui>
 				</div>
@@ -207,15 +215,32 @@ export default {
 			text-align: center;
 			list-style: none;
 			padding-left: 0px;
+			display: flex;
 			.iconWrapper{
 				position: relative;
 				margin-right: 10px;
 				float: left;
+				height: 120px;
+				.reply-userNm{
+					margin-left: 30px;
+				}
 			}
 			.circle{
 				width: 33px;
 				height: 33px;
 				border-radius: 50%;
+			}
+			.reply-bind{
+				display: flex;
+				.reply-info{
+					
+				}
+				.reply-title{
+					margin-left: 100px;
+				}
+				.reply-time{
+
+				}
 			}
 		}
 	}
