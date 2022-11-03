@@ -101,7 +101,8 @@
               <div>
                 <input 
                   class="r_d_text_input"
-                  type="text" />
+                  type="text"
+                  value="test입니다." />
               </div>
             </div>
           </div>
