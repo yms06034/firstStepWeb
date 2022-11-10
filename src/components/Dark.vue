@@ -96,6 +96,14 @@ body {
                 color: #fff;
                 background: url('https://i.ibb.co/HCV097b/dashicons-arrow-down1.png') no-repeat 105% 30%;
             }
+            .r_d_container .r_d_content .r_d_social_post_detail .r_d_info .r_d_info_tb .r_d_info_tr .r_d_info_dest {
+                color: #d9d9d9;
+                background: #171717;
+                border-left: 1px solid #eee;
+            }
+            .r_d_container .r_d_content .r_d_social_post_detail .r_d_info .r_d_info_tb .r_d_info_tr .r_d_info_adres {
+                color: #d9d9d9;
+            }
         }
     }
 }
