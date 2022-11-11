@@ -416,7 +416,7 @@
                   </tr>
                   <tr class="r_d_info_tr">
                     <th class="r_d_info_dest">인원&가격</th>
-                    <td class="r_d_info_adres">2인 / 1박 - 45000원</td>
+                    <td class="r_d_info_adres">1인 / 1박 - 45000원</td>
                   </tr>
                 </tbody>
               </table>
