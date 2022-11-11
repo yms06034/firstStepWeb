@@ -444,7 +444,7 @@
               </div>
               <!-- Text Content -->
               <div class="r_d_text_area">
-                <p>애견 팬션 미친듯이 좋네요~~ 다들 애견팬션 꼭 여기로 <br />오세요 정말이지 좋아요~~ 💕</p>
+                <p>애견 팬션 너무너무 좋네요~~ 다들 애견팬션 꼭 여기로 <br />오세요 정말이지 좋아요~~ 💕</p>
               </div>
               <!-- Text Delete Modify button -->
               <div class="r_d_text_buttom">
