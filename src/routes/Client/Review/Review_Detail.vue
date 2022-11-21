@@ -130,9 +130,27 @@
                       <div class="com_detail">
                         <div class="main">
                           <span class="user_name">nun_na_najugeo</span>
-                          <span class="comment_txt">눈나 미모가 더 미쳤어용</span>
+                          <span class="comment_txt">1시간 전</span>
                         </div>
-                        <div class="sub">1시간 전</div>
+                        <div class="sub">눈나 미모가 더 미쳤어용</div>
+                        <div class="like_dislike_icon">
+                          <button class="like_btn">
+                            <img src="https://i.ibb.co/swdZnZt/uiw-like-o.png" alt="LIKEICON" />
+                          </button>
+                          <button class="dislike_btn">
+                            <img src="https://i.ibb.co/9Gj7zG4/uiw-dislike-o.png" alt="DISLIKEICON" />
+                          </button>
+                          <div class="reply_area">
+                            <button class="reply_btn">
+                              <div class="reply_context">답글</div>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="rereply_area">
+                          <button class="rereply_btn">
+                            <div class="rereply_btn_click">답글보기</div>
+                          </button>
+                        </div>
                       </div>
                     </div>
                     <div class="com_content_area">
@@ -149,9 +167,22 @@
                       <div class="com_detail">
                         <div class="main">
                           <span class="user_name">nun_na_najugeo</span>
-                          <span class="comment_txt">눈나 미모가 더 미쳤어용</span>
+                          <span class="comment_txt">1시간 전</span>
                         </div>
-                        <div class="sub">1시간 전</div>
+                        <div class="sub">눈나 미모가 더 미쳤어용</div>
+                        <div class="like_dislike_icon">
+                          <button class="like_btn">
+                            <img src="https://i.ibb.co/swdZnZt/uiw-like-o.png" alt="LIKEICON" />
+                          </button>
+                          <button class="dislike_btn">
+                            <img src="https://i.ibb.co/9Gj7zG4/uiw-dislike-o.png" alt="DISLIKEICON" />
+                          </button>
+                          <div class="reply_area">
+                            <button class="reply_btn">
+                              <div class="reply_context">답글</div>
+                            </button>
+                          </div>
+                        </div>
                       </div>
                     </div>
                     <div class="com_content_area">
@@ -168,543 +199,22 @@
                       <div class="com_detail">
                         <div class="main">
                           <span class="user_name">nun_na_najugeo</span>
-                          <span class="comment_txt">눈나 미모가 더 미쳤어용</span>
+                          <span class="comment_txt">1시간 전</span>
                         </div>
-                        <div class="sub">1시간 전</div>
-                      </div>
-                    </div>
-                    <a class="com_btn_more" href="javascript:void(0)">
-                      댓글 더 보기...
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="r_d_content_list">
-            <div class="r_d_social_post_detail">
-              <div class="r_d_social_user_state">
-                <a href="javascript:void(0)" class="user_state">
-                  <div class="user_profile_img">
-                    <img 
-                      src="https://i.pinimg.com/236x/72/4e/f4/724ef4e3c2bbd2dda183e187593f75db.jpg" 
-                      alt="user_profile_img" 
-                      class="profile_img" />
-                  </div>
-                  <!-- a tag structural change -->
-                  <div class="user_profile_name">
-                    <p class="user_name">gorgeous_sh_</p>
-                    <span class="user_up_time">6시간 전</span>
-                  </div>
-                </a>
-              </div>
-              <div class="r_d_social_user_img">
-                <swiper
-                  :slides-per-view="1"
-                  :space-between="30"
-                  :navigation="true"
-                  :pagination="{ type: 'fraction' }"
-                  @swiper="onSwiper"
-                  @slideChange="onSlideChange">
-                  <swiper-slide>
-                    <img 
-                      class="user_img" 
-                      src="https://i.pinimg.com/564x/c3/b2/fa/c3b2fa206fd2d092ce555d537441f98e.jpg" 
-                      alt="test_1" />
-                  </swiper-slide>
-                  <swiper-slide>
-                    <img 
-                      class="user_img" 
-                      src="https://i.pinimg.com/564x/c3/b2/fa/c3b2fa206fd2d092ce555d537441f98e.jpg" 
-                      alt="test_1" />
-                  </swiper-slide>
-                  <swiper-slide>
-                    <img 
-                      class="user_img" 
-                      src="https://i.pinimg.com/564x/c3/b2/fa/c3b2fa206fd2d092ce555d537441f98e.jpg" 
-                      alt="test_1" />
-                  </swiper-slide>
-                </swiper>
-              </div>
-              <table class="r_d_info">
-                <tbody class="r_d_info_tb">
-                  <tr class="r_d_info_tr">
-                    <th class="r_d_info_dest">여행지</th>
-                    <td class="r_d_info_adres">경기도 화성시 송상면 고정리</td>
-                  </tr>
-                  <tr class="r_d_info_tr">
-                    <th class="r_d_info_dest">팬션</th>
-                    <td class="r_d_info_adres">OO 애견팬션</td>
-                  </tr>
-                  <tr class="r_d_info_tr">
-                    <th class="r_d_info_dest">인원&가격</th>
-                    <td class="r_d_info_adres">2인 / 1박 - 45000원</td>
-                  </tr>
-                </tbody>
-              </table>
-              <!-- 좋아요 & 댓글 & 공유 버튼 -->
-              <div class="r_d_social_btn">
-                <div id="btn_bind" class="btn_bind">
-                  <button type="submit" href="javascript:void(0)" class="btn_like" aria-label="좋아요" @click="btn_likeClick()">
-                    <img 
-                      class="btn_like_img"
-                      src="https://i.ibb.co/tQzVN2D/bi-heart.png" 
-                      alt="like_btn" />
-                  </button>
-                  <div ref="clicker_like" class="btn_like_counter"></div>
-                  <button type="submit" href="javascript:void(0)" class="btn_commit" aria-label="댓글">
-                    <img 
-                      class="btn_commit_img" 
-                      src="https://i.ibb.co/2dcrNFv/bi-chat.png" 
-                      alt="commit_btn" />
-                  </button>
-                  <div ref="clicker_commit" class="btn_commit_counter">13</div>
-                </div>
-                <a href="javascript:void(0)" class="r_d_social-share">
-                  <img src="https://i.ibb.co/PC5VFCm/fluent-share-ios-28-filled.png" alt="btn_share_img" />
-                </a>
-              </div>
-              <!-- Text Content -->
-              <div class="r_d_text_area">
-                <p>애견 팬션 미친듯이 좋네요~~ 다들 애견팬션 꼭 여기로 <br />오세요 정말이지 좋아요~~ 💕</p>
-              </div>
-              <!-- Text Delete Modify button -->
-              <div class="r_d_text_buttom">
-                <button class="btn_modify">수정</button>
-                <button class="btn_delete">삭제</button>
-              </div>
-            </div>
-            <!-- Comments Area -->
-            <div class="r_d_comments_area">
-              <!-- Comment Text Input -->
-              <div class="r_d_comments_content">
-                <input 
-                  class="r_d_text_input"
-                  type="text"
-                  placeholder="댓글을 입력해주세요" />
-                <button class="r_d_text_btn">
-                  댓글 입력
-                </button> 
-              </div>
-              <!-- Comment View Area -->
-              <div class="r_d_comments_view">
-                <div class="r_d_comments_view_area">
-                  <div class="r_d_comments_view_total">
-                    <span class="first">댓글</span>
-                    <span class="comments_total">152개</span>
-                  </div>
-                  <div class="com_comment_list">
-                    <div class="com_content_area">
-                      <div class="com_user_img">
-                        <a 
-                          class="com_user_img_a" 
-                          href="/">
-                          <img 
-                            class="com_user_img_img" 
-                            src="https://i.pinimg.com/236x/72/4e/f4/724ef4e3c2bbd2dda183e187593f75db.jpg" 
-                            alt="" />
-                        </a>
-                      </div>
-                      <div class="com_detail">
-                        <div class="main">
-                          <span class="user_name">nun_na_najugeo</span>
-                          <span class="comment_txt">눈나 미모가 더 미쳤어용</span>
+                        <div class="sub">눈나 미모가 더 미쳤어용</div>
+                        <div class="like_dislike_icon">
+                          <button class="like_btn">
+                            <img src="https://i.ibb.co/swdZnZt/uiw-like-o.png" alt="LIKEICON" />
+                          </button>
+                          <button class="dislike_btn">
+                            <img src="https://i.ibb.co/9Gj7zG4/uiw-dislike-o.png" alt="DISLIKEICON" />
+                          </button>
+                          <div class="reply_area">
+                            <button class="reply_btn">
+                              <div class="reply_context">답글</div>
+                            </button>
+                          </div>
                         </div>
-                        <div class="sub">1시간 전</div>
-                      </div>
-                    </div>
-                    <div class="com_content_area">
-                      <div class="com_user_img">
-                        <a 
-                          class="com_user_img_a" 
-                          href="/">
-                          <img 
-                            class="com_user_img_img" 
-                            src="https://i.pinimg.com/236x/72/4e/f4/724ef4e3c2bbd2dda183e187593f75db.jpg" 
-                            alt="" />
-                        </a>
-                      </div>
-                      <div class="com_detail">
-                        <div class="main">
-                          <span class="user_name">nun_na_najugeo</span>
-                          <span class="comment_txt">눈나 미모가 더 미쳤어용</span>
-                        </div>
-                        <div class="sub">1시간 전</div>
-                      </div>
-                    </div>
-                    <div class="com_content_area">
-                      <div class="com_user_img">
-                        <a 
-                          class="com_user_img_a" 
-                          href="/">
-                          <img 
-                            class="com_user_img_img" 
-                            src="https://i.pinimg.com/236x/72/4e/f4/724ef4e3c2bbd2dda183e187593f75db.jpg" 
-                            alt="" />
-                        </a>
-                      </div>
-                      <div class="com_detail">
-                        <div class="main">
-                          <span class="user_name">nun_na_najugeo</span>
-                          <span class="comment_txt">눈나 미모가 더 미쳤어용</span>
-                        </div>
-                        <div class="sub">1시간 전</div>
-                      </div>
-                    </div>
-                    <a class="com_btn_more" href="javascript:void(0)">
-                      댓글 더 보기...
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="r_d_content_list">
-            <div class="r_d_social_post_detail">
-              <div class="r_d_social_user_state">
-                <a href="javascript:void(0)" class="user_state">
-                  <div class="user_profile_img">
-                    <img 
-                      src="https://i.pinimg.com/236x/72/4e/f4/724ef4e3c2bbd2dda183e187593f75db.jpg" 
-                      alt="user_profile_img" 
-                      class="profile_img" />
-                  </div>
-                  <!-- a tag structural change -->
-                  <div class="user_profile_name">
-                    <p class="user_name">gorgeous_sh_</p>
-                    <span class="user_up_time">6시간 전</span>
-                  </div>
-                </a>
-              </div>
-              <div class="r_d_social_user_img">
-                <swiper
-                  :slides-per-view="1"
-                  :space-between="30"
-                  :navigation="true"
-                  :pagination="{ type: 'fraction' }"
-                  @swiper="onSwiper"
-                  @slideChange="onSlideChange">
-                  <swiper-slide>
-                    <img 
-                      class="user_img" 
-                      src="https://i.pinimg.com/564x/c3/b2/fa/c3b2fa206fd2d092ce555d537441f98e.jpg" 
-                      alt="test_1" />
-                  </swiper-slide>
-                  <swiper-slide>
-                    <img 
-                      class="user_img" 
-                      src="https://i.pinimg.com/564x/c3/b2/fa/c3b2fa206fd2d092ce555d537441f98e.jpg" 
-                      alt="test_1" />
-                  </swiper-slide>
-                  <swiper-slide>
-                    <img 
-                      class="user_img" 
-                      src="https://i.pinimg.com/564x/c3/b2/fa/c3b2fa206fd2d092ce555d537441f98e.jpg" 
-                      alt="test_1" />
-                  </swiper-slide>
-                </swiper>
-              </div>
-              <table class="r_d_info">
-                <tbody class="r_d_info_tb">
-                  <tr class="r_d_info_tr">
-                    <th class="r_d_info_dest">여행지</th>
-                    <td class="r_d_info_adres">경기도 화성시 송상면 고정리</td>
-                  </tr>
-                  <tr class="r_d_info_tr">
-                    <th class="r_d_info_dest">팬션</th>
-                    <td class="r_d_info_adres">OO 애견팬션</td>
-                  </tr>
-                  <tr class="r_d_info_tr">
-                    <th class="r_d_info_dest">인원&가격</th>
-                    <td class="r_d_info_adres">1인 / 1박 - 45000원</td>
-                  </tr>
-                </tbody>
-              </table>
-              <!-- 좋아요 & 댓글 & 공유 버튼 -->
-              <div class="r_d_social_btn">
-                <div id="btn_bind" class="btn_bind">
-                  <button type="submit" href="javascript:void(0)" class="btn_like" aria-label="좋아요" @click="btn_likeClick()">
-                    <img 
-                      class="btn_like_img"
-                      src="https://i.ibb.co/tQzVN2D/bi-heart.png" 
-                      alt="like_btn" />
-                  </button>
-                  <div ref="clicker_like" class="btn_like_counter"></div>
-                  <button type="submit" href="javascript:void(0)" class="btn_commit" aria-label="댓글">
-                    <img 
-                      class="btn_commit_img" 
-                      src="https://i.ibb.co/2dcrNFv/bi-chat.png" 
-                      alt="commit_btn" />
-                  </button>
-                  <div ref="clicker_commit" class="btn_commit_counter">13</div>
-                </div>
-                <a href="javascript:void(0)" class="r_d_social-share">
-                  <img src="https://i.ibb.co/PC5VFCm/fluent-share-ios-28-filled.png" alt="btn_share_img" />
-                </a>
-              </div>
-              <!-- Text Content -->
-              <div class="r_d_text_area">
-                <p>애견 팬션 너무너무 좋네요~~ 다들 애견팬션 꼭 여기로 <br />오세요 정말이지 좋아요~~ 💕</p>
-              </div>
-              <!-- Text Delete Modify button -->
-              <div class="r_d_text_buttom">
-                <button class="btn_modify">수정</button>
-                <button class="btn_delete">삭제</button>
-              </div>
-            </div>
-            <!-- Comments Area -->
-            <div class="r_d_comments_area">
-              <!-- Comment Text Input -->
-              <div class="r_d_comments_content">
-                <input 
-                  class="r_d_text_input"
-                  type="text"
-                  placeholder="댓글을 입력해주세요" />
-                <button class="r_d_text_btn">
-                  댓글 입력
-                </button> 
-              </div>
-              <!-- Comment View Area -->
-              <div class="r_d_comments_view">
-                <div class="r_d_comments_view_area">
-                  <div class="r_d_comments_view_total">
-                    <span class="first">댓글</span>
-                    <span class="comments_total">152개</span>
-                  </div>
-                  <div class="com_comment_list">
-                    <div class="com_content_area">
-                      <div class="com_user_img">
-                        <a 
-                          class="com_user_img_a" 
-                          href="/">
-                          <img 
-                            class="com_user_img_img" 
-                            src="https://i.pinimg.com/236x/72/4e/f4/724ef4e3c2bbd2dda183e187593f75db.jpg" 
-                            alt="" />
-                        </a>
-                      </div>
-                      <div class="com_detail">
-                        <div class="main">
-                          <span class="user_name">nun_na_najugeo</span>
-                          <span class="comment_txt">눈나 미모가 더 미쳤어용</span>
-                        </div>
-                        <div class="sub">1시간 전</div>
-                      </div>
-                    </div>
-                    <div class="com_content_area">
-                      <div class="com_user_img">
-                        <a 
-                          class="com_user_img_a" 
-                          href="/">
-                          <img 
-                            class="com_user_img_img" 
-                            src="https://i.pinimg.com/236x/72/4e/f4/724ef4e3c2bbd2dda183e187593f75db.jpg" 
-                            alt="" />
-                        </a>
-                      </div>
-                      <div class="com_detail">
-                        <div class="main">
-                          <span class="user_name">nun_na_najugeo</span>
-                          <span class="comment_txt">눈나 미모가 더 미쳤어용</span>
-                        </div>
-                        <div class="sub">1시간 전</div>
-                      </div>
-                    </div>
-                    <div class="com_content_area">
-                      <div class="com_user_img">
-                        <a 
-                          class="com_user_img_a" 
-                          href="/">
-                          <img 
-                            class="com_user_img_img" 
-                            src="https://i.pinimg.com/236x/72/4e/f4/724ef4e3c2bbd2dda183e187593f75db.jpg" 
-                            alt="" />
-                        </a>
-                      </div>
-                      <div class="com_detail">
-                        <div class="main">
-                          <span class="user_name">nun_na_najugeo</span>
-                          <span class="comment_txt">눈나 미모가 더 미쳤어용</span>
-                        </div>
-                        <div class="sub">1시간 전</div>
-                      </div>
-                    </div>
-                    <a class="com_btn_more" href="javascript:void(0)">
-                      댓글 더 보기...
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="r_d_content_list">
-            <div class="r_d_social_post_detail">
-              <div class="r_d_social_user_state">
-                <a href="javascript:void(0)" class="user_state">
-                  <div class="user_profile_img">
-                    <img 
-                      src="https://i.pinimg.com/236x/72/4e/f4/724ef4e3c2bbd2dda183e187593f75db.jpg" 
-                      alt="user_profile_img" 
-                      class="profile_img" />
-                  </div>
-                  <!-- a tag structural change -->
-                  <div class="user_profile_name">
-                    <p class="user_name">gorgeous_sh_</p>
-                    <span class="user_up_time">6시간 전</span>
-                  </div>
-                </a>
-              </div>
-              <div class="r_d_social_user_img">
-                <swiper
-                  :slides-per-view="1"
-                  :space-between="30"
-                  :navigation="true"
-                  :pagination="{ type: 'fraction' }"
-                  @swiper="onSwiper"
-                  @slideChange="onSlideChange">
-                  <swiper-slide>
-                    <img 
-                      class="user_img" 
-                      src="https://i.pinimg.com/564x/c3/b2/fa/c3b2fa206fd2d092ce555d537441f98e.jpg" 
-                      alt="test_1" />
-                  </swiper-slide>
-                  <swiper-slide>
-                    <img 
-                      class="user_img" 
-                      src="https://i.pinimg.com/564x/c3/b2/fa/c3b2fa206fd2d092ce555d537441f98e.jpg" 
-                      alt="test_1" />
-                  </swiper-slide>
-                  <swiper-slide>
-                    <img 
-                      class="user_img" 
-                      src="https://i.pinimg.com/564x/c3/b2/fa/c3b2fa206fd2d092ce555d537441f98e.jpg" 
-                      alt="test_1" />
-                  </swiper-slide>
-                </swiper>
-              </div>
-              <table class="r_d_info">
-                <tbody class="r_d_info_tb">
-                  <tr class="r_d_info_tr">
-                    <th class="r_d_info_dest">여행지</th>
-                    <td class="r_d_info_adres">경기도 화성시 송상면 고정리</td>
-                  </tr>
-                  <tr class="r_d_info_tr">
-                    <th class="r_d_info_dest">팬션</th>
-                    <td class="r_d_info_adres">OO 애견팬션</td>
-                  </tr>
-                  <tr class="r_d_info_tr">
-                    <th class="r_d_info_dest">인원&가격</th>
-                    <td class="r_d_info_adres">2인 / 1박 - 45000원</td>
-                  </tr>
-                </tbody>
-              </table>
-              <!-- 좋아요 & 댓글 & 공유 버튼 -->
-              <div class="r_d_social_btn">
-                <div id="btn_bind" class="btn_bind">
-                  <button type="submit" href="javascript:void(0)" class="btn_like" aria-label="좋아요" @click="btn_likeClick()">
-                    <img 
-                      class="btn_like_img"
-                      src="https://i.ibb.co/tQzVN2D/bi-heart.png" 
-                      alt="like_btn" />
-                  </button>
-                  <div ref="clicker_like" class="btn_like_counter"></div>
-                  <button type="submit" href="javascript:void(0)" class="btn_commit" aria-label="댓글">
-                    <img 
-                      class="btn_commit_img" 
-                      src="https://i.ibb.co/2dcrNFv/bi-chat.png" 
-                      alt="commit_btn" />
-                  </button>
-                  <div ref="clicker_commit" class="btn_commit_counter">13</div>
-                </div>
-                <a href="javascript:void(0)" class="r_d_social-share">
-                  <img src="https://i.ibb.co/PC5VFCm/fluent-share-ios-28-filled.png" alt="btn_share_img" />
-                </a>
-              </div>
-              <!-- Text Content -->
-              <div class="r_d_text_area">
-                <p>애견 팬션 미친듯이 좋네요~~ 다들 애견팬션 꼭 여기로 <br />오세요 정말이지 좋아요~~ 💕</p>
-              </div>
-              <!-- Text Delete Modify button -->
-              <div class="r_d_text_buttom">
-                <button class="btn_modify">수정</button>
-                <button class="btn_delete">삭제</button>
-              </div>
-            </div>
-            <!-- Comments Area -->
-            <div class="r_d_comments_area">
-              <!-- Comment Text Input -->
-              <div class="r_d_comments_content">
-                <input 
-                  class="r_d_text_input"
-                  type="text"
-                  placeholder="댓글을 입력해주세요" />
-                <button class="r_d_text_btn">
-                  댓글 입력
-                </button> 
-              </div>
-              <!-- Comment View Area -->
-              <div class="r_d_comments_view">
-                <div class="r_d_comments_view_area">
-                  <div class="r_d_comments_view_total">
-                    <span class="first">댓글</span>
-                    <span class="comments_total">152개</span>
-                  </div>
-                  <div class="com_comment_list">
-                    <div class="com_content_area">
-                      <div class="com_user_img">
-                        <a 
-                          class="com_user_img_a" 
-                          href="/">
-                          <img 
-                            class="com_user_img_img" 
-                            src="https://i.pinimg.com/236x/72/4e/f4/724ef4e3c2bbd2dda183e187593f75db.jpg" 
-                            alt="" />
-                        </a>
-                      </div>
-                      <div class="com_detail">
-                        <div class="main">
-                          <span class="user_name">nun_na_najugeo</span>
-                          <span class="comment_txt">눈나 미모가 더 미쳤어용</span>
-                        </div>
-                        <div class="sub">1시간 전</div>
-                      </div>
-                    </div>
-                    <div class="com_content_area">
-                      <div class="com_user_img">
-                        <a 
-                          class="com_user_img_a" 
-                          href="/">
-                          <img 
-                            class="com_user_img_img" 
-                            src="https://i.pinimg.com/236x/72/4e/f4/724ef4e3c2bbd2dda183e187593f75db.jpg" 
-                            alt="" />
-                        </a>
-                      </div>
-                      <div class="com_detail">
-                        <div class="main">
-                          <span class="user_name">nun_na_najugeo</span>
-                          <span class="comment_txt">눈나 미모가 더 미쳤어용</span>
-                        </div>
-                        <div class="sub">1시간 전</div>
-                      </div>
-                    </div>
-                    <div class="com_content_area">
-                      <div class="com_user_img">
-                        <a 
-                          class="com_user_img_a" 
-                          href="/">
-                          <img 
-                            class="com_user_img_img" 
-                            src="https://i.pinimg.com/236x/72/4e/f4/724ef4e3c2bbd2dda183e187593f75db.jpg" 
-                            alt="" />
-                        </a>
-                      </div>
-                      <div class="com_detail">
-                        <div class="main">
-                          <span class="user_name">nun_na_najugeo</span>
-                          <span class="comment_txt">눈나 미모가 더 미쳤어용</span>
-                        </div>
-                        <div class="sub">1시간 전</div>
                       </div>
                     </div>
                     <a class="com_btn_more" href="javascript:void(0)">
@@ -982,6 +492,7 @@ div {
               display: flex;
               align-items: center;
               padding: 12px 0;
+              align-items: flex-start;
               .com_user_img {
                 width: 34px;
                 height: 34px;
@@ -1013,6 +524,7 @@ div {
                     margin-right: 4px;
                     font-size: 14px;
                     letter-spacing: -.21px;
+                    color: rgba(34, 34, 34, .5);
                   }
                 }
                 .sub {
@@ -1023,7 +535,33 @@ div {
                   line-height: 14px;
                   font-size: 14px;
                   letter-spacing: -.06px;
-                  color: rgba(34, 34, 34, .5);
+                }
+                .like_dislike_icon {
+                  display: flex;
+                  .reply_area {
+                    font-size: 12px;
+                    margin-left: 10px;
+                    display: flex;
+                    align-content: center;
+                    .reply_btn {
+                      width: 32px;
+                      height: 32px;
+                      .reply_context {
+
+                      }
+                    }
+                  }
+                }
+                .rereply_area {
+                  display: flex;
+                  font-size: 13px;
+                  margin-top: 5px;
+                  .rereply_btn {
+                    .rereply_btn_click {
+                      color: #eb860d;
+                      font-weight: bold;
+                    }
+                  }
                 }
               }
             }
