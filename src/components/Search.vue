@@ -12,10 +12,15 @@
           type="text"
           placeholder="원하시는 여행 키워드를 검색해주세요" 
           class='sinput btn' />
-        <div class="btn">
-          <button>로그인</button>
-          <button>회원가입</button>
-          <button>마이</button>
+        <div class="top_btn">
+          <div 
+            v-for="nav in navigations" 
+            :key="nav.name">
+            <RouterLink
+              :to="nav.href">
+              {{ nav.name }}
+            </RouterLink>
+          </div>
         </div>
       </div>
     </article>
@@ -26,7 +31,20 @@
 export default {
   data() {
     return {
-      title: ''
+      navigations: [
+        {
+          name: '로그인',
+          href: '/Client/Login'
+        },
+        {
+          name: '회원가입',
+          href: '/Client/Login'
+        },
+        {
+          name: '마이페이지',
+          href: '/Client/Login'
+        },
+      ]
     }
   }
 }
@@ -51,6 +69,11 @@ export default {
       color: #CACACA;
     }
   }
+  .top_btn {
+    display: flex;
+    margin-bottom: 0 !important;
+    align-items: center;
+  }
 }
 .logo {
   font-family: 'Roboto', 'sans-serif';
@@ -59,7 +82,7 @@ export default {
   text-decoration: none;
   font-weight: bold;
   &:hover {
-    color: $primary;
+    color: $primary !important;
   }
 }
 </style>
