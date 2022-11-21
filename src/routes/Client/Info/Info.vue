@@ -24,7 +24,7 @@
 						<option value="views">조회수순</option>
 					</select>
 				<!-- </div> -->
-				<router-link to="Info_Post">
+				<router-link to="info_Post">
 					<button class="postBtn" type="submit">글쓰기</button>
 				</router-link>
 				
@@ -79,7 +79,7 @@ export default {
 					,time : '6시간 전'
 					,title : '부산'
 					,content : 'Vue (pronounced /vjuː/, like view) is a JavaScript framework for building user interfaces. It builds on top of standard HTML, CSS and JavaScript, and provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be it simple or complex.'
-					,url : '/Info_Detail'
+					,url : '/Client/Info/Info_Detail'
 				},
 				{
 					id : 2
@@ -87,7 +87,7 @@ export default {
 					,time : '6시간 전'
 					,title : '부산'
 					,content : 'Vue (pronounced /vjuː/, like view) is a JavaScript framework for building user interfaces. It builds on top of standard HTML, CSS and JavaScript, and provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be it simple or complex.'
-					,url : '/Info_Detail'
+					,url : '/Client/Info/Info_Detail'
 				},
 				{
 					id : 3
@@ -95,7 +95,7 @@ export default {
 					,time : '6시간 전'
 					,title : '부산'
 					,content : 'Vue (pronounced /vjuː/, like view) is a JavaScript framework for building user interfaces. It builds on top of standard HTML, CSS and JavaScript, and provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be it simple or complex.'
-					,url : '/Info_Detail'
+					,url : '/Client/Info/Info_Detail'
 				},
 				{
 					id : 4
@@ -111,7 +111,7 @@ export default {
 					,time : '6시간 전'
 					,title : '부산'
 					,content : 'Vue (pronounced /vjuː/, like view) is a JavaScript framework for building user interfaces. It builds on top of standard HTML, CSS and JavaScript, and provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be it simple or complex.'
-					,url : '/Info_Detail'
+					,url : '/Client/Info/Info_Detail'
 				},
 				{
 					id : 6
@@ -119,7 +119,7 @@ export default {
 					,time : '6시간 전'
 					,title : '부산'
 					,content : 'Vue (pronounced /vjuː/, like view) is a JavaScript framework for building user interfaces. It builds on top of standard HTML, CSS and JavaScript, and provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be it simple or complex.'
-					,url : '/Info_Detail'
+					,url : '/Client/Info/Info_Detail'
 				},
 				{
 					id : 7
@@ -127,7 +127,7 @@ export default {
 					,time : '6시간 전'
 					,title : '부산'
 					,content : 'Vue (pronounced /vjuː/, like view) is a JavaScript framework for building user interfaces. It builds on top of standard HTML, CSS and JavaScript, and provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be it simple or complex.'
-					,url : '/Info_Detail'
+					,url : '/Client/Info/Info_Detail'
 				},
 				{
 					id : 8
@@ -135,7 +135,7 @@ export default {
 					,time : '6시간 전'
 					,title : '부산'
 					,content : 'Vue (pronounced /vjuː/, like view) is a JavaScript framework for building user interfaces. It builds on top of standard HTML, CSS and JavaScript, and provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be it simple or complex.'
-					,url : '/Info_Detail'
+					,url : '/Client/Info/Info_Detail'
 				},
 				{
 					id : 9
@@ -143,7 +143,7 @@ export default {
 					,time : '6시간 전'
 					,title : '부산'
 					,content : 'Vue (pronounced /vjuː/, like view) is a JavaScript framework for building user interfaces. It builds on top of standard HTML, CSS and JavaScript, and provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be it simple or complex.'
-					,url : '/Info_Detail'
+					,url : '/Client/Info/Info_Detail'
 				},
 				{
 					id : 10
@@ -151,7 +151,7 @@ export default {
 					,time : '6시간 전'
 					,title : '부산'
 					,content : 'Vue (pronounced /vjuː/, like view) is a JavaScript framework for building user interfaces. It builds on top of standard HTML, CSS and JavaScript, and provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be it simple or complex.'
-					,url : '/Info_Detail'
+					,url : '/Client/Info/Info_Detail'
 				}
 			]
 		}

@@ -35,19 +35,19 @@ export default {
         // },
         {
           name: '여행정보',
-          href: '/info',
+          href: '/Client/Info/info',
         },
         {
           name: '여행실사후기',
-          href: '/review'
+          href: '/Client/Review/review'
         },
         {
           name: '커뮤니티',
-          href: '/cmnty'
+          href: '/Client/Cmnty/cmnty'
         },
         {
           name: 'Notice',
-          href: '/notice'
+          href: '/Client/Notice/notice'
         }
       ]
     }
