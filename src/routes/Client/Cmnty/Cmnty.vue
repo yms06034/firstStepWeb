@@ -53,7 +53,9 @@
 							<td class="num">{{ item.no }}</td>
 							<td class="title">
 								<span class="category">{{ item.category }}</span>
-								<a href="javascript:void(0)">{{ item.title }}</a>
+								<router-link :to="item.url">
+									<span class="title">{{ item.title }}</span>
+								</router-link>
 							</td>
 							<td class="name">
 								<div>
@@ -86,6 +88,7 @@
 						, regDate : "04-22"
 						, views : 100
 						, likes : 120
+						,url : '/Client/Cmnty/Cmnty_Detail'
 					},
 					{
 						no : 9
@@ -95,6 +98,7 @@
 						, regDate : "04-22"
 						, views : 100
 						, likes : 120
+						,url : '/Client/Cmnty/Cmnty_Detail'
 					},
 					{
 						no : 8
@@ -104,6 +108,7 @@
 						, regDate : "04-22"
 						, views : 100
 						, likes : 120
+						,url : '/Client/Cmnty/Cmnty_Detail'
 					},
 					{
 						no : 7
@@ -113,6 +118,7 @@
 						, regDate : "04-22"
 						, views : 100
 						, likes : 120
+						,url : '/Client/Cmnty/Cmnty_Detail'
 					},
 					{
 						no : 6
@@ -122,6 +128,7 @@
 						, regDate : "04-22"
 						, views : 100
 						, likes : 120
+						,url : '/Client/Cmnty/Cmnty_Detail'
 					},
 					{
 						no : 5
@@ -131,6 +138,7 @@
 						, regDate : "04-22"
 						, views : 100
 						, likes : 120
+						,url : '/Client/Cmnty/Cmnty_Detail'
 					},
 					{
 						no : 4
@@ -140,6 +148,7 @@
 						, regDate : "04-22"
 						, views : 100
 						, likes : 120
+						,url : '/Client/Cmnty/Cmnty_Detail'
 					},
 					{
 						no : 3
@@ -149,6 +158,7 @@
 						, regDate : "04-22"
 						, views : 100
 						, likes : 120
+						,url : '/Client/Cmnty/Cmnty_Detail'
 					},
 					{
 						no : 2
@@ -158,6 +168,7 @@
 						, regDate : "04-22"
 						, views : 100
 						, likes : 120
+						,url : '/Client/Cmnty/Cmnty_Detail'
 					},
 					{
 						no : 1
@@ -167,6 +178,7 @@
 						, regDate : "04-22"
 						, views : 100
 						, likes : 120
+						,url : '/Client/Cmnty/Cmnty_Detail'
 					}
 
 				]

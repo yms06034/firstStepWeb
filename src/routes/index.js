@@ -7,6 +7,7 @@ import ReviewComponent from './Client/Review/Review'
 import Review_DetailComponent from './Client/Review/Review_Detail'
 import Review_PostComponent from './Client/Review/Review_Post'
 import CmntyComponent from './Client/Cmnty/Cmnty'
+import Cmnty_DetailComponent from './Client/Cmnty/Cmnty_Detail'
 import Cmnty_PostComponent from './Client/Cmnty/Cmnty_Post'
 import NoticeComponent from './Client/Notice/Notice'
 
@@ -24,6 +25,7 @@ export default createRouter({
         { path: '/Client/Review/Review_Detail', component: Review_DetailComponent },
         { path: '/Client/Review/Review_Post', component: Review_PostComponent },
         { path: '/Client/Cmnty/Cmnty', component: CmntyComponent },
+        { path: '/Client/Cmnty/Cmnty_Detail', component: Cmnty_DetailComponent },
         { path: '/Client/Cmnty/Cmnty_Post', component: Cmnty_PostComponent },
         { path: '/Client/Notice/Notice', component: NoticeComponent },
     ]
