@@ -37,7 +37,9 @@
 					<div class="cmnty-search">
 						<input class="searchBar" type="text" placeholder="검색하세요"/>
 					</div>
-					<button class="postBtn" type="submit">글쓰기</button>
+					<router-link to="Cmnty_Post">
+						<button class="postBtn" type="submit">글쓰기</button>
+					</router-link>
 				</div>
 			</section>
 

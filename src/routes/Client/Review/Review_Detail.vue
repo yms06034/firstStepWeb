@@ -727,10 +727,10 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import SwiperCore, { Navigation, Pagination, A11y } from "swiper";
 
 // Import Swiper styles
-import '../../node_modules/swiper/swiper.min.css';
-import '../../node_modules/swiper/swiper-bundle.css'
-import '../../node_modules/swiper/components/navigation/navigation.scss'
-import '../../node_modules/swiper/components/pagination/pagination.scss'
+import '../../../../node_modules/swiper/swiper.min.css';
+import '../../../../node_modules/swiper/swiper-bundle.css'
+import '../../../../node_modules/swiper/components/navigation/navigation.scss'
+import '../../../../node_modules/swiper/components/pagination/pagination.scss'
 
 SwiperCore.use([Navigation, Pagination, A11y]);
 
