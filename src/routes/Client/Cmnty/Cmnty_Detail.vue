@@ -20,18 +20,32 @@
 							</section>
 							<section class="detail-mid-wrap">
 								<img class="contentImg" src="https://cdn.pixabay.com/photo/2022/09/11/15/56/river-7447346_960_720.jpg" alt="contentImg"/>
-								<div class="detail-content">{{ item.content }}</div>
+								
+								<div class="detail-content"> <br />{{ item.content }}</div>
 							</section>
 					</div>
 					<div class="detail-sub-wrap">
-						<div class="like-box">
-							<button class="click-to-likes">하트</button>
-							<span>추천</span>
-							<span>{{ item.likesCnt }}</span>
+						<div class="r_d_text_buttom">
+							<button class="btn_modify">수정</button>
+							<button class="btn_delete">삭제</button>
 						</div>
 						<div class="detail-sub-group">
 							<button class="book-mark-btn" type="submit" value="book-mark">북마크</button>
 							<button class="share-btn" type="submit" value="share">공유</button>
+						</div>
+					</div>
+					<div class="detail-like-box-wrap">
+						<div class="like-box">
+							<button type="submit" href="javascript:void(0)" class="click-to-likes" aria-label="좋아요" @click="btn_likeClick()">
+								<img 
+                      class="btn_like_img"
+                      src="https://i.ibb.co/tQzVN2D/bi-heart.png" 
+                      alt="heart_btn" />
+							</button>
+							<div class="recom">
+								<span>추천</span>
+								<span class="likeCnt">{{ item.likesCnt }}</span>
+							</div>
 						</div>
 					</div>
 			</section>
@@ -177,7 +191,7 @@ export default {
 	width: 900px;
 	.detail-main-wrap{
 		height: auto;
-		border: 1px solid gray;
+		border: 1px solid #EBEBEB;
 		.detail-top-wrap{
 			margin: 15px;
 			overflow: hidden;
@@ -225,7 +239,7 @@ export default {
 		.detail-mid-wrap{
 			margin: 0;
 			width: 100%;
-			border-top: 1px solid gray;
+			border-top: 1px solid #EBEBEB;
 			.contentImg{
 				margin-top: 20px;
 			}
@@ -235,11 +249,12 @@ export default {
 	.detail-sub-wrap{
 		margin-top: 5px;
 		width: 100%;
-		display: inline-flex;
+		justify-content: space-between;
+		display: flex;
 		.like-box{
 			margin: auto;
 			width: 200px;
-			border : 1px solid gray;
+			border : 1px solid #EBEBEB;
 		}
 		.detail-sub-group{
 			.book-mark-btn{
@@ -247,6 +262,49 @@ export default {
 			}
 		}
 	}
+	.r_d_text_buttom {
+		text-align: right;
+		.btn_modify {
+			padding: 5px 15px;
+			border: 1px solid #EBEBEB;
+			border-radius: 5px;
+			font-size: 14px;
+		}
+		.btn_delete {
+			padding: 5px 15px;
+			border: 1px solid #EBEBEB;
+			border-radius: 5px;
+			margin: 10px 0 0 0;
+			margin-left: 10px;
+			font-size: 14px;
+		}
+	}
+	.detail-like-box-wrap {
+		margin: auto;
+		display: flex;
+		margin-bottom: 30px;
+
+		.like-box{
+			margin: auto;
+			border: 1px solid #EBEBEB;
+			height: 50px;
+			display: flex;
+			.click-to-likes{
+				margin-left: 10px;
+				margin-right: 5px;
+				float: left;
+			}
+			.recom {
+				margin-top: 12px;
+				margin-right: 15px;
+				.likeCnt {
+					margin-left: 5px;
+				}
+			}
+		}
+		
+	}
+	
 }
 .r_d_comments_area {
 	width: 730px;
@@ -262,6 +320,9 @@ export default {
 			text-align: left;
 			padding: 12px 30px;
 			border-radius: 5px 0 0 5px;
+			&::placeholder{
+				color: rgb(208, 208, 208);
+			}
 		}
 		.r_d_text_btn {
 			background-color: #F3B66D;
@@ -373,4 +434,4 @@ export default {
 		}
 	}
 }
-</style>
+</style>	
