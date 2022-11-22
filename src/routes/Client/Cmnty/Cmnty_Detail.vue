@@ -280,6 +280,7 @@ export default {
 		}
 	}
 	.detail-like-box-wrap {
+		border-radius: 5px;
 		margin: auto;
 		display: flex;
 		margin-bottom: 30px;
@@ -400,9 +401,6 @@ export default {
 								.reply_btn {
 									width: 32px;
 									height: 32px;
-									.reply_context {
-
-									}
 								}
 							}
 						}

@@ -38,7 +38,7 @@ export default {
         },
         {
           name: '회원가입',
-          href: '/Client/Signin/Login'
+          href: '/Client/SignUp/SignUp'
         },
         {
           name: '마이페이지',
