@@ -10,7 +10,7 @@ $time: #959595;
 article {
     margin: auto;
     text-align: center;
-    font-family: "Pretendard","Apple SD Gothic Neo","Helvetica Neue",sans-serif;
+    font-family: "Pretendard", "Apple SD Gothic Neo", "Helvetica Neue", sans-serif;
     .top_title {
         margin-bottom: 30px;
         font-weight: bold;
@@ -35,20 +35,25 @@ article {
         }
     }
 }
-* { margin: 0; padding: 0; }
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
 p {
-  margin: 0;
+    margin: 0;
 }
 
 // css 초기화
 a {
-  text-decoration: none !important;
-  color: $black;
-  a:hover {
     text-decoration: none !important;
-    cursor: pointer;
-    color: $primary;
-  }
+    color: $black;
+    a:hover {
+        text-decoration: none !important;
+        cursor: pointer;
+        color: $primary;
+    }
 }
 
 .p_btn:last-child {
@@ -66,12 +71,65 @@ a {
     border: 1px solid gray;
 }
 
+.required:after {
+    content: "*";
+    color: red;
+}
+
+
+/*input 은 숨겨주기*/
+
+input#agree_chk {
+    display: none;
+}
+
+
+/*input 바로 다음의 label*/
+
+input#agree_chk+label {
+    cursor: pointer;
+}
+
+
+/*input 바로 다음의 label:before 에 체크하기 전 CSS 설정*/
+
+input#agree_chk+label:before {
+    content: "";
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    line-height: 17px;
+    border: 1px solid #cbcbcb;
+    vertical-align: middle;
+    /*체크 전과 체크 후 높이 차이 때문에 설정*/
+}
+
+
+/*checked된 input 바로 다음의 label:before 에 체크 후 CSS 설정*/
+
+input#agree_chk:checked+label:before {
+    // content: "\f00c";
+    font-weight: 900;
+    color: #fff;
+    background-color: $primary;
+    border-color: $primary;
+    font-size: 13px;
+    text-align: center;
+}
+
 select {
     appearance: none;
     -moz-appearance: none;
     /* Firefox */
     -webkit-appearance: none;
     /* Safari and Chrome */
+}
+
+input {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    //-webkit-appearance: checkbox;
 }
 
 
