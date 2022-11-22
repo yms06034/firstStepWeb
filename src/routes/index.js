@@ -10,7 +10,9 @@ import CmntyComponent from './Client/Cmnty/Cmnty'
 import Cmnty_DetailComponent from './Client/Cmnty/Cmnty_Detail'
 import Cmnty_PostComponent from './Client/Cmnty/Cmnty_Post'
 import NoticeComponent from './Client/Notice/Notice'
-import LoginComponent from './Client/Login'
+import Notice_DetialComponent from './Client/Notice/Notice_Detail'
+import LoginComponent from './Client/Signin/Login'
+import FindpasswordComponent from './Client/Signin/Findpassword'
 
 export default createRouter({
     history: createWebHashHistory(),
@@ -29,6 +31,8 @@ export default createRouter({
         { path: '/Client/Cmnty/Cmnty_Detail', component: Cmnty_DetailComponent },
         { path: '/Client/Cmnty/Cmnty_Post', component: Cmnty_PostComponent },
         { path: '/Client/Notice/Notice', component: NoticeComponent },
-        { path: '/Client/Login', component: LoginComponent },
+        { path: '/Client/Notice/Notice_Detail', component: Notice_DetialComponent },
+        { path: '/Client/Signin/Login', component: LoginComponent },
+        { path: '/Client/Signin/Findpassword', component: FindpasswordComponent },
     ]
 })

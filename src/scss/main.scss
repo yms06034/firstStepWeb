@@ -10,7 +10,7 @@ $time: #959595;
 article {
     margin: auto;
     text-align: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Pretendard","Apple SD Gothic Neo","Helvetica Neue",sans-serif;
     .top_title {
         margin-bottom: 30px;
         font-weight: bold;
@@ -42,10 +42,10 @@ p {
 
 // css 초기화
 a {
-  text-decoration: none;
+  text-decoration: none !important;
   color: $black;
   a:hover {
-    text-decoration: none;
+    text-decoration: none !important;
     cursor: pointer;
     color: $primary;
   }

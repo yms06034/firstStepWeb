@@ -11,7 +11,7 @@
           <div class="login_form_container">
             <div class="login_form_container-jc">
               <label class="label">
-                아이디
+                이메일
               </label>
               <div class="form-control-wrap">
                 <input 
@@ -21,7 +21,7 @@
                   maxlength="1000"
                   id="firststep_id"
                   type="email" 
-                  class="form-control-wrap input"/>
+                  class="form-control-wrap input" />
               </div>
             </div>
           </div>
@@ -32,7 +32,7 @@
               </label>
               <div class="form-control-wrap_pass">
                 <input 
-                  placeholder="example@firststep.com" 
+                  placeholder="비밀번호 8자리 이상" 
                   required 
                   max="1000"
                   maxlength="1000"
@@ -48,6 +48,35 @@
             로그인
           </button>
         </div>
+        <div class="signup_form">
+          <a class="signup_href" href="javascript:void(0)">회원가입</a>
+          <div class="sigup_center"></div>
+          <RouterLink
+            to="/Client/Signin/Findpassword"
+            class="signup_href">
+            비밀번호 찾기
+          </RouterLink>
+        </div>
+        <div class="sociallogin_button_form">
+          <button type="button" class="btn-kakaologin">
+            <div class="socoal_image">
+              <img src="https://www.itthere.co.kr/_skin/basic_Live_220719/img/member/icon_kakao.png" alt="카카오 로그인" />
+            </div>
+            <p class="kakaologin_text">카카오로 시작하기</p>
+          </button>
+          <button type="button" class="btn-naverlogin">
+            <div class="socoal_image">
+              <img src="	https://www.itthere.co.kr/_skin/basic_Live_220719/img/member/icon_naver.png" alt="네이버 로그인" />
+            </div>
+            <p class="kakaologin_text">네이버로 시작하기</p>
+          </button>
+          <button type="button" class="btn-naverlogin">
+            <div class="socoal_image">
+              <img src="	https://www.itthere.co.kr/_skin/basic_Live_220719/img/member/icon_naver.png" alt="네이버 로그인" />
+            </div>
+            <p class="kakaologin_text">구글로 시작하기</p>
+          </button>
+        </div>
       </div>
     </div>
   </article>
@@ -60,7 +89,8 @@ export default {
 </script>
 
 <style lang="scss" scpoe>
-@import "~/scss/main";
+@import "../../../scss/main.scss";
+
 .btn-v2 {
   position: relative;
   display: inline-block;
@@ -188,6 +218,78 @@ export default {
         font-weight: bold;
         margin-top: 40px;
         cursor: pointer;
+      }
+    }
+    .signup_form {
+      display: flex;
+      justify-content: center;
+      margin: 30px 0 0;
+      align-items: center;
+      margin-bottom: 40px;
+      .signup_href {
+        color: #4c545b;
+        font-size: 13px;
+        line-height: 20px;
+        font-weight: normal;
+        text-decoration: none;
+        &:hover{
+          color: #4c545b !important;
+        }
+      }
+      .sigup_center {
+        background-color: #a0a0a0;
+        width: 1px;
+        height: 12px;
+        margin: 0 20px;
+      }
+    }
+    .sociallogin_button_form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 375px;
+      .btn-kakaologin {
+        background-color: rgb(250, 227, 0);
+        border: 1px solid rgb(250, 227, 0);
+        align-items: center;
+        height: 48px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .socoal_image {
+          width: 24px;
+          height: 24px;
+          margin-right: 8px;
+        }
+        .kakaologin_text {
+          font-size: 16px;
+          font-weight: bold;
+          color: #333;
+          line-height: 1.2;
+        }
+      }
+      .btn-naverlogin {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 48px;
+        justify-content: center;
+        border: 1px solid rgb(221, 221 ,221);
+        outline: none;
+        margin-top: 15px;
+        .socoal_image {
+          width: 24px;
+          height: 24px;
+          margin-right: 8px;
+        }
+        .kakaologin_text {
+          font-size: 16px;
+          font-weight: bold;
+          color: #333;
+          line-height: 1.2;
+        }
       }
     }
   }

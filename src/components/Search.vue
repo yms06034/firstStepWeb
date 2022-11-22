@@ -34,15 +34,15 @@ export default {
       navigations: [
         {
           name: '로그인',
-          href: '/Client/Login'
+          href: '/Client/Signin/Login'
         },
         {
           name: '회원가입',
-          href: '/Client/Login'
+          href: '/Client/Signin/Login'
         },
         {
           name: '마이페이지',
-          href: '/Client/Login'
+          href: '/Client/Signin/Login'
         },
       ]
     }
