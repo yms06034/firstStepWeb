@@ -15,13 +15,12 @@
               </label>
               <div class="form-control-wrap">
                 <input 
-                  placeholder="example@firststep.com" 
-                  required 
-                  max="1000"
-                  maxlength="1000"
-                  id="firststep_id"
-                  type="email" 
-                  class="form-control-wrap input" />
+                  class="form-control-wrap input"
+                  type="text" 
+                  v-model="email"
+                  placeholder="example@firststep.com"
+                  required />
+                <span class="error_msg" v-if="msg.email">{{msg.email}}</span>
               </div>
             </div>
           </div>
@@ -84,7 +83,33 @@
 
 <script>
 export default {
-  
+  name: 'Login',
+  data(){
+    return {
+      name: '',
+      password: '',
+      email: '',
+      msg: [],
+      twitter: ''
+    }
+  },
+  watch: {
+    email(value){
+      // binding this to the data value in the email input
+      this.email = value;
+      this.validateEmail(value);
+    }
+  },
+  methods:{
+    validateEmail(value){
+      if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value))
+  {
+    this.msg['email'] = '';
+  } else{
+    this.msg['email'] = '이메일 주소를 정확히 입력해주세요';
+  } 
+    }
+  }
 }
 </script>
 
@@ -96,6 +121,10 @@ export default {
   display: inline-block;
   margin: 0;
   font-family: "Pretendard","Apple SD Gothic Neo","Helvetica Neue",sans-serif;
+}
+
+.input-danger {
+  border-bottom: 1px solid red !important;
 }
 
 .firststep_form_login_area {
@@ -161,6 +190,12 @@ export default {
                 color: rgb(208, 208, 208);
               }
             }
+          }
+          .error_msg {
+            font-size: 13px;
+            color: red;
+            text-align: left;
+            margin-top: 5px;
           }
         }
       }

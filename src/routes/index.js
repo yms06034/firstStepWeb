@@ -21,7 +21,7 @@ export default createRouter({
         return { top: 0 }
     },
     routes: [
-        { path: '/Client/', component: HomeComponent },
+        { path: '/', component: HomeComponent },
         { path: '/Client/Info/Info', component: InfoComponent },
         { path: '/Client/Info/Info_Detail', component: Info_DetailComponent },
         { path: '/Client/Info/Info_Post', component: Info_PostComponent },

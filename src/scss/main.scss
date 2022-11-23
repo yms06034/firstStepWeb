@@ -79,9 +79,9 @@ a {
 
 /*input 은 숨겨주기*/
 
-input#agree_chk {
-    display: none;
-}
+// input#agree_chk {
+//     display: none;
+// }
 
 
 /*input 바로 다음의 label*/
@@ -129,7 +129,7 @@ input {
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
-    //-webkit-appearance: checkbox;
+    // -webkit-appearance: checkbox;
 }
 
 

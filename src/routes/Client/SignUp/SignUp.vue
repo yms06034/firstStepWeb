@@ -41,7 +41,7 @@
                   maxlength="1000"
                   id="firststep_pw"
                   type="email"
-                  class="form-control-wrap input_pass"/>
+                  class="form-control-wrap input_pass" />
               </div>
             </div>
           </div>
@@ -55,16 +55,18 @@
                   maxlength="1000"
                   id="firststep_pw_chk"
                   type="email"
-                  class="form-control-wrap input_pass_chk"/>
+                  class="form-control-wrap input_pass_chk" />
               </div>
             </div>
           </div>
 					<div class="signUp_form_container_agree_wrap">
 						<div class="signUp_form_container_jc_agree_chk">
 								<div class="form-control-wrap_agree_chk">
-									<input type="checkbox" name="agree_chk" id="agree_chk" />
+                  <input type="checkbox" name="agree_chk" id="agree_chk" />
 									<label for="agree_chk" class="agree_chk"></label>
-									<span class="agree_txt">[필수] 개인정보 처리방침 동의</span>
+                  <span class="agree_txt">[필수] 개인정보 처리방침 동의</span>
+                </div>
+                <div class="form-control-wrap_agree_chk">
 									<button class="agree_contents_popup"> 내용 보기 </button>
 								</div>
 							
@@ -78,10 +80,11 @@
 					<div class="signUp_form_container_member_chk">
 						<div class="signUp_form_container_jc_member_chk">
 								<div class="form-control-wrap_member_chk">
-									<span class="member_txt">이미 회원이신가요?</span>
-									<button class="go_to_login"> 로그인하러가기 </button>
+									<span class="member_txt">이미 FIRSTSTEP 회원이신가요?</span>
 								</div>
-							
+                <div class="form-control-wrap_member_chk">
+                  <button class="go_to_login"> 로그인하러가기 </button>
+                </div>
 						</div>
 					</div>
         </div>
@@ -190,7 +193,7 @@ export default {
             width: 100%;
             font-size: 14px;
             line-height: 20px;
-            margin-bottom: 8px;
+            margin-bottom: 15px;
             font-weight: normal;
             padding: 0px;
             text-align: left;
@@ -238,7 +241,7 @@ export default {
             width: 100%;
             font-size: 14px;
             line-height: 20px;
-            margin-bottom: 8px;
+            margin-bottom: 15px;
             font-weight: normal;
             padding: 0px;
             text-align: left;
@@ -272,21 +275,23 @@ export default {
         }
       }
 			.signUp_form_container_agree_wrap {
-				margin-top: 20px;
+				margin-top: 40px;
         width: 100%;
         display: flex;
-        flex-direction: column;
-        width: 100%;
 				.signUp_form_container_jc_agree_chk {
 					display: flex;
 					border-top: 1px solid rgb(207, 213, 219);
+          font-size: 14px;
+          width: 100%;
+          justify-content: space-between;
 					.form-control-wrap_agree_chk{
-						margin-top: 10px;
+						margin-top: 20px;
 						.agree_chk{
 							margin-right: 10px;
 						}
 						.agree_contents_popup{
-							margin-left: 50px;
+              color: #afafaf;
+              border-bottom: 1px solid #afafaf;
 						}
 					}
 				}
@@ -300,7 +305,25 @@ export default {
         line-height: 15px;
         font-weight: bold;
         margin-top: 40px;
+        margin-bottom: 30px;
         cursor: pointer;
+      }
+      .signUp_form_container_member_chk {
+        width: 100%;
+        .signUp_form_container_jc_member_chk {
+          display: flex;
+          justify-content: space-between;
+          .form-control-wrap_member_chk {
+            font-size: 14px;
+            .member_txt {
+              color: #afafaf;
+            }
+            .go_to_login {
+              font-weight: bold;
+              color: #494747;
+            }
+          }
+        }
       }
 			.email-auth-wrap {
 				margin-top: 10px;
@@ -309,12 +332,9 @@ export default {
 					height: 15px;
 					float: right;
 					padding: 5px 5px 8px 5px;
-					border-top-left-radius: 5px;
-					border-bottom-left-radius: 5px;
+          font-size: 13px;
+          border-radius: 5px;
 					margin-right: 10px;
-					border-top-right-radius: 5px;
-					border-bottom-right-radius: 5px;
-					margin-left: -3px;
 					border: 1px solid rgb(207, 213, 219);
 				}
 			}
