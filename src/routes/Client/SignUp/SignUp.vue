@@ -135,7 +135,7 @@ export default {
 			let getAuthNum = 123456;
 			if(chkAuthNum.match(getAuthNum)){
 				console.log("success");
-				alert("인증되었습니다.");
+				alert("인증되었습니다123.");
 			}else{
 				console.log("fail");
 				alert("인증번호가 일치하지 않습니다.");
