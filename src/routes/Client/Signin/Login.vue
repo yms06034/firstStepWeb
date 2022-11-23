@@ -86,11 +86,9 @@ export default {
   name: 'Login',
   data(){
     return {
-      name: '',
       password: '',
       email: '',
       msg: [],
-      twitter: ''
     }
   },
   watch: {
