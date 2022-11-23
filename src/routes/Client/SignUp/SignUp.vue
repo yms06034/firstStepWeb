@@ -76,7 +76,6 @@
                 <div class="form-control-wrap_agree_chk">
 									<button class="agree_contents_popup"> 내용 보기 </button>
 								</div>
-							
 						</div>
 					</div>
           <button 

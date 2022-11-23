@@ -93,7 +93,6 @@ export default {
   },
   watch: {
     email(value){
-      // binding this to the data value in the email input
       this.email = value;
       this.validateEmail(value);
     }
@@ -119,10 +118,6 @@ export default {
   display: inline-block;
   margin: 0;
   font-family: "Pretendard","Apple SD Gothic Neo","Helvetica Neue",sans-serif;
-}
-
-.input-danger {
-  border-bottom: 1px solid red !important;
 }
 
 .firststep_form_login_area {
