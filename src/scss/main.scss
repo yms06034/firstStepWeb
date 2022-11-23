@@ -108,7 +108,7 @@ input#agree_chk+label:before {
 /*checked된 input 바로 다음의 label:before 에 체크 후 CSS 설정*/
 
 input#agree_chk:checked+label:before {
-    // content: "\f00c";
+    content: '✔';
     font-weight: 900;
     color: #fff;
     background-color: $primary;

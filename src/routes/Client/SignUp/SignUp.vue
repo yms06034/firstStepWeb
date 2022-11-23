@@ -19,12 +19,17 @@
                   required 
                   max="1000"
                   maxlength="1000"
+									v-model="clientEmail"
                   id="firststep_email"
                   type="email" 
                   class="form-control-wrap input-email"/>
               </div>
 							<div class="email-auth-wrap">
-								<button class="email-auth-btn">이메일 인증</button>
+								<button class="email-auth-btn" name="email-auth-btn" @click="email_auth()" v-show="emailAuthShow === true">이메일 인증</button>
+							</div>
+							<div class="auth-num-chk" v-show="authNumShow === true">
+								<input class="auth-num" type="text" v-model="chkAuthNum" maxlength="6"/>
+								<button class="email-chk" name="email-chk-btn" @click="email_chk_btn">확인</button>
 							</div>
             </div>
           </div>
@@ -39,6 +44,7 @@
                   required 
                   max="1000"
                   maxlength="1000"
+									v-model="firststep_pw"
                   id="firststep_pw"
                   type="email"
                   class="form-control-wrap input_pass" />
@@ -53,6 +59,7 @@
                   required 
                   max="1000"
                   maxlength="1000"
+									v-model="firststep_pw_chk"
                   id="firststep_pw_chk"
                   type="email"
                   class="form-control-wrap input_pass_chk" />
@@ -95,7 +102,46 @@
 
 <script>
 export default {
-  
+  data(){
+		return{
+			clientEmail : ""
+			, chkAuthNum : ""
+			, firststep_pw  : ""
+			, firststep_pw_chk : ""
+			, emailAuthShow : true
+			, authNumShow : false
+		}
+	},
+	methods: {
+		email_auth(){
+			const _this = this;
+			let clientEmail = _this.clientEmail;
+			let regExp  = /[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]$/i;
+			if(clientEmail.match(regExp) !== null){
+				console.log("success");
+				alert("이메일이 발송되었습니다.");
+				_this.emailAuthShow = false;
+				_this.authNumShow = true;
+				console.log("_this.emailAuthShow = " + _this.emailAuthShow);
+				console.log("_this.authNumShow = " + _this.authNumShow);
+			}else{
+				console.log("fail");
+				alert("이메일 형식에 맞지 않습니다.");
+			}
+		},
+		email_chk_btn(){
+			const _this = this;
+			let chkAuthNum = _this.chkAuthNum;
+			let getAuthNum = 123456;
+			if(chkAuthNum.match(getAuthNum)){
+				console.log("success");
+				alert("인증되었습니다.");
+			}else{
+				console.log("fail");
+				alert("인증번호가 일치하지 않습니다.");
+			}
+		}
+	}
 }
 </script>
 
@@ -335,6 +381,12 @@ export default {
           font-size: 13px;
           border-radius: 5px;
 					margin-right: 10px;
+					border: 1px solid rgb(207, 213, 219);
+				}
+			}
+			.auth-num-chk {
+				margin-top: 10px;
+				.auth-num{
 					border: 1px solid rgb(207, 213, 219);
 				}
 			}
