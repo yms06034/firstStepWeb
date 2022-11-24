@@ -56,7 +56,7 @@ export default {
   .find_password-text {
     font-size: 15px;
     line-height: 24px;
-    color: #2E2E5D;
+    color: #2d2d2d;
     text-align: center;
     margin-top: 40px;
     font-weight: bold;

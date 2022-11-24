@@ -31,13 +31,12 @@
               </label>
               <div class="form-control-wrap_pass">
                 <input 
-                  placeholder="비밀번호 8자리 이상" 
-                  required 
-                  max="1000"
-                  maxlength="1000"
-                  id="firststep_id"
-                  type="email" 
-                  class="form-control-wrap input_pass"/>
+                  class="form-control-wrap input_pass"
+                  type="text" 
+                  v-model="password"
+                  placeholder="비밀번호 8자리 이상 입력해주세요"
+                  required />
+                <span class="error_msg" v-if="msg.password">{{msg.password}}</span>
               </div>
             </div>
           </div>
@@ -95,6 +94,10 @@ export default {
     email(value){
       this.email = value;
       this.validateEmail(value);
+    },
+    password(value){
+      this.password = value;
+      this.validatePassword(value);
     }
   },
   methods:{
@@ -105,6 +108,14 @@ export default {
   } else{
     this.msg['email'] = '이메일 주소를 정확히 입력해주세요';
   } 
+    },
+    validatePassword(value){
+      // let difference = 8 - value.length;
+      if (value.length<8) {
+        this.msg['password'] = '비밀번호 8자리 이상 입력해주세요';
+      } else {
+        this.msg['password'] = ''
+      }
     }
   }
 }
@@ -233,6 +244,12 @@ export default {
                 color: rgb(208, 208, 208);
               }
             }
+          }
+          .error_msg {
+            font-size: 13px;
+            color: red;
+            text-align: left;
+            margin-top: 5px;
           }
         }
       }
