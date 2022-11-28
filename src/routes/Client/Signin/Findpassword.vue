@@ -16,9 +16,9 @@
             id="findpassword"
             type="email"
             value />
-            <p class="error_msg">
-              이메일을 입력해주세요.
-            </p>
+          <p class="error_msg">
+            이메일을 입력해주세요.
+          </p>
         </div>
         <span class="find_password_infor"> 
           만일 이메일이 오지 않는다면 스펨함을 확인해주세요
