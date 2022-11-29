@@ -18,8 +18,8 @@
             v-model="email"
             type="text"
             placeholder="example@firststep.com"
-            max="1000"
-            maxlength="1000"
+            max="50"
+            maxlength="50"
             id="findpassword"
             required />
           <span class="error_msg" v-if="msg.email">{{msg.email}}</span>
@@ -30,7 +30,7 @@
         <button 
           type="button"
           class="find_password-btn"
-          @click="email_auth(value)">
+          @click="email_auth(value), emailSecurity()">
           확인
         </button>
         <RouterLink
@@ -49,7 +49,7 @@
             src="https://i.ibb.co/xm3C044/2-2-1.png" 
             alt="firststep_logo" />
           <p class="send_ps-mail">
-            {{email}}로 임시 비밀번호를 보내드렸습니다.
+            {{emailSecurity()}}로 임시 비밀번호를 보내드렸습니다.
             로그인 후 비밀번호를 수정해주시기 바랍니다.
           </p>
         </div>
@@ -88,6 +88,7 @@ export default {
       msg: [],
       findPsShow: true,
       findPsSendShow: false,
+      userEmail: '',
     }
   },
   watch: {
@@ -98,12 +99,12 @@ export default {
   },
   methods: {
     validateEmail(value){
-      if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value))
-    {
-      this.msg['email'] = '';
-    } else{
-      this.msg['email'] = '이메일 주소를 정확히 입력해주세요';
-    }
+      if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,30})+$/.test(value))
+      {
+        this.msg['email'] = '';
+      } else{
+        this.msg['email'] = '이메일 주소를 정확히 입력해주세요';
+      }
     },
     email_auth() {
       let passBtn = this.$refs.find_ps_btn;
@@ -112,11 +113,9 @@ export default {
       let regExp  = /[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]$/i;
       if (fintPsEmail.match(regExp) !== null)
       {
-        console.log('성공')
         passBtn.classList.add('display-none')
         sendBtn.classList.remove('display-none')
       } else {
-        console.log('실패')
         sendBtn.classList.add('display-none')
         passBtn.classList.remove('display-none')
       }
@@ -124,6 +123,21 @@ export default {
     repassword_resend() {
       // modal로 변경 예정
       alert('임시 비밀번호가 재발급 되었습니다.\n이메일을 확인해주세요.')
+    },
+    emailSecurity() {
+      let id = this.email.split('@')[0]
+      let mail = this.email.split('@')[1]
+
+      let masking = (id)=> {
+        let splitId = id.substring(0 ,2);
+
+        for (let i = 1; i < id.length; i++){
+          splitId += '*'
+        }
+        return splitId
+      };
+      let userEmail = masking(id) + '@' + mail
+      return userEmail
     }
   }
 }
