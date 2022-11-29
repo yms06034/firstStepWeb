@@ -29,15 +29,22 @@
               <label class="label">
                 비밀번호
               </label>
-              <div class="form-control-wrap_pass">
-                <input 
-                  placeholder="비밀번호 8자리 이상" 
-                  required 
-                  max="1000"
-                  maxlength="1000"
-                  id="firststep_id"
-                  type="email" 
-                  class="form-control-wrap input_pass"/>
+              <div class="form-control-password">
+                <div class="form-control-wrap_pass">
+                  <input 
+                    :type="filedType"
+                    class="form-control-wrap input_pass"
+                    v-model="password"
+                    placeholder="비밀번호 8자리 이상 입력해주세요"
+                    required />
+                  <span class="error_msg" v-if="msg.password">{{msg.password}}</span>
+                </div>
+                <div class="password_control">
+                  <button class="password_control_btn" @click="toggleShow">
+                    <span ref="show_hide_icon" class="show_hide_icon">
+                    </span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -48,7 +55,11 @@
           </button>
         </div>
         <div class="signup_form">
-          <a class="signup_href" href="javascript:void(0)">회원가입</a>
+          <RouterLink 
+            to="/Client/SignUp/SignUp"
+            class="signup_href">
+            회원가입
+          </RouterLink>
           <div class="sigup_center"></div>
           <RouterLink
             to="/Client/Signin/Findpassword"
@@ -89,13 +100,23 @@ export default {
       password: '',
       email: '',
       msg: [],
+      showPassword: false,
+      filedType: 'password'
+    }
+  },
+  computed: {
+    buttonLabel() {
+      return (this.showPassword) ? "Hide" : "Show";
     }
   },
   watch: {
     email(value){
-      // binding this to the data value in the email input
       this.email = value;
       this.validateEmail(value);
+    },
+    password(value){
+      this.password = value;
+      this.validatePassword(value);
     }
   },
   methods:{
@@ -106,9 +127,27 @@ export default {
   } else{
     this.msg['email'] = '이메일 주소를 정확히 입력해주세요';
   } 
+    },
+    validatePassword(value){
+      // let difference = 8 - value.length;
+      if (value.length<8) {
+        this.msg['password'] = '비밀번호 8자리 이상 입력해주세요';
+      } else {
+        this.msg['password'] = ''
+      }
+    },
+    toggleShow(){
+      let chBtn = this.$refs.show_hide_icon;
+      if(this.filedType === 'password'){
+        this.filedType = 'text';
+        chBtn.classList.add('active');
+      }else {
+        this.filedType = 'password';
+        chBtn.classList.remove('active');
+      }
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scpoe>
@@ -119,10 +158,6 @@ export default {
   display: inline-block;
   margin: 0;
   font-family: "Pretendard","Apple SD Gothic Neo","Helvetica Neue",sans-serif;
-}
-
-.input-danger {
-  border-bottom: 1px solid red !important;
 }
 
 .firststep_form_login_area {
@@ -177,6 +212,7 @@ export default {
               min-height: 44px;
               width: 315px;
               border: 1px solid rgb(207, 213, 219);
+              border-radius: 4px;
               text-align: left;
               padding-left: 15px;
               padding-bottom: 5px;
@@ -218,26 +254,69 @@ export default {
             text-align: left;
             color: rgb(33, 39, 42);
           }
-          .form-control-wrap_pass {
+          .form-control-password {
             display: flex;
-            flex-direction: column;
-            width: 100%;
-            .input_pass {
-              height: 44px;
-              min-height: 44px;
-              width: 315px;
-              border: 1px solid rgb(207, 213, 219);
-              text-align: left;
-              padding-left: 15px;
-              padding-bottom: 5px;
-              &:focus {
-                border: 1px solid $primary;
-              }
-              &::placeholder {
-                font-size: 13px;
-                color: rgb(208, 208, 208);
+            justify-content: flex-start;
+            .form-control-wrap_pass {
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+              .input_pass {
+                height: 44px;
+                min-height: 44px;
+                width: 315px;
+                border: 1px solid rgb(207, 213, 219);
+                text-align: left;
+                padding-left: 15px;
+                padding-bottom: 5px;
+                border-radius: 4px;
+                &:focus {
+                  border: 1px solid $primary;
+                }
+                &::placeholder {
+                  font-size: 13px;
+                  color: rgb(208, 208, 208);
+                }
               }
             }
+            .password_control {
+              box-sizing: border-box;
+              clear: both;
+              font-size: 1rem;
+              position: relative;
+              text-align: inherit;
+              .password_control_btn {
+                .show_hide_icon {
+                  display: block;
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  width: 50px;
+                  height: 50px;
+                  background: url(https://www.itthere.co.kr/_skin/basic_Live_220719/img/member/icon_pwd.png) no-repeat center;
+                  cursor: pointer;
+                  &::after{
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    width: 1px;
+                    height: 24px;
+                    margin-top: -12px;
+                    background: #e7e7e7;
+                    content: '';
+                  }
+                }
+                .active {
+                    background-image: url(https://www.itthere.co.kr/_skin/basic_Live_220719/img/member/icon_pwd_active.png);
+                }
+              }
+            }
+          }
+          .error_msg {
+            font-size: 13px;
+            color: red;
+            text-align: left;
+            margin-top: 5px;
           }
         }
       }
@@ -251,6 +330,7 @@ export default {
         font-weight: bold;
         margin-top: 40px;
         cursor: pointer;
+        border-radius: 4px;
       }
     }
     .signup_form {

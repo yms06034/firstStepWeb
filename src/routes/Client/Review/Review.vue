@@ -139,13 +139,13 @@
           </RouterLink>
         </div>
         <!-- Content area -->
-        <RouterLink
-          to="/Client/Review/Review_Detail">
-          <div 
-            v-for="con in contents" 
-            :key="con"
-            class="reviewitems">
-            <!-- 첫번째 Columns -->
+        <div 
+          v-for="con in contents" 
+          :key="con"
+          class="reviewitems">
+          <!-- 첫번째 Columns -->
+          <RouterLink
+            to="/Client/Review/Review_Detail">
             <ul class="reviewcol">
               <!-- 1 -->
               <li class="reviewitem">
@@ -358,7 +358,10 @@
                 </div>
               </li>
             </ul>
-            <!-- 두번째 Columns -->
+          </RouterLink>
+          <!-- 두번째 Columns -->
+          <RouterLink
+            to="/Client/Review/Review_Detail">
             <ul class="reviewcol">
               <!-- 1 -->
               <li class="reviewitem">
@@ -561,7 +564,10 @@
                 </div>
               </li>
             </ul>
-            <!-- 세번째 Columns -->
+          </RouterLink>
+          <!-- 세번째 Columns -->
+          <RouterLink
+            to="/Client/Review/Review_Detail">
             <ul class="reviewcol">
               <!-- 1 -->
               <li class="reviewitem">
@@ -764,7 +770,10 @@
                 </div>
               </li>
             </ul>
-            <!-- 네번째 Columns -->
+          </RouterLink>
+          <!-- 네번째 Columns -->
+          <RouterLink
+            to="/Client/Review/Review_Detail">
             <ul class="reviewcol">
               <!-- 1 -->
               <li class="reviewitem">
@@ -967,8 +976,8 @@
                 </div>
               </li>
             </ul>
-          </div>
-        </RouterLink>
+          </RouterLink>
+        </div>
       </div>
     </article>
   </form>

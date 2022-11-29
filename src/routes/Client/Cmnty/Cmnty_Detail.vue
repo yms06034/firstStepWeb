@@ -290,6 +290,7 @@ export default {
 			border: 1px solid #EBEBEB;
 			height: 50px;
 			display: flex;
+			border-radius: 5px;
 			.click-to-likes{
 				margin-left: 10px;
 				margin-right: 5px;
