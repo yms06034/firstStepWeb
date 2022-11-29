@@ -395,6 +395,42 @@ export default {
 							}
 						}
 					}
+
+					.password_control {
+						box-sizing: border-box;
+						clear: both;
+						font-size: 1rem;
+						position: relative;
+						text-align: inherit;
+
+						.password_control_btn {
+							.show_hide_icon {
+								display: block;
+								position: absolute;
+								top: 0;
+								right: 0;
+								width: 50px;
+								height: 50px;
+								background: url(https://www.itthere.co.kr/_skin/basic_Live_220719/img/member/icon_pwd.png) no-repeat center;
+								cursor: pointer;
+
+								&::after {
+									position: absolute;
+									top: 50%;
+									left: 0;
+									width: 1px;
+									height: 24px;
+									margin-top: -12px;
+									background: #e7e7e7;
+									content: '';
+								}
+							}
+
+							.active {
+								background-image: url(https://www.itthere.co.kr/_skin/basic_Live_220719/img/member/icon_pwd_active.png);
+							}
+						}
+					}
 					.error_msg {
 						font-size: 13px;
 						color: red;
@@ -430,7 +466,6 @@ export default {
 					.form-control-password-chk{
 						display: flex;
             justify-content: flex-start;
-					
 					.form-control-wrap_pass_chk {
 						display: flex;
 						flex-direction: column;
@@ -465,7 +500,6 @@ export default {
 						font-size: 1rem;
 						position: relative;
 						text-align: inherit;
-
 						.password_control_btn_chk {
 							.show_hide_icon {
 								display: block;
