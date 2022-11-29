@@ -89,7 +89,9 @@
 									<span class="member_txt">이미 FIRSTSTEP 회원이신가요?</span>
 								</div>
                 <div class="form-control-wrap_member_chk">
-                  <button class="go_to_login"> 로그인하러가기 </button>
+                  <RouterLink to="/Client/Signin/Login">
+                    <button class="go_to_login">로그인하러가기</button>
+                  </RouterLink>
                 </div>
 						</div>
 					</div>

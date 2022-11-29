@@ -55,7 +55,11 @@
           </button>
         </div>
         <div class="signup_form">
-          <a class="signup_href" href="javascript:void(0)">회원가입</a>
+          <RouterLink 
+            to="/Client/SignUp/SignUp"
+            class="signup_href">
+            회원가입
+          </RouterLink>
           <div class="sigup_center"></div>
           <RouterLink
             to="/Client/Signin/Findpassword"
@@ -208,6 +212,7 @@ export default {
               min-height: 44px;
               width: 315px;
               border: 1px solid rgb(207, 213, 219);
+              border-radius: 4px;
               text-align: left;
               padding-left: 15px;
               padding-bottom: 5px;
@@ -264,6 +269,7 @@ export default {
                 text-align: left;
                 padding-left: 15px;
                 padding-bottom: 5px;
+                border-radius: 4px;
                 &:focus {
                   border: 1px solid $primary;
                 }
@@ -324,6 +330,7 @@ export default {
         font-weight: bold;
         margin-top: 40px;
         cursor: pointer;
+        border-radius: 4px;
       }
     }
     .signup_form {

@@ -42,7 +42,7 @@ export default {
         },
         {
           name: '마이페이지',
-          href: '/Client/Signin/Login'
+          href: '/Client/Mypage/Mypage'
         },
       ]
     }

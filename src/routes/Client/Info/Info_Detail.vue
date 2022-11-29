@@ -254,6 +254,7 @@ export default {
 			margin: auto;
 			width: 200px;
 			border : 1px solid #EBEBEB;
+			border-radius: 5px;
 		}
 		.detail-sub-group{
 			.book-mark-btn{
@@ -289,6 +290,7 @@ export default {
 			border: 1px solid #EBEBEB;
 			height: 50px;
 			display: flex;
+			border-radius: 5px;
 			.click-to-likes{
 				margin-left: 10px;
 				margin-right: 5px;
