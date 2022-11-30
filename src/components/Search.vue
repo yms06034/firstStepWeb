@@ -11,7 +11,7 @@
           v-model="title"
           type="text"
           placeholder="원하시는 여행 키워드를 검색해주세요" 
-          class='sinput btn' />
+          class="sinput btn" />
         <div class="top_btn">
           <div 
             v-for="nav in navigations" 
