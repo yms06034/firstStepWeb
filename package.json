@@ -53,6 +53,7 @@
     "quill-blot-formatter": "^1.0.5",
     "quill-image-uploader": "^1.2.3",
     "swiper": "^6.8.4",
+    "v-click-outside": "^3.2.0",
     "vue": "^3.2.36",
     "vue-backtotop": "^1.6.1",
     "vue-router": "^4.1.3",

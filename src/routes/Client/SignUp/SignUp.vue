@@ -14,9 +14,9 @@
 								이메일
 							</label>
 							<div class="form-control-wrap">
-								<input placeholder="example@firststep.com" required max="1000" maxlength="1000" v-model="email"
-									type="email" class="form-control-wrap input-email" />
-								<span class="error_msg" v-if="msg.email">{{ msg.email }}</span>
+								<input placeholder="example@firststep.com" required max="50" maxlength="50" v-model="email" type="text"
+									class="email_form-input" />
+								<span ref="error_msg" class="error_msg" v-if="msg.email">{{ msg.email }}</span>
 							</div>
 							<div class="email-auth-wrap">
 								<button class="email-auth-btn" name="email-auth-btn" @click="email_auth()"
@@ -35,8 +35,8 @@
 							</label>
 							<div class="form-control-password">
 								<div class="form-control-wrap_pass">
-									<input placeholder="비밀번호 8자리 이상" required max="1000" maxlength="1000" v-model="password"
-										type="password" class="form-control-wrap input_pass" />
+									<input :type="filedType" placeholder="비밀번호 8자리 이상" required v-model="password"
+										class="form-control-wrap input_pass" />
 									<span class="error_msg" v-if="msg.password">{{ msg.password }}</span>
 								</div>
 								<div class="password_control">
@@ -55,8 +55,8 @@
 							</label>
 							<div class="form-control-password-chk">
 								<div class="form-control-wrap_pass_chk">
-									<input placeholder="비밀번호 확인" required max="1000" maxlength="1000" v-model="password_chk"
-										id="password_chk" type="password" class="form-control-wrap input_pass_chk" />
+									<input placeholder="비밀번호 확인" required v-model="password_chk" :type="filedTypeChk" id="password_chk"
+										class="form-control-wrap input_pass_chk" />
 									<span class="error_msg_chk" v-if="msg.password_chk">{{ msg.password_chk }}</span>
 								</div>
 								<div class="password_control_chk">
@@ -76,23 +76,26 @@
 								<span class="agree_txt">[필수] 개인정보 처리방침 동의</span>
 							</div>
 							<div class="form-control-wrap_agree_chk">
-								<button class="agree_contents_popup"> 내용 보기 </button>
+								<button class="agree_contents_popup" @click="handle_toggle"> 내용 보기 </button>
 							</div>
 						</div>
 					</div>
+
+					<MyModal v-show="isModalOpen === false" />
+
 					<button type="button" class="signUp-btn">
 						가입하기
 					</button>
 					<div class="signUp_form_container_member_chk">
 						<div class="signUp_form_container_jc_member_chk">
-								<div class="form-control-wrap_member_chk">
-									<span class="member_txt">이미 FIRSTSTEP 회원이신가요?</span>
-								</div>
-                <div class="form-control-wrap_member_chk">
-                  <RouterLink to="/Client/Signin/Login">
-                    <button class="go_to_login">로그인하러가기</button>
-                  </RouterLink>
-                </div>
+							<div class="form-control-wrap_member_chk">
+								<span class="member_txt">이미 FIRSTSTEP 회원이신가요?</span>
+							</div>
+							<div class="form-control-wrap_member_chk">
+								<RouterLink to="/Client/Signin/Login">
+									<button class="go_to_login">로그인하러가기</button>
+								</RouterLink>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -102,7 +105,15 @@
 </template>
 
 <script>
+import MyModal from '../../../components/privacyPoliModal'
+import vClickOutside from 'v-click-outside'
 export default {
+	directives: {
+    clickOutside: vClickOutside.directive
+  },
+	components : {
+		MyModal
+	},
 	data() {
 		return {
 			email: ''
@@ -114,6 +125,9 @@ export default {
 			, authNumShow: false
 			, showPassword: false
 			, showPasswordChk: false
+			, filedType: 'password'
+			, filedTypeChk: 'password'
+			, isModalOpen : false
 		}
 	},
 	computed: {
@@ -157,11 +171,19 @@ export default {
 		},
 		email_chk_btn() {
 			const _this = this;
+			const msgCode = _this.$refs.error_msg;
+			console.log("msgCode = " + msgCode);
 			let chkAuthNum = _this.chkAuthNum;
 			let getAuthNum = 123456;
 			if (chkAuthNum.match(getAuthNum)) {
 				console.log("success");
 				alert("인증되었습니다123.");
+				_this.authNumShow = false;
+
+				_this.msg['email'] = '이메일 인증이 완료되었습니다';
+
+				msgCode.classList.remove('error_msg');
+				msgCode.classList.add('success_msg');
 			} else {
 				console.log("fail");
 				alert("인증번호가 일치하지 않습니다.");
@@ -183,10 +205,13 @@ export default {
 		},
 		validatePasswordChk(value) {
 			// let difference = 8 - value.length;
-			if (value.length < 8) {
-				this.msg['password_chk'] = '비밀번호 8자리 이상 입력해주세요';
+			let chkPw = this.password;
+			console.log("chkPw = " + chkPw);
+
+			if (chkPw.match(value)) {
+				this.msg['password_chk'] = '';
 			} else {
-				this.msg['password_chk'] = ''
+				this.msg['password_chk'] = '비밀번호가 일치하지 않습니다.'
 			}
 		},
 		toggleShow() {
@@ -201,13 +226,21 @@ export default {
 		},
 		toggleShowChk() {
 			let chBtn = this.$refs.show_hide_icon_chk;
-			if (this.filedType === 'password_chk') {
-				this.filedType = 'text';
+			if (this.filedTypeChk === 'password') {
+				this.filedTypeChk = 'text';
 				chBtn.classList.add('active');
 			} else {
-				this.filedType = 'password_chk';
+				this.filedTypeChk = 'password';
 				chBtn.classList.remove('active');
 			}
+		},
+		handle_toggle() {	
+			this.isModalOpen = true;
+			console.log("456 = " + this.isModalOpen);
+		},
+		onClickOutside(){
+			this.isModalOpen = false;
+			console.log("123 = " + this.isModalOpen);
 		}
 	}
 }
@@ -279,7 +312,7 @@ export default {
 						flex-direction: column;
 						width: 100%;
 
-						.input-email {
+						.email_form-input {
 							height: 44px;
 							min-height: 44px;
 							width: 315px;
@@ -300,6 +333,20 @@ export default {
 								font-size: 13px;
 								color: rgb(208, 208, 208);
 							}
+						}
+
+						.success_msg {
+							font-size: 13px;
+							line-height: 15px;
+							color: greenyellow;
+							margin-top: 10px;
+						}
+
+						.error_msg {
+							font-size: 13px;
+							line-height: 15px;
+							color: red;
+							margin-top: 10px;
 						}
 					}
 				}
@@ -328,9 +375,11 @@ export default {
 						text-align: left;
 						color: rgb(33, 39, 42);
 					}
+
 					.form-control-password {
 						display: flex;
-            justify-content: flex-start;
+						justify-content: flex-start;
+
 						.form-control-wrap_pass {
 							display: flex;
 							flex-direction: column;
@@ -359,6 +408,7 @@ export default {
 								}
 							}
 						}
+
 						.password_control {
 							box-sizing: border-box;
 							clear: both;
@@ -396,41 +446,6 @@ export default {
 						}
 					}
 
-					.password_control {
-						box-sizing: border-box;
-						clear: both;
-						font-size: 1rem;
-						position: relative;
-						text-align: inherit;
-
-						.password_control_btn {
-							.show_hide_icon {
-								display: block;
-								position: absolute;
-								top: 0;
-								right: 0;
-								width: 50px;
-								height: 50px;
-								background: url(https://www.itthere.co.kr/_skin/basic_Live_220719/img/member/icon_pwd.png) no-repeat center;
-								cursor: pointer;
-
-								&::after {
-									position: absolute;
-									top: 50%;
-									left: 0;
-									width: 1px;
-									height: 24px;
-									margin-top: -12px;
-									background: #e7e7e7;
-									content: '';
-								}
-							}
-
-							.active {
-								background-image: url(https://www.itthere.co.kr/_skin/basic_Live_220719/img/member/icon_pwd_active.png);
-							}
-						}
-					}
 					.error_msg {
 						font-size: 13px;
 						color: red;
@@ -463,79 +478,85 @@ export default {
 						text-align: left;
 						color: rgb(33, 39, 42);
 					}
-					.form-control-password-chk{
+
+					.form-control-password-chk {
 						display: flex;
-            justify-content: flex-start;
-					.form-control-wrap_pass_chk {
-						display: flex;
-						flex-direction: column;
-						width: 100%;
+						justify-content: flex-start;
 
-						.input_pass_chk {
-							height: 44px;
-							min-height: 44px;
-							width: 315px;
-							border-top-left-radius: 5px;
-							border-bottom-left-radius: 5px;
-							border-top-right-radius: 5px;
-							border-bottom-right-radius: 5px;
-							border: 1px solid rgb(207, 213, 219);
-							text-align: left;
-							padding-left: 15px;
-							padding-bottom: 5px;
+						.form-control-wrap_pass_chk {
+							display: flex;
+							flex-direction: column;
+							width: 100%;
 
-							&:focus {
-								border: 1px solid $primary;
-							}
+							.input_pass_chk {
+								height: 44px;
+								min-height: 44px;
+								width: 315px;
+								border-top-left-radius: 5px;
+								border-bottom-left-radius: 5px;
+								border-top-right-radius: 5px;
+								border-bottom-right-radius: 5px;
+								border: 1px solid rgb(207, 213, 219);
+								text-align: left;
+								padding-left: 15px;
+								padding-bottom: 5px;
 
-							&::placeholder {
-								font-size: 13px;
-								color: rgb(208, 208, 208);
-							}
-						}
-					}
-					.password_control_chk {
-						box-sizing: border-box;
-						clear: both;
-						font-size: 1rem;
-						position: relative;
-						text-align: inherit;
-						.password_control_btn_chk {
-							.show_hide_icon {
-								display: block;
-								position: absolute;
-								top: 0;
-								right: 0;
-								width: 50px;
-								height: 50px;
-								background: url(https://www.itthere.co.kr/_skin/basic_Live_220719/img/member/icon_pwd.png) no-repeat center;
-								cursor: pointer;
+								&:focus {
+									border: 1px solid $primary;
+								}
 
-								&::after {
-									position: absolute;
-									top: 50%;
-									left: 0;
-									width: 1px;
-									height: 24px;
-									margin-top: -12px;
-									background: #e7e7e7;
-									content: '';
+								&::placeholder {
+									font-size: 13px;
+									color: rgb(208, 208, 208);
 								}
 							}
-							.active {
-								background-image: url(https://www.itthere.co.kr/_skin/basic_Live_220719/img/member/icon_pwd_active.png);
+						}
+
+						.password_control_chk {
+							box-sizing: border-box;
+							clear: both;
+							font-size: 1rem;
+							position: relative;
+							text-align: inherit;
+
+							.password_control_btn_chk {
+								.show_hide_icon_chk {
+									display: block;
+									position: absolute;
+									top: 0;
+									right: 0;
+									width: 50px;
+									height: 50px;
+									background: url(https://www.itthere.co.kr/_skin/basic_Live_220719/img/member/icon_pwd.png) no-repeat center;
+									cursor: pointer;
+
+									&::after {
+										position: absolute;
+										top: 50%;
+										left: 0;
+										width: 1px;
+										height: 24px;
+										margin-top: -12px;
+										background: #e7e7e7;
+										content: '';
+									}
+								}
+
+								.active {
+									background-image: url(https://www.itthere.co.kr/_skin/basic_Live_220719/img/member/icon_pwd_active.png);
+								}
 							}
 						}
 					}
-				}
-				.error_msg_chk {
-					font-size: 13px;
-					color: red;
-					text-align: left;
-					margin-top: 5px;
+
+					.error_msg_chk {
+						font-size: 13px;
+						color: red;
+						text-align: left;
+						margin-top: 5px;
+					}
 				}
 			}
-		}
 
 
 			.signUp_form_container_agree_wrap {
