@@ -39,6 +39,9 @@
           </div>
         </div>
       </div>
+      <!-- header section-title -->
+      <div>
+      </div>
       <div class="mycontent_area">
         <div class="top_btnn">
           <button
@@ -66,6 +69,13 @@
         <!-- travel_info_list -->
         <div v-show="travelInfo === true" class="travel_info_list">
           <table>
+            <colgroup>
+              <col width="10%" />
+              <col width="*%" />
+              <col width="10%" />
+              <col width="10%" />
+              <col width="10%" />
+            </colgroup>
             <thead>
               <th v-for="item in header" :key="item" class="thCls">{{ item }}</th>
             </thead>
@@ -77,12 +87,6 @@
                   <router-link :to="item.url">
                     <span class="title">{{ item.title }}</span>
                   </router-link>
-                </td>
-                <td class="name">
-                  <div>
-                    <!-- <img class="profileimg" src="https://i.pinimg.com/236x/72/4e/f4/724ef4e3c2bbd2dda183e187593f75db.jpg" alt="profile_img" /> -->
-                    <span>{{ item.regId }}</span>
-                  </div>
                 </td>
                 <td class="date">{{ item.regDate }}</td>
                 <td class="view">{{ item.views }}</td>
@@ -108,7 +112,32 @@
           </div>
         </div>
         <div v-show="community === true" class="community_list">
-
+          <table>
+            <colgroup>
+              <col width="10%" />
+              <col width="*%" />
+              <col width="10%" />
+              <col width="10%" />
+              <col width="10%" />
+            </colgroup>
+            <thead>
+              <th v-for="item in header" :key="item" class="thCls">{{ item }}</th>
+            </thead>
+            <tbody>
+              <tr v-for="item in cmnTy" :key="item" class="trCls">
+                <td class="num">{{ item.no }}</td>
+                <td class="title">
+                  <span class="category">{{ item.category }}</span>
+                  <router-link :to="item.url">
+                    <span class="title">{{ item.title }}</span>
+                  </router-link>
+                </td>
+                <td class="date">{{ item.regDate }}</td>
+                <td class="view">{{ item.views }}</td>
+                <td class="like">{{ item.likes }}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
@@ -119,7 +148,7 @@
 export default {
   data() {
     return {
-      header: ["번호","제목","글쓴이","작성일","조회수","추천수"] ,
+      header: ["번호","제목","작성일","조회수","추천수"] ,
       tvInfo:[
         {
           no : 10
@@ -521,16 +550,14 @@ export default {
     flex-direction: column;
     .top_btnn {
       display: flex;
+      margin-bottom: 25px;
       .btnn {
         border: 1px solid #EBEBEB;
-        border-radius: 10px 10px 0 0;
-        padding: 13px 25px;
-        font-size: 15px;
-        &:nth-child(-n+2){
-          border-right: none;
-        }
-        &:nth-child(-n+3){
-          border-bottom: none;
+        border-radius: 10px;
+        padding: 10px 14px;
+        font-size: 13px;
+        &:nth-child(-n+2) {
+          margin-right: 10px
         }
       }
     }
@@ -549,6 +576,9 @@ export default {
       border-bottom: 1px solid #eeeeef;
       td {
         line-height: 50px;
+      }
+      .num {
+        font-weight: bold;
       }
       .title {
         text-align: left;
