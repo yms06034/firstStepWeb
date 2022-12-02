@@ -14,7 +14,7 @@ export default {
   components: {
     Header,
     Footer,
-    Dark
+    Dark,
   }
 }
 </script>
