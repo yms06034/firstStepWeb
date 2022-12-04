@@ -125,7 +125,6 @@ export default {
   } 
     },
     validatePassword(value){
-      // let difference = 8 - value.length;
       if (value.length<8) {
         this.msg['password'] = '비밀번호 8자리 이상 입력해주세요';
       } else {
