@@ -622,7 +622,7 @@ export default {
     }
   }
   .community_list {
-
+    display: flex;
   }
 }
 </style>
