@@ -66,7 +66,17 @@
         <div class="sociallogin_button_form">
           <button type="button" class="btn-kakaologin">
             <div class="socoal_image">
-              <img src="https://www.itthere.co.kr/_skin/basic_Live_220719/img/member/icon_kakao.png" alt="카카오 로그인" />
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_964_21270___undefinedundefinedundefinedundefinedundefinedaaundefined)">
+                  <path d="M12.0004 2C6.47742 2 2.00195 5.8526 2.00195 10.6052C2.00195 13.6988 3.89907 16.4095 6.74577 17.9264C6.53855 18.7767 5.98838 21.0064 5.87855 21.4829C5.74334 22.075 6.07801 22.0671 6.29714 21.9075C6.46914 21.7829 9.03765 19.8825 10.1458 19.0621C10.7603 19.1612 11.3807 19.2109 12.002 19.2109C17.5249 19.2109 22.0004 15.3572 22.0004 10.6052C22.0004 5.85316 17.5234 2 12.002 2" fill="#391B1B"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_964_21270___undefinedundefinedundefinedundefinedundefinedaaundefined">
+                    <rect width="20" height="20" fill="white" transform="translate(2 2)"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
+              <!-- <img src="https://www.itthere.co.kr/_skin/basic_Live_220719/img/member/icon_kakao.png" alt="카카오 로그인" /> -->
             </div>
             <p class="kakaologin_text">카카오로 시작하기</p>
           </button>
@@ -78,7 +88,15 @@
           </button>
           <button type="button" class="btn-naverlogin">
             <div class="socoal_image">
-              <img src="	https://www.itthere.co.kr/_skin/basic_Live_220719/img/member/icon_naver.png" alt="네이버 로그인" />
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <g fill="none" fill-rule="nonzero">
+                  <path fill="#FBBD05" d="M6.99 13.878l-.627 2.339-2.29.048A8.96 8.96 0 0 1 3 12c0-1.492.363-2.9 1.006-4.139l2.04.374.893 2.026A5.35 5.35 0 0 0 6.649 12c.001.66.12 1.294.34 1.878z"></path>
+                  <path fill="#4385F4" d="M20.49 10.717c.187.514.305.7.349 1.447.043.747.064.948-.09 1.715a8.782 8.782 0 0 1-3.115 5.14l-2.568-.132-.363-2.269a5.364 5.364 0 0 0 2.307-2.739h-4.812v-3.162h4.883l3.378.029.03-.029z"></path>
+                  <path fill="#34A853" d="M17.634 19.018A8.962 8.962 0 0 1 12 21a8.999 8.999 0 0 1-7.927-4.735l2.916-2.387a5.351 5.351 0 0 0 7.713 2.74l2.932 2.4z"></path>
+                  <path fill="#EA4336" d="M17.655 5.231l-2.596 2.443C14.424 7.04 13.039 6.65 12 6.65a5.353 5.353 0 0 0-5.061 3.611l-2.932-2.4C5.504 4.973 8.269 3 12 3c2.184 0 4.27.724 5.655 2.231z"></path>
+                </g>
+              </svg>
+              <!-- <img src="	https://www.itthere.co.kr/_skin/basic_Live_220719/img/member/icon_naver.png" alt="네이버 로그인" /> -->
             </div>
             <p class="kakaologin_text">구글로 시작하기</p>
           </button>
@@ -365,7 +383,7 @@ export default {
         justify-content: center;
         .socoal_image {
           width: 24px;
-          height: 24px;
+          // height: 24px;
           margin-right: 8px;
         }
         .kakaologin_text {
@@ -386,7 +404,7 @@ export default {
         margin-top: 15px;
         .socoal_image {
           width: 24px;
-          height: 24px;
+          // height: 24px;
           margin-right: 8px;
         }
         .kakaologin_text {

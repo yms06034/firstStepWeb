@@ -21,6 +21,8 @@
             max="50"
             maxlength="50"
             id="findpassword"
+            @keypress.enter.prevent
+            @keyup.enter="email_auth(value), emailSecurity"
             required />
           <span class="error_msg" v-if="msg.email">{{msg.email}}</span>
         </div>
@@ -30,7 +32,7 @@
         <button 
           type="button"
           class="find_password-btn"
-          @click="email_auth(value), emailSecurity()">
+          @click="email_auth(value), emailSecurity">
           확인
         </button>
         <RouterLink
@@ -55,8 +57,9 @@
         </div>
         <div class="ps_resend">
           <p class="ps_resend-text">비밀번호를 받지 못하셨나요?</p>
-          <button 
-            @click="repassword_resend" 
+          <button
+            @keypress.enter.prevent
+            @click="repassword_resend"
             class="ps_resend-btn">
             재전송
           </button>

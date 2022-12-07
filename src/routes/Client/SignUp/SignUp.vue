@@ -73,16 +73,23 @@
 							<div class="form-control-wrap_agree_chk">
 								<input type="checkbox" name="agree_chk" id="agree_chk" />
 								<label for="agree_chk" class="agree_chk"></label>
-								<span class="agree_txt">[필수] 개인정보 처리방침 동의</span>
+								<span class="agree_txt">[필수] 이용약관 동의</span>
 							</div>
 							<div class="form-control-wrap_agree_chk">
-								<button class="agree_contents_popup" @click="handle_toggle"> 내용 보기 </button>
+								<!-- <button class="agree_contents_popup" @click="handle_toggle"> <Model /> </button> -->
+								<button 
+									class="agree_contents_popup" 
+									id="show-modal" 
+									@click="openModal">내용보기</button>
+								<Modal @close="closeModal" v-if="modal">
+									<!-- sampleModel.vue에서 <slot /> 주석 해지 후 사용 -->
+									<!-- <p>Vue.js Modal Window!</p> -->
+								</Modal>
 							</div>
 						</div>
 					</div>
 
-					<MyModal v-show="isModalOpen === false" />
-
+					<!-- MODAL -->
 					<button type="button" class="signUp-btn">
 						가입하기
 					</button>
@@ -105,14 +112,11 @@
 </template>
 
 <script>
-import MyModal from '../../../components/privacyPoliModal'
-import vClickOutside from 'v-click-outside'
+import Modal from '../../../components/privacyPoliModal'
+
 export default {
-	directives: {
-    clickOutside: vClickOutside.directive
-  },
 	components : {
-		MyModal
+		Modal
 	},
 	data() {
 		return {
@@ -128,6 +132,8 @@ export default {
 			, filedType: 'password'
 			, filedTypeChk: 'password'
 			, isModalOpen : false
+			, showModal: false
+			, modal: false,
 		}
 	},
 	computed: {
@@ -241,7 +247,22 @@ export default {
 		onClickOutside(){
 			this.isModalOpen = false;
 			console.log("123 = " + this.isModalOpen);
-		}
+		},
+    openModal() {
+      this.modal = true
+    },
+    closeModal() {
+      this.modal = false
+    },
+    doSend() {
+      if (this.message.length > 0) {
+        alert(this.message)
+        this.message = ''
+        this.closeModal()
+      } else {
+        alert('메시지를 입력해주세요.')
+      }
+    }
 	}
 }
 </script>
