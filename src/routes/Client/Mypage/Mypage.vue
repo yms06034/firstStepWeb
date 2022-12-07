@@ -25,25 +25,42 @@
           </div>
           <div class="post_count">
             <div class="post_travelinfo">
-              <p class="count">8888</p>
-              <p class="title">여행정보</p>
+              <a 
+                class="post_btn"
+                href="javascript:void(0)" 
+                @click="moveButton(tvInfo)">
+                <p class="count">8888</p>
+                <p class="title">여행정보</p>
+              </a>
             </div>
             <div class="post_travelreview">
-              <p class="count">8888</p>
-              <p class="title">여행실사후기</p>
+              <a 
+                class="post_btn"
+                href="javascript:void(0)" 
+                @click="moveButton(tvReview)">
+                <p class="count">8888</p>
+                <p class="title">여행실사후기</p>
+              </a>
             </div>
             <div class="post_community">
-              <p class="count">8888</p>
-              <p class="title">커뮤니티</p>
+              <a 
+                class="post_btn"
+                href="javascript:void(0)"
+                @click="moveButton(cmnTy)">
+                <p class="count">8888</p>
+                <p class="title">커뮤니티</p>
+              </a>
             </div>
           </div>
         </div>
       </div>
       <!-- header section-title -->
-      <div>
-      </div>
       <div class="mycontent_area">
-        <div class="top_btnn">
+        <!-- <div class="header_title">
+          <button class="header_btn">게시글</button>
+          <button class="header_btn">댓글</button>
+        </div> -->
+        <!-- <div class="top_btnn">
           <button
             type="button"
             class="btnn active"
@@ -65,9 +82,10 @@
             @click="moveButton(cmnTy)">
             커뮤니티
           </button>
-        </div>
+        </div> -->
         <!-- travel_info_list -->
         <div v-show="travelInfo === true" class="travel_info_list">
+          <p class="title_header">여행정보</p>
           <table>
             <colgroup>
               <col width="10%" />
@@ -97,6 +115,7 @@
         </div>
         <!-- travel_review_list -->
         <div v-show="travelReview === true" class="travel_review_list">
+          <p class="title_header">여행실사후기</p>
           <div class="tvreview_content-area">
             <ul class="tv_content">
               <li
@@ -112,6 +131,7 @@
           </div>
         </div>
         <div v-show="community === true" class="community_list">
+          <p class="title_header">커뮤니티</p>
           <table>
             <colgroup>
               <col width="10%" />
@@ -512,6 +532,9 @@ export default {
         display: flex;
         .post_travelinfo{
           margin-right: 40px;
+          .post_btn {
+            line-height: 1.4;
+          }
           .count{
             font-size: 22px;
             font-weight: bold;
@@ -523,6 +546,9 @@ export default {
         }
         .post_travelreview{
           margin-right: 40px;
+          .post_btn {
+            line-height: 1.4;
+          }
           .count{
             font-size: 22px;
             font-weight: bold;
@@ -533,6 +559,9 @@ export default {
           }
         }
         .post_community{
+          .post_btn {
+            line-height: 1.4;
+          }
           .count{
             font-size: 22px;
             font-weight: bold;
@@ -548,6 +577,9 @@ export default {
   .mycontent_area {
     display: flex;
     flex-direction: column;
+    .header_title {
+
+    }
     .top_btnn {
       display: flex;
       margin-bottom: 25px;
@@ -561,6 +593,13 @@ export default {
         }
       }
     }
+  }
+  .title_header {
+    text-align: left;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 12px;
+    margin-bottom: 8px;
   }
   table {
     width: 100%;
@@ -599,6 +638,7 @@ export default {
   .travel_review_list {
     width: 100%;
     display: flex;
+    flex-direction: column;
     .tvreview_content-area {
       width: 100%;
       display: flex;
@@ -622,7 +662,8 @@ export default {
     }
   }
   .community_list {
-
+    display: flex;
+    flex-direction: column;
   }
 }
 </style>

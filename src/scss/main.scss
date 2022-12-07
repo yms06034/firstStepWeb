@@ -107,7 +107,7 @@ input#agree_chk+label:before {
 
 /*checked된 input 바로 다음의 label:before 에 체크 후 CSS 설정*/
 
-input#agree_chk:checked+label:before {
+input#agree_chk:checked+label::before {
     content: '✔';
     font-weight: 900;
     color: #fff;
@@ -115,6 +115,7 @@ input#agree_chk:checked+label:before {
     border-color: $primary;
     font-size: 13px;
     text-align: center;
+    line-height: 13px;
 }
 
 select {
