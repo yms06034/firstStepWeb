@@ -11,7 +11,7 @@
 					<div class="signUp_form_container">
 						<div class="signUp_form_container-jc">
 							<label class="label required">
-								이메일
+								이메일1
 							</label>
 							<div class="form-control-wrap">
 								<input placeholder="example@firststep.com" required max="50" maxlength="50" v-model="email" type="text"
