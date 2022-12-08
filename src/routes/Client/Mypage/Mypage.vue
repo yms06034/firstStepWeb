@@ -23,7 +23,10 @@
               </div>
             </div>
           </div>
-          <div class="post_count">
+          <div class="post_cmnts_toggle">
+
+          </div>
+          <!-- <div class="post_count">
             <div class="post_travelinfo">
               <a 
                 class="post_btn"
@@ -51,39 +54,11 @@
                 <p class="title">커뮤니티</p>
               </a>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
       <!-- header section-title -->
       <div class="mycontent_area">
-        <!-- <div class="header_title">
-          <button class="header_btn">게시글</button>
-          <button class="header_btn">댓글</button>
-        </div> -->
-        <!-- <div class="top_btnn">
-          <button
-            type="button"
-            class="btnn active"
-            ref="tvInfoBtn"
-            @click="moveButton(tvInfo)">
-            여행정보
-          </button>
-          <button
-            type="button"
-            class="btnn"
-            ref="tvReviewBtn"
-            @click="moveButton(tvReview)">
-            여행실사후기
-          </button>
-          <button
-            type="button"
-            class="btnn"
-            ref="cmnTyBtn"
-            @click="moveButton(cmnTy)">
-            커뮤니티
-          </button>
-        </div> -->
-        <!-- travel_info_list -->
         <div v-show="travelInfo === true" class="travel_info_list">
           <p class="title_header">여행정보</p>
           <table>
@@ -466,9 +441,9 @@ export default {
   .mypage_content_area {
     display: flex;
     padding: 22px;
-    border: 1px solid #ebebeb;
     border-radius: 10px;
     align-items: center;
+    justify-content: center;
     margin-bottom: 70px;
     .user_area {
       display: flex;
@@ -517,16 +492,12 @@ export default {
               color: rgba(34, 34, 34 ,.5);
             }
           }
-          &::after{
-            position: absolute;
-            left: 100%;
-            width: 1px;
-            height: 100%;
-            background: #e7e7e7;
-            content: "";
-            margin-left: 45px;
-          }
         }
+      }
+      .post_cmnts_toggle {
+        width: 100%;
+        display: flex;
+        justify-content: center;
       }
       .post_count {
         display: flex;
