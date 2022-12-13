@@ -39,19 +39,11 @@
             class="comm"
             href="javascript:void(0)">댓글</a>
         </div>
-        <div class="save_name">
-          <a
-            ref="save"
-            class="save"
-            href="javascript:void(0)">임시저장글</a>
-        </div>
       </div>
       <!-- 게시글 -->
       <Post />
       <!-- 댓글 -->
       <Cmnts />
-      <!-- 임시저장글 -->
-      <TmpSave />
     </div>
   </article>
 </template>
@@ -59,13 +51,11 @@
 <script>
 import Post from './Components/Post'
 import Cmnts from './Components/Cmnts'
-import TmpSave from './Components/tmpSave'
 
 export default {
   components : {
     Post,
-    Cmnts,
-    TmpSave
+    Cmnts
   },
   data() {
     return {
@@ -493,23 +483,6 @@ export default {
         color: #B0B0B0;
       }
       .comm {
-        font-weight: bold;
-        color: #B0B0B0;
-      }
-      .active_t {
-        font-weight: bold;
-        color: #000;
-        &:hover {
-          color: #000 !important;
-        }
-      }
-    }
-    .save_name {
-      padding: 16px 18px;
-      &:hover {
-        color: #B0B0B0;
-      }
-      .save {
         font-weight: bold;
         color: #B0B0B0;
       }
