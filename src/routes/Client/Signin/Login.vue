@@ -1,6 +1,6 @@
 <template>
   <article>
-		<form @submit.prevent="signInForm" lazy-validation>
+		<form @submit.prevent="signInForm">
 			<div class="firststep_form_login_area">
 				<div class="login_form_area">
 					<div class="default_login_top_text">
@@ -16,11 +16,11 @@
 								</label>
 								<div class="form-control-wrap">
 									<input 
+                    required
 										class="form-control-wrap input"
-										type="text" 
+										type="email" 
 										v-model="email"
-										placeholder="example@firststep.com"
-										required />
+										placeholder="example@firststep.com" />
 									<span class="error_msg" v-if="msg.email">{{msg.email}}</span>
 								</div>
 							</div>
@@ -33,11 +33,11 @@
 								<div class="form-control-password">
 									<div class="form-control-wrap_pass">
 										<input 
+                      required
 											:type="filedType"
 											class="form-control-wrap input_pass"
 											v-model="password"
-											placeholder="비밀번호 8자리 이상 입력해주세요"
-											required />
+											placeholder="비밀번호 8자리 이상 입력해주세요" />
 										<span class="error_msg" v-if="msg.password">{{msg.password}}</span>
 									</div>
 									<div class="password_control">
@@ -167,7 +167,7 @@ export default {
     },
 		signInForm(){
 			// 서버에서 id pw 체크 후 true면 로그인 및 메인 페이지 이동
-			console.log("123");
+			this.$router.push('/');
 		}
   }
 };
