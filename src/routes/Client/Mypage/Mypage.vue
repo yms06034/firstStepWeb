@@ -23,67 +23,57 @@
               </div>
             </div>
           </div>
-          <div class="post_count">
-            <div class="post_travelinfo">
-              <a 
-                class="post_btn"
-                href="javascript:void(0)" 
-                @click="moveButton(tvInfo)">
-                <p class="count">8888</p>
-                <p class="title">여행정보</p>
-              </a>
-            </div>
-            <div class="post_travelreview">
-              <a 
-                class="post_btn"
-                href="javascript:void(0)" 
-                @click="moveButton(tvReview)">
-                <p class="count">8888</p>
-                <p class="title">여행실사후기</p>
-              </a>
-            </div>
-            <div class="post_community">
-              <a 
-                class="post_btn"
-                href="javascript:void(0)"
-                @click="moveButton(cmnTy)">
-                <p class="count">8888</p>
-                <p class="title">커뮤니티</p>
-              </a>
-            </div>
-          </div>
+        </div>
+      </div>
+      <!-- header_post_name -->
+      <div class="header_post_name">
+        <div class="post_name">
+          <a
+            class="post active_t"
+            href="javascript:void(0)">게시글</a>
+        </div>
+        <div class="comm_name">
+          <a
+            class="comm"
+            href="javascript:void(0)">댓글</a>
+        </div>
+        <div class="save_name">
+          <a
+            class="save"
+            href="javascript:void(0)">임시저장글</a>
+        </div>
+      </div>
+      <div class="post_btn_area">
+        <div class="post_trinfo">
+          <a
+            class="post_btn active_c"
+            href="javascript:void(0)" 
+            @click="moveButton(tvInfo)">
+            <p class="title">여행정보</p>
+            <p class="count">8888</p>
+          </a>
+        </div>
+        <div class="post_trinfo">
+          <a 
+            class="post_btn"
+            href="javascript:void(0)" 
+            @click="moveButton(tvReview)">
+            <p class="title">여행실사후기</p>
+            <p class="count">8888</p>
+          </a>
+        </div>
+        <div class="post_trinfo">
+          <a 
+            class="post_btn"
+            href="javascript:void(0)" 
+            @click="moveButton(cmnTy)">
+            <p class="title">커뮤니티</p>
+            <p class="count">8888</p>
+          </a>
         </div>
       </div>
       <!-- header section-title -->
       <div class="mycontent_area">
-        <!-- <div class="header_title">
-          <button class="header_btn">게시글</button>
-          <button class="header_btn">댓글</button>
-        </div> -->
-        <!-- <div class="top_btnn">
-          <button
-            type="button"
-            class="btnn active"
-            ref="tvInfoBtn"
-            @click="moveButton(tvInfo)">
-            여행정보
-          </button>
-          <button
-            type="button"
-            class="btnn"
-            ref="tvReviewBtn"
-            @click="moveButton(tvReview)">
-            여행실사후기
-          </button>
-          <button
-            type="button"
-            class="btnn"
-            ref="cmnTyBtn"
-            @click="moveButton(cmnTy)">
-            커뮤니티
-          </button>
-        </div> -->
-        <!-- travel_info_list -->
         <div v-show="travelInfo === true" class="travel_info_list">
           <p class="title_header">여행정보</p>
           <table>
@@ -466,10 +456,10 @@ export default {
   .mypage_content_area {
     display: flex;
     padding: 22px;
-    border: 1px solid #ebebeb;
     border-radius: 10px;
     align-items: center;
-    margin-bottom: 70px;
+    justify-content: left;
+    margin-bottom: 20px;
     .user_area {
       display: flex;
       align-items: center;
@@ -516,15 +506,6 @@ export default {
               font-size: 14px;
               color: rgba(34, 34, 34 ,.5);
             }
-          }
-          &::after{
-            position: absolute;
-            left: 100%;
-            width: 1px;
-            height: 100%;
-            background: #e7e7e7;
-            content: "";
-            margin-left: 45px;
           }
         }
       }
@@ -574,12 +555,104 @@ export default {
       }
     }
   }
+  .header_post_name {
+    display: flex;
+    justify-content: left;
+    .post_name {
+      padding: 16px 18px;
+      &:hover {
+        color: #B0B0B0;
+      }
+      .post {
+        font-weight: bold;
+        color: #B0B0B0;
+      }
+      .active_t {
+        font-weight: bold;
+        color: #000;
+        &:hover {
+          color: #000 !important;
+        }
+      }
+    }
+    .comm_name {
+      padding: 16px 18px;
+      &:hover {
+        color: #B0B0B0;
+      }
+      .comm {
+        font-weight: bold;
+        color: #B0B0B0;
+      }
+      .active_t {
+        font-weight: bold;
+        color: #000;
+        &:hover {
+          color: #000 !important;
+        }
+      }
+    }
+    .save_name {
+      padding: 16px 18px;
+      &:hover {
+        color: #B0B0B0;
+      }
+      .save {
+        font-weight: bold;
+        color: #B0B0B0;
+      }
+      .active_t {
+        font-weight: bold;
+        color: #000;
+        &:hover {
+          color: #000 !important;
+        }
+      }
+    }
+  }
+  .post_btn_area {
+    display: flex;
+    justify-content: left;
+    border-top: 1px solid #EBEBEB;
+    padding-top: 20px;
+    margin-bottom: 45px;
+    .post_trinfo {
+      &:nth-child(-n+2) {
+      margin-right: 20px;
+      }
+      .post_btn {
+        line-height: 1.4;
+        text-align: center;
+        display: flex;
+        font-weight: bold;
+        color: #B0B0B0;
+        border: 1px solid #B0B0B0;
+        padding: 10px 16px;
+        border-radius: 50px;
+        &:hover {
+          color: #B0B0B0 !important;
+        }
+        .count {
+          font-size: 14px;
+        }
+        .title {
+          margin-right: 5px;
+          font-size: 14px;
+        }
+      }
+      .active_c {
+        color: #F3B66D;
+        border: 1px solid #F3B66D;
+        border-radius: 50px;
+        &:hover {
+          color: #F3B66D !important;
+        }
+      }
+    }
+  }
   .mycontent_area {
     display: flex;
     flex-direction: column;
-    .header_title {
-
-    }
     .top_btnn {
       display: flex;
       margin-bottom: 25px;

@@ -55,7 +55,11 @@
           </button>
         </div>
         <div class="signup_form">
-          <a class="signup_href" href="javascript:void(0)">회원가입</a>
+          <RouterLink
+            to="/Client/SignUp/SignUp"
+            class="signup_href">
+            회원가입
+          </RouterLink>
           <div class="sigup_center"></div>
           <RouterLink
             to="/Client/Signin/Findpassword"
@@ -304,7 +308,7 @@ export default {
                   right: 0;
                   width: 50px;
                   height: 50px;
-                  background: url(https://www.itthere.co.kr/_skin/basic_Live_220719/img/member/icon_pwd.png) no-repeat center;
+                  background: url(http://www.itthere.co.kr/_skin/basic_Live_220719/img/member/icon_pwd.png) no-repeat center;
                   cursor: pointer;
                   &::after{
                     position: absolute;
@@ -318,7 +322,7 @@ export default {
                   }
                 }
                 .active {
-                    background-image: url(https://www.itthere.co.kr/_skin/basic_Live_220719/img/member/icon_pwd_active.png);
+                    background-image: url(http://www.itthere.co.kr/_skin/basic_Live_220719/img/member/icon_pwd_active.png);
                 }
               }
             }
