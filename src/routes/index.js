@@ -14,6 +14,7 @@ import Notice_DetialComponent from './Client/Notice/Notice_Detail'
 import LoginComponent from './Client/Signin/Login'
 import FindpasswordComponent from './Client/Signin/Findpassword'
 import SignUpComponent from './Client/SignUp/SignUp'
+import CreateNickNameComponent from './Client/SignUp/CreateNickName'
 import MypageComponent from './Client/Mypage/Mypage'
 
 export default createRouter({
@@ -38,5 +39,6 @@ export default createRouter({
         { path: '/Client/Signin/Findpassword', component: FindpasswordComponent },
         { path: '/Client/SignUp/SignUp', component: SignUpComponent },
         { path: '/Client/Mypage/Mypage', component: MypageComponent },
+        { path: '/Client/SignUp/CreateNickName', component: CreateNickNameComponent },
     ]
 })
