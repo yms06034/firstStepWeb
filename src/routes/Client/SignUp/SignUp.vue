@@ -1,113 +1,114 @@
 <template>
 	<article>
-		<div class="firststep_form_signUp_area">
-			<div class="signUp_form_area">
-				<div class="default_signUp_top_text">
-					<div class="text-center">
-						<strong>누구나 간편하게 여행정보</strong>
-					</div>
-				</div>
-				<div class="signUp_form_top_container">
-					<div class="signUp_form_container">
-						<div class="signUp_form_container-jc">
-							<label class="label required">
-								이메일
-							</label>
-							<div class="form-control-wrap">
-								<input placeholder="example@firststep.com" required max="50" maxlength="50" v-model="email" type="text"
-									class="email_form-input" />
-								<span ref="error_msg" class="error_msg" v-if="msg.email">{{ msg.email }}</span>
-							</div>
-							<div class="email-auth-wrap">
-								<button class="email-auth-btn" name="email-auth-btn" @click="email_auth()"
-									v-show="emailAuthShow === true">이메일 인증</button>
-							</div>
-							<div class="auth-num-chk" v-show="authNumShow === true">
-								<input class="auth-num" type="text" v-model="chkAuthNum" maxlength="6" />
-								<button class="email-chk" name="email-chk-btn" @click="email_chk_btn">확인</button>
-							</div>
+		<form @submit.prevent="signUpForm" lazy-validation>
+			<div class="firststep_form_signUp_area">
+				<div class="signUp_form_area">
+					<div class="default_signUp_top_text">
+						<div class="text-center">
+							<strong>누구나 간편하게 여행정보</strong>
 						</div>
 					</div>
-					<div class="signUp_form_container_pass">
-						<div class="signUp_form_container-jc_pass">
-							<label class="label required">
-								비밀번호
-							</label>
-							<div class="form-control-password">
-								<div class="form-control-wrap_pass">
-									<input :type="filedType" placeholder="비밀번호 8자리 이상" required v-model="password"
-										class="form-control-wrap input_pass" />
-									<span class="error_msg" v-if="msg.password">{{ msg.password }}</span>
+					<div class="signUp_form_top_container">
+						<div class="signUp_form_container">
+							<div class="signUp_form_container-jc">
+								<label class="label required">
+									이메일
+								</label>
+								<div class="form-control-wrap">
+									<input placeholder="example@firststep.com" required max="50" maxlength="50" v-model="email" type="text"
+										class="email_form-input" />
+									<span ref="error_msg" class="error_msg" v-if="msg.email">{{ msg.email }}</span>
 								</div>
-								<div class="password_control">
-									<button class="password_control_btn" @click="toggleShow">
-										<span ref="show_hide_icon" class="show_hide_icon">
-										</span>
-									</button>
+								<div class="email-auth-wrap">
+									<button class="email-auth-btn" name="email-auth-btn" @click="email_auth()"
+										v-show="emailAuthShow === true">이메일 인증</button>
+								</div>
+								<div class="auth-num-chk" v-show="authNumShow === true">
+									<input class="auth-num" type="text" v-model="chkAuthNum" maxlength="6" />
+									<button class="email-chk" name="email-chk-btn" @click="email_chk_btn">확인</button>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="signUp_form_container_pass_chk">
-						<div class="signUp_form_container-jc_pass_chk">
-							<label class="label required">
-								비밀번호 확인
-							</label>
-							<div class="form-control-password-chk">
-								<div class="form-control-wrap_pass_chk">
-									<input placeholder="비밀번호 확인" required v-model="password_chk" :type="filedTypeChk" id="password_chk"
-										class="form-control-wrap input_pass_chk" />
-									<span class="error_msg_chk" v-if="msg.password_chk">{{ msg.password_chk }}</span>
-								</div>
-								<div class="password_control_chk">
-									<button class="password_control_btn_chk" @click="toggleShowChk">
-										<span ref="show_hide_icon_chk" class="show_hide_icon_chk">
-										</span>
-									</button>
+						<div class="signUp_form_container_pass">
+							<div class="signUp_form_container-jc_pass">
+								<label class="label required">
+									비밀번호
+								</label>
+								<div class="form-control-password">
+									<div class="form-control-wrap_pass">
+										<input :type="filedType" placeholder="비밀번호 8자리 이상" required v-model="password"
+											class="form-control-wrap input_pass" />
+										<span class="error_msg" v-if="msg.password">{{ msg.password }}</span>
+									</div>
+									<div class="password_control">
+										<button class="password_control_btn" @click="toggleShow">
+											<span ref="show_hide_icon" class="show_hide_icon">
+											</span>
+										</button>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="signUp_form_container_agree_wrap">
-						<div class="signUp_form_container_jc_agree_chk">
-							<div class="form-control-wrap_agree_chk">
-								<input type="checkbox" name="agree_chk" id="agree_chk" />
-								<label for="agree_chk" class="agree_chk"></label>
-								<span class="agree_txt">[필수] 이용약관 동의</span>
-							</div>
-							<div class="form-control-wrap_agree_chk">
-								<!-- <button class="agree_contents_popup" @click="handle_toggle"> <Model /> </button> -->
-								<button 
-									class="agree_contents_popup" 
-									id="show-modal" 
-									@click="openModal">내용보기</button>
-								<Modal @close="closeModal" v-if="modal">
-									<!-- sampleModel.vue에서 <slot /> 주석 해지 후 사용 -->
-									<!-- <p>Vue.js Modal Window!</p> -->
-								</Modal>
+						<div class="signUp_form_container_pass_chk">
+							<div class="signUp_form_container-jc_pass_chk">
+								<label class="label required">
+									비밀번호 확인
+								</label>
+								<div class="form-control-password-chk">
+									<div class="form-control-wrap_pass_chk">
+										<input placeholder="비밀번호 확인" required v-model="password_chk" :type="filedTypeChk" id="password_chk"
+											class="form-control-wrap input_pass_chk" />
+										<span class="error_msg_chk" v-if="msg.password_chk">{{ msg.password_chk }}</span>
+									</div>
+									<div class="password_control_chk">
+										<button class="password_control_btn_chk" @click="toggleShowChk">
+											<span ref="show_hide_icon_chk" class="show_hide_icon_chk">
+											</span>
+										</button>
+									</div>
+								</div>
 							</div>
 						</div>
-					</div>
+						<div class="signUp_form_container_agree_wrap">
+							<div class="signUp_form_container_jc_agree_chk">
+								<div class="form-control-wrap_agree_chk">
+									<input type="checkbox" name="agree_chk" id="agree_chk" v-model="agreeYN" true-value="Y" false-value="N"/>
+									<label for="agree_chk" class="agree_chk"></label>
+									<span class="agree_txt">[필수] 이용약관 동의</span>
+								</div>
+								<div class="form-control-wrap_agree_chk">
+									<!-- <button class="agree_contents_popup" @click="handle_toggle"> <Model /> </button> -->
+									<button 
+										class="agree_contents_popup" 
+										id="show-modal" 
+										@click="openModal">내용보기</button>
+									<Modal @close="closeModal" v-if="modal">
+										<!-- sampleModel.vue에서 <slot /> 주석 해지 후 사용 -->
+										<!-- <p>Vue.js Modal Window!</p> -->
+									</Modal>
+								</div>
+							</div>
+						</div>
 
-					<!-- MODAL -->
-					<button type="button" class="signUp-btn">
-						가입하기
-					</button>
-					<div class="signUp_form_container_member_chk">
-						<div class="signUp_form_container_jc_member_chk">
-							<div class="form-control-wrap_member_chk">
-								<span class="member_txt">이미 FIRSTSTEP 회원이신가요?</span>
-							</div>
-							<div class="form-control-wrap_member_chk">
-								<RouterLink to="/Client/Signin/Login">
-									<button class="go_to_login">로그인하러가기</button>
-								</RouterLink>
+						<!-- MODAL -->
+						<button type="submit" class="toRegister" id="toRegister">가입하기</button>
+		
+						<div class="signUp_form_container_member_chk">
+							<div class="signUp_form_container_jc_member_chk">
+								<div class="form-control-wrap_member_chk">
+									<span class="member_txt">이미 FIRSTSTEP 회원이신가요?</span>
+								</div>
+								<div class="form-control-wrap_member_chk">
+									<RouterLink to="/Client/Signin/Login">
+										<button class="go_to_login">로그인하러가기</button>
+									</RouterLink>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+	</form>
 	</article>
 </template>
 
@@ -127,13 +128,17 @@ export default {
 			, password_chk: ''
 			, emailAuthShow: true
 			, authNumShow: false
+			, authEmail : false
 			, showPassword: false
 			, showPasswordChk: false
+			, chkPassword : false
 			, filedType: 'password'
 			, filedTypeChk: 'password'
 			, isModalOpen : false
 			, showModal: false
-			, modal: false,
+			, modal: false
+			, agreeYN : false
+			, chkReg : false
 		}
 	},
 	computed: {
@@ -156,7 +161,14 @@ export default {
 		password_chk(value) {
 			this.password_chk = value;
 			this.validatePasswordChk(value);
+		},
+		signUpForm(value){
+			this.email = value;
+			this.validateEmail(value);
+			this.password_chk = value;
+			this.validatePasswordChk(value);
 		}
+
 	},
 	methods: {
 		email_auth() {
@@ -183,7 +195,7 @@ export default {
 			let getAuthNum = 123456;
 			if (chkAuthNum.match(getAuthNum)) {
 				console.log("success");
-				alert("인증되었습니다123.");
+				_this.authEmail = true;
 				_this.authNumShow = false;
 
 				_this.msg['email'] = '이메일 인증이 완료되었습니다';
@@ -214,8 +226,10 @@ export default {
 			let chkPw = this.password;
 			console.log("chkPw = " + chkPw);
 
+			console.log("value = " + value);
 			if (chkPw.match(value)) {
 				this.msg['password_chk'] = '';
+				this.chkPassword = true;
 			} else {
 				this.msg['password_chk'] = '비밀번호가 일치하지 않습니다.'
 			}
@@ -262,7 +276,35 @@ export default {
       } else {
         alert('메시지를 입력해주세요.')
       }
-    }
+    },
+		async signUpForm(value){
+			const _this = this;
+			
+			try{
+				console.log("emailChk 123");
+				const emailChk = _this.email_chk_btn();
+				console.log("passChk 456");
+				const passChk = _this.validatePasswordChk(value);	
+
+				if(emailChk){
+					if(passChk){
+						_this.$router.push('/Client/SignUp/CreateNickName');
+					}
+				}
+			}catch(e){
+				console.log("e = " + e.toString());
+			}
+			
+			// if(_this.authEmail === false){
+			// 	alert('이메일 인증이 필요합니다.');		
+			// }else if(_this.chkPassword === false){
+			// 	alert('비밀번호 인증이 필요합니다.');
+			// }else if(_this.agreeYN === false){
+			// 	alert('약관에 동의가 필요합니다.');
+			// }else{
+			
+				// _this.$route.('/Client/SignUp/CreateNickName');
+		}
 	}
 }
 </script>
@@ -445,7 +487,7 @@ export default {
 									right: 0;
 									width: 50px;
 									height: 50px;
-									background: url(https://www.itthere.co.kr/_skin/basic_Live_220719/img/member/icon_pwd.png) no-repeat center;
+									background: url(http://www.itthere.co.kr/_skin/basic_Live_220719/img/member/icon_pwd.png) no-repeat center;
 									cursor: pointer;
 
 									&::after {
@@ -461,7 +503,7 @@ export default {
 								}
 
 								.active {
-									background-image: url(https://www.itthere.co.kr/_skin/basic_Live_220719/img/member/icon_pwd_active.png);
+									background-image: url(http://www.itthere.co.kr/_skin/basic_Live_220719/img/member/icon_pwd_active.png);
 								}
 							}
 						}
@@ -548,7 +590,7 @@ export default {
 									right: 0;
 									width: 50px;
 									height: 50px;
-									background: url(https://www.itthere.co.kr/_skin/basic_Live_220719/img/member/icon_pwd.png) no-repeat center;
+									background: url(http://www.itthere.co.kr/_skin/basic_Live_220719/img/member/icon_pwd.png) no-repeat center;
 									cursor: pointer;
 
 									&::after {
@@ -564,7 +606,7 @@ export default {
 								}
 
 								.active {
-									background-image: url(https://www.itthere.co.kr/_skin/basic_Live_220719/img/member/icon_pwd_active.png);
+									background-image: url(http://www.itthere.co.kr/_skin/basic_Live_220719/img/member/icon_pwd_active.png);
 								}
 							}
 						}
@@ -618,6 +660,9 @@ export default {
 				margin-top: 40px;
 				margin-bottom: 30px;
 				cursor: pointer;
+				.toRegister{
+					margin-top: 15px;
+				}
 			}
 
 			.signUp_form_container_member_chk {
