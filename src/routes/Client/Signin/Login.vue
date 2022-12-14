@@ -1,6 +1,6 @@
 <template>
   <article>
-		<form @submit.prevent="signInForm">
+		<form id="signInForm" novalidate @submit.prevent="signInForm" method="post">
 			<div class="firststep_form_login_area">
 				<div class="login_form_area">
 					<div class="default_login_top_text">
@@ -41,7 +41,7 @@
 										<span class="error_msg" v-if="msg.password">{{msg.password}}</span>
 									</div>
 									<div class="password_control">
-										<button class="password_control_btn" @click="toggleShow">
+										<button type="button" class="password_control_btn" @click="toggleShow">
 											<span ref="show_hide_icon" class="show_hide_icon">
 											</span>
 										</button>
@@ -50,7 +50,8 @@
 							</div>
 						</div>
 						<button 
-							type="submit"
+							type="button"
+							@click="loginUser"
 							class="login-btn">
 							로그인
 						</button>
@@ -165,7 +166,7 @@ export default {
         chBtn.classList.remove('active');
       }
     },
-		signInForm(){
+		loginUser(){
 			// 서버에서 id pw 체크 후 true면 로그인 및 메인 페이지 이동
 			this.$router.push('/');
 		}

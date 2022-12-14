@@ -1,6 +1,6 @@
 <template>
   <article>
-    <form id="singupfrom" novalidate @submit.prevent="signUpForm">
+    <form id="signUpForm" novalidate @submit.prevent="signUpForm" method="post">
       <div class="firststep_form_signUp_area">
         <div class="signUp_form_area">
           <div class="default_signUp_top_text">
@@ -14,13 +14,15 @@
                 <label class="label required"> 이메일 </label>
                 <div class="form-control-wrap">
                   <input
-										form="singupfrom"
+										form="signUpForm"
                     placeholder="example@firststep.com"
                     max="50"
                     maxlength="50"
                     v-model="email"
 										required
                     type="email"
+										name="email"
+										$ref="email"
                     class="email_form-input" />
                   <span ref="error_msg" class="error_msg" v-if="msg.email">{{
                     msg.email
@@ -37,28 +39,38 @@
                 </div>
                 <div class="auth-num-chk" v-show="authNumShow === true">
                   <input
-										form="singupfrom"
+										form="signUpForm"
                     class="auth-num"
                     type="text"
 										required
                     v-model="chkAuthNum"
-                    maxlength="6" />
+                    maxlength="6" 
+										oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
                   <button
+										type="button"
                     class="email-chk"
                     name="email-chk-btn"
                     @click="email_chk_btn">
                     확인
                   </button>
+									<button
+										type="button"
+                    class="email-auth-resend"
+                    name="email-auth-resend-btn"
+                    @click="email-auth-resend-btn">
+                    재전송
+                  </button>
                 </div>
               </div>
             </div>
+
             <div class="signUp_form_container_pass">
               <div class="signUp_form_container-jc_pass">
                 <label class="label required"> 비밀번호 </label>
                 <div class="form-control-password">
                   <div class="form-control-wrap_pass">
                     <input
-											form="singupfrom"
+											form="signUpForm"
                       :type="filedType"
 											required
                       placeholder="비밀번호 8자리 이상"
@@ -69,7 +81,7 @@
                     }}</span>
                   </div>
                   <div class="password_control">
-                    <button class="password_control_btn" @click="toggleShow">
+                    <button class="password_control_btn" type="button" @click="toggleShow">
                       <span ref="show_hide_icon" class="show_hide_icon"> </span>
                     </button>
                   </div>
@@ -82,7 +94,7 @@
                 <div class="form-control-password-chk">
                   <div class="form-control-wrap_pass_chk">
                     <input
-											form="singupfrom"
+											form="signUpForm"
                       placeholder="비밀번호 확인"
                       v-model="password_chk"
 											required
@@ -95,6 +107,7 @@
                   </div>
                   <div class="password_control_chk">
                     <button
+											type="button"
                       class="password_control_btn_chk"
                       @click="toggleShowChk">
                       <span ref="show_hide_icon_chk" class="show_hide_icon_chk">
@@ -104,15 +117,48 @@
                 </div>
               </div>
             </div>
+
+						<div class="signUp_form_container_nickname">
+              <div class="signUp_form_container-jc_nickname">
+                <label class="label required"> 닉네임 </label>
+                <div class="form-control-nickname">
+                  <div class="form-control-wrap_nickname">
+                    <input
+											form="signUpForm"
+                      placeholder="닉네임"
+                      v-model="nickname"
+											required
+                      :type="filedTypeChk"
+                      id="nickname"
+                      class="form-control-wrap input_nickname" />
+                    <span class="error_msg_chk" v-if="msg.nickname">{{
+                      msg.nickname
+                    }}</span>
+                  </div>
+                  <div class="nickname-chk-wrap">
+										<button
+											type="button"
+											class="nickname-chk-btn"
+											name="nickname-chk-btn"
+											@click="nickname_chk()"
+											v-show="nicknameChk === true">
+											중복 확인
+										</button>
+									</div>
+                </div>
+              </div>
+            </div>
+
             <div class="signUp_form_container_agree_wrap">
               <div class="signUp_form_container_jc_agree_chk">
                 <div class="form-control-wrap_agree_chk">
                   <input
-										form="singupfrom"
+										form="signUpForm"
                     type="checkbox"
                     name="agree_chk"
                     id="agree_chk"
-                    v-model="agreeYN"
+										ref="agreeChk"
+										v-model="agreeChk"
                     true-value="Y"
                     false-value="N" />
                   <label for="agree_chk" class="agree_chk"></label>
@@ -133,7 +179,7 @@
               </div>
             </div>
             <!-- MODAL -->
-            <button type="submit" class="toRegister" id="toRegister">
+            <button type="button" class="signUp-btn" id="toRegister" @click="registerUser">
               가입하기
             </button>
 
@@ -185,8 +231,9 @@ export default {
       isModalOpen: false,
       showModal: false,
       modal: false,
-      agreeYN: false,
-      chkReg: false,
+			nickname : "",
+			nicknameChk: true,
+			agreeChk : false
     };
   },
   computed: {
@@ -202,6 +249,10 @@ export default {
       this.email = value;
       this.validateEmail(value);
     },
+		chkAuthNum(value){
+			this.chkAuthNum = value;
+			this.validateChkAuthNum(value);
+		},
     password(value) {
       this.password = value;
       this.validatePassword(value);
@@ -210,6 +261,10 @@ export default {
       this.password_chk = value;
       this.validatePasswordChk(value);
     },
+		nickname_chk(value){
+			this.nickname = value;
+			this.validateNickName(value);
+		},
     signUpForm(value) {
       this.email = value;
       this.validateEmail(value);
@@ -225,14 +280,12 @@ export default {
         /[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]$/i;
       if (clientEmail.match(regExp) !== null) {
         console.log("success");
-        alert("이메일이 발송되었습니다.");
         _this.emailAuthShow = false;
         _this.authNumShow = true;
         console.log("_this.emailAuthShow = " + _this.emailAuthShow);
         console.log("_this.authNumShow = " + _this.authNumShow);
       } else {
         console.log("fail");
-        alert("이메일 형식에 맞지 않습니다.");
       }
     },
     email_chk_btn() {
@@ -308,13 +361,23 @@ export default {
     closeModal() {
       this.modal = false;
     },
-    async signUpForm() {
-			if(this.chkPassword && this.authEmail) {
-				this.$router.push("/");
-			}
-			else {
-				console.log("함수 작도 안함")
-			}
+		async validateNickName(){
+				let nicknameChk = this.nickname;
+				console.log("nicknameChk = " + nicknameChk);
+		},
+    async registerUser() {
+			
+				if(this.chkPassword && this.authEmail) {
+					if(this.$refs.agreeChk.checked){
+							this.$router.push("/");
+					}else{
+						alert("필수값");
+					}
+				}
+				else {
+					console.log("함수 작도 안함")
+				}
+			
     },
   },
 };
@@ -636,6 +699,96 @@ export default {
         }
       }
 
+			.signUp_form_container_nickname {
+        margin-top: 20px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .signUp_form_container-jc_nickname {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 0;
+          width: 100%;
+
+          .label {
+            width: 100%;
+            font-size: 14px;
+            line-height: 20px;
+            margin-bottom: 15px;
+            font-weight: normal;
+            padding: 0px;
+            text-align: left;
+            color: rgb(33, 39, 42);
+          }
+
+          .form-control-nickname {
+            display: flex;
+            justify-content: flex-start;
+
+            .form-control-wrap_nickname {
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+
+              .input_nickname {
+                height: 44px;
+                min-height: 44px;
+                width: 315px;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+                border: 1px solid rgb(207, 213, 219);
+                text-align: left;
+                padding-left: 15px;
+                padding-bottom: 5px;
+
+                &:focus {
+                  border: 1px solid $primary;
+                }
+
+                &::placeholder {
+                  font-size: 13px;
+                  color: rgb(208, 208, 208);
+                }
+              }
+            }
+
+            .nickname_control_chk {
+              box-sizing: border-box;
+              clear: both;
+              font-size: 1rem;
+              position: relative;
+              text-align: inherit;
+            }
+          }
+
+          .error_msg_chk {
+            font-size: 13px;
+            color: red;
+            text-align: left;
+            margin-top: 5px;
+          }
+
+					.nickname-chk-wrap {
+						margin-top: 10px;
+
+						.nickname-chk-btn {
+							width: 100px;
+							height: 15px;
+							float: right;
+							padding: 5px 5px 8px 5px;
+							font-size: 13px;
+							border-radius: 5px;
+							margin-right: 10px;
+							border: 1px solid rgb(207, 213, 219);
+						}
+					}
+        }
+      }
+
       .signUp_form_container_agree_wrap {
         margin-top: 40px;
         width: 100%;
@@ -675,12 +828,9 @@ export default {
         font-size: 14px;
         line-height: 15px;
         font-weight: bold;
-        margin-top: 40px;
-        margin-bottom: 30px;
+        margin-top: 20px;
+        margin-bottom: 15px;
         cursor: pointer;
-        .toRegister {
-          margin-top: 15px;
-        }
       }
 
       .signUp_form_container_member_chk {
@@ -722,10 +872,34 @@ export default {
 
       .auth-num-chk {
         margin-top: 10px;
-
+				margin-right: auto;
         .auth-num {
+					padding: 5px 5px 8px 5px;
+					width: 200px;
+          border-radius: 5px;
+          margin-right: 10px;
           border: 1px solid rgb(207, 213, 219);
+          border: 1px solid rgb(207, 213, 219);
+					height: 15px;
         }
+				.email-chk{
+					width: 35px;
+          height: 15px;
+          padding: 5px 5px 8px 5px;
+          font-size: 13px;
+          border-radius: 5px;
+          margin-right: 5px;
+          border: 1px solid rgb(207, 213, 219);
+				}
+				.email-auth-resend{
+					width: 45px;
+          height: 15px;
+          float: right;
+          padding: 5px 5px 8px 5px;
+          font-size: 13px;
+          border-radius: 5px;
+          border: 1px solid rgb(207, 213, 219);
+				}
       }
     }
   }
