@@ -22,7 +22,7 @@
 										required
                     type="email"
 										name="email"
-										$ref="email"
+										ref="email"
                     class="email_form-input" />
                   <span ref="error_msg" class="error_msg" v-if="msg.email">{{
                     msg.email
@@ -128,7 +128,7 @@
                       placeholder="닉네임"
                       v-model="nickname"
 											required
-                      :type="filedTypeChk"
+                      type="text"
                       id="nickname"
                       class="form-control-wrap input_nickname" />
                     <span class="error_msg_chk" v-if="msg.nickname">{{
@@ -377,7 +377,6 @@ export default {
 				else {
 					console.log("함수 작도 안함")
 				}
-			
     },
   },
 };
