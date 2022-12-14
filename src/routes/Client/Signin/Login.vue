@@ -87,7 +87,7 @@
 						</button>
 						<button type="button" class="btn-naverlogin">
 							<div class="socoal_image">
-								<img src="	https://www.itthere.co.kr/_skin/basic_Live_220719/img/member/icon_naver.png" alt="네이버 로그인" />
+								<img src="http://www.itthere.co.kr/_skin/basic_Live_220719/img/member/icon_naver.png" alt="네이버 로그인" />
 							</div>
 							<p class="kakaologin_text">네이버로 시작하기</p>
 						</button>

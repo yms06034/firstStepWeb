@@ -161,7 +161,7 @@
 </template>
 
 <script>
-import Modal from "../../../components/privacyPoliModal";
+import Modal from "../../../components/Modal/privacyPoliModal";
 
 export default {
   components: {
@@ -310,7 +310,7 @@ export default {
     },
     async signUpForm() {
 			if(this.chkPassword && this.authEmail) {
-				this.$router.push("/Client/SignUp/CreateNickName");
+				this.$router.push("/");
 			}
 			else {
 				console.log("함수 작도 안함")

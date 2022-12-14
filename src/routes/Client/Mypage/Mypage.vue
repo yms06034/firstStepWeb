@@ -31,19 +31,21 @@
           <a
             ref="post"
             class="post active_t"
-            href="javascript:void(0)">게시글</a>
+            href="javascript:void(0)"
+            @click="openPost">게시글</a>
         </div>
         <div class="comm_name">
           <a
             ref="comm"
             class="comm"
-            href="javascript:void(0)">댓글</a>
+            href="javascript:void(0)"
+            @click="openCmnts">댓글</a>
         </div>
       </div>
       <!-- 게시글 -->
-      <Post />
+      <Post v-if="Post"/>
       <!-- 댓글 -->
-      <Cmnts />
+      <Cmnts v-if="Cmnts"/>
     </div>
   </article>
 </template>
@@ -55,291 +57,43 @@ import Cmnts from './Components/Cmnts'
 export default {
   components : {
     Post,
-    Cmnts
+    Cmnts,
   },
   data() {
     return {
-      header: ["번호","제목","작성일","조회수","추천수"] ,
-      tvInfo:[
-        {
-          no : 10
-          , category : "# 게임"
-          , title : "띠부띠부"
-          , regId : "admin"
-          , regDate : "04-22"
-          , views : 100
-          , likes : 120
-          ,url : '/Client/Cmnty/Cmnty_Detail'
-        },
-        {
-          no : 9
-          , category : "# 게임"
-          , title : "띠부띠부"
-          , regId : "admin"
-          , regDate : "04-22"
-          , views : 100
-          , likes : 120
-          ,url : '/Client/Cmnty/Cmnty_Detail'
-        },
-        {
-          no : 8
-          , category : "# 게임"
-          , title : "띠부띠부"
-          , regId : "admin"
-          , regDate : "04-22"
-          , views : 100
-          , likes : 120
-          ,url : '/Client/Cmnty/Cmnty_Detail'
-        },
-        {
-          no : 7
-          , category : "# 게임"
-          , title : "띠부띠부"
-          , regId : "admin"
-          , regDate : "04-22"
-          , views : 100
-          , likes : 120
-          ,url : '/Client/Cmnty/Cmnty_Detail'
-        },
-        {
-          no : 6
-          , category : "# 게임"
-          , title : "띠부띠부"
-          , regId : "admin"
-          , regDate : "04-22"
-          , views : 100
-          , likes : 120
-          ,url : '/Client/Cmnty/Cmnty_Detail'
-        },
-        {
-          no : 5
-          , category : "# 게임"
-          , title : "띠부띠부"
-          , regId : "admin"
-          , regDate : "04-22"
-          , views : 100
-          , likes : 120
-          ,url : '/Client/Cmnty/Cmnty_Detail'
-        },
-        {
-          no : 4
-          , category : "# 게임"
-          , title : "띠부띠부"
-          , regId : "admin"
-          , regDate : "04-22"
-          , views : 100
-          , likes : 120
-          ,url : '/Client/Cmnty/Cmnty_Detail'
-        },
-        {
-          no : 3
-          , category : "# 게임"
-          , title : "띠부띠부"
-          , regId : "admin"
-          , regDate : "04-22"
-          , views : 100
-          , likes : 120
-          ,url : '/Client/Cmnty/Cmnty_Detail'
-        },
-        {
-          no : 2
-          , category : "# 게임"
-          , title : "띠부띠부"
-          , regId : "admin"
-          , regDate : "04-22"
-          , views : 100
-          , likes : 120
-          ,url : '/Client/Cmnty/Cmnty_Detail'
-        },
-        {
-          no : 1
-          , category : "# 게임"
-          , title : "띠부띠부"
-          , regId : "admin"
-          , regDate : "04-22"
-          , views : 100
-          , likes : 120
-          ,url : '/Client/Cmnty/Cmnty_Detail'
-        }
-
-      ],
-      tvReview: [
-        {
-          id: 1,
-          img: 'https://i.pinimg.com/236x/b4/93/92/b493926bfcdb3f2c312d5f37d627a904.jpg'
-        },
-        {
-          id: 2,
-          img: 'https://i.pinimg.com/236x/0e/db/0e/0edb0eb326bb2228313f6694f532f3d6.jpg'
-        },
-        {
-          id: 3,
-          img: 'https://i.pinimg.com/564x/7c/71/d3/7c71d3bcbc24d5ae5817328b3899ef1d.jpg'
-        },
-        {
-          id: 4,
-          img: 'https://i.pinimg.com/236x/6a/1f/7b/6a1f7b9b5d44e5dc6f1a627885e78214.jpg'
-        },
-        {
-          id: 5,
-          img: 'https://i.pinimg.com/236x/a4/fe/e4/a4fee42124348f87eb2bc7be23088315.jpg'
-        },
-        {
-          id: 6,
-          img: 'https://i.pinimg.com/236x/61/70/41/61704181409d0d430b6f8361ca269daa.jpg'
-        },
-        {
-          id: 7,
-          img: 'https://i.pinimg.com/236x/95/d0/07/95d00790cd0a347d9a63fd62c278a982.jpg'
-        },
-        {
-          id: 8,
-          img: 'https://i.pinimg.com/236x/a8/7a/65/a87a654ebd8290c07fd59b3f20d1afa9.jpg'
-        },
-      ],
-      cmnTy:[
-        {
-          no : 10
-          , category : "# 게임"
-          , title : "띠부띠부"
-          , regId : "admin"
-          , regDate : "04-22"
-          , views : 100
-          , likes : 120
-          ,url : '/Client/Cmnty/Cmnty_Detail'
-        },
-        {
-          no : 9
-          , category : "# 게임"
-          , title : "띠부띠부"
-          , regId : "admin"
-          , regDate : "04-22"
-          , views : 100
-          , likes : 120
-          ,url : '/Client/Cmnty/Cmnty_Detail'
-        },
-        {
-          no : 8
-          , category : "# 게임"
-          , title : "띠부띠부"
-          , regId : "admin"
-          , regDate : "04-22"
-          , views : 100
-          , likes : 120
-          ,url : '/Client/Cmnty/Cmnty_Detail'
-        },
-        {
-          no : 7
-          , category : "# 게임"
-          , title : "띠부띠부"
-          , regId : "admin"
-          , regDate : "04-22"
-          , views : 100
-          , likes : 120
-          ,url : '/Client/Cmnty/Cmnty_Detail'
-        },
-        {
-          no : 6
-          , category : "# 게임"
-          , title : "띠부띠부"
-          , regId : "admin"
-          , regDate : "04-22"
-          , views : 100
-          , likes : 120
-          ,url : '/Client/Cmnty/Cmnty_Detail'
-        },
-        {
-          no : 5
-          , category : "# 게임"
-          , title : "띠부띠부"
-          , regId : "admin"
-          , regDate : "04-22"
-          , views : 100
-          , likes : 120
-          ,url : '/Client/Cmnty/Cmnty_Detail'
-        },
-        {
-          no : 4
-          , category : "# 게임"
-          , title : "띠부띠부"
-          , regId : "admin"
-          , regDate : "04-22"
-          , views : 100
-          , likes : 120
-          ,url : '/Client/Cmnty/Cmnty_Detail'
-        },
-        {
-          no : 3
-          , category : "# 게임"
-          , title : "띠부띠부"
-          , regId : "admin"
-          , regDate : "04-22"
-          , views : 100
-          , likes : 120
-          ,url : '/Client/Cmnty/Cmnty_Detail'
-        },
-        {
-          no : 2
-          , category : "# 게임"
-          , title : "띠부띠부"
-          , regId : "admin"
-          , regDate : "04-22"
-          , views : 100
-          , likes : 120
-          ,url : '/Client/Cmnty/Cmnty_Detail'
-        },
-        {
-          no : 1
-          , category : "# 게임"
-          , title : "띠부띠부"
-          , regId : "admin"
-          , regDate : "04-22"
-          , views : 100
-          , likes : 120
-          ,url : '/Client/Cmnty/Cmnty_Detail'
-        }
-
-      ],
-      travelInfo: true,
-      travelReview: false,
-      community: false,
+      isModalOpen: false,
+      showModal: false,
+      modal: false,
+      Post: true,
+      Cmnts: false
     }
   },
   methods: {
-    moveButton(data) {
-      const _this = this;
-      let trinfo = this.$refs.trinfo;
-      let trreview = this.$refs.trreview;
-      let cmnty = this.$refs.cmnty;
+    openModal() {
+      this.modal = true;
+    },
+    closeModal() {
+      this.modal = false;
+    },
+    openPost() {
+      let Post_btn = this.$refs.post
+      let Cmnts_btn = this.$refs.comm
 
-      if (data === _this.tvInfo){
-        _this.travelInfo = true
-        _this.travelReview = false
-        _this.community = false
+      this.Post = true;
+      this.Cmnts = false;
 
-        trinfo.classList.add('active_c')
-        trreview.classList.remove('active_c')
-        cmnty.classList.remove('active_c')
+      Post_btn.classList.add('active_t')
+      Cmnts_btn.classList.remove('active_t')
+    },
+    openCmnts() {
+      let Post_btn = this.$refs.post
+      let Cmnts_btn = this.$refs.comm
 
-      }else if (data === _this.tvReview) {
-        _this.travelInfo = false
-        _this.travelReview = true
-        _this.community = false
+      this.Post = false;
+      this.Cmnts = true;
 
-        trinfo.classList.remove('active_c')
-        trreview.classList.add('active_c')
-        cmnty.classList.remove('active_c')
-
-      }else if (data === _this.cmnTy) {
-        _this.travelInfo = false
-        _this.travelReview = false
-        _this.community = true
-
-        trinfo.classList.remove('active_c')
-        trreview.classList.remove('active_c')
-        cmnty.classList.add('active_c')
-
-      }
+      Post_btn.classList.remove('active_t')
+      Cmnts_btn.classList.add('active_t')
     }
   }
 }

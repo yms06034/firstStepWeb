@@ -35,7 +35,7 @@
   <div class="mycontent_area">
     <div v-show="travelInfo === true" class="travel_info_list">
       <p class="title_header">여행정보</p>
-      <table>
+      <table class="cmnts_table">
         <colgroup>
           <col width="10%" />
           <col width="*%" />
@@ -48,9 +48,14 @@
         </thead>
         <tbody>
           <tr v-for="item in tvInfo" :key="item" class="trCls">
-            <td class="num">{{ item.no }}</td>
+            <td class="num">
+              <button 
+                @click="openModal" 
+                class="trinfo_delete">
+                [삭제]
+              </button>
+            </td>
             <td class="title">
-              <span class="category">{{ item.category }}</span>
               <router-link :to="item.url">
                 <span class="title">{{ item.title }}</span>
               </router-link>
@@ -62,26 +67,13 @@
         </tbody>
       </table>
     </div>
+    <Modal 
+      @close="closeModal"
+      v-if="modal" />
     <!-- travel_review_list -->
     <div v-show="travelReview === true" class="travel_review_list">
       <p class="title_header">여행실사후기</p>
-      <div class="tvreview_content-area">
-        <ul class="tv_content">
-          <li
-            class="tv_img"
-            v-for="tR in tvReview"
-            :key="tR">
-            <img 
-              class="tv_userimg"
-              :src="tR.img" 
-              alt="USER_IMG" />
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div v-show="community === true" class="community_list">
-      <p class="title_header">커뮤니티</p>
-      <table>
+      <table class="cmnts_table">
         <colgroup>
           <col width="10%" />
           <col width="*%" />
@@ -93,10 +85,50 @@
           <th v-for="item in header" :key="item" class="thCls">{{ item }}</th>
         </thead>
         <tbody>
-          <tr v-for="item in cmnTy" :key="item" class="trCls">
-            <td class="num">{{ item.no }}</td>
+          <tr v-for="item in tvInfo" :key="item" class="trCls">
+            <td class="num">
+              <button 
+                @click="openModal" 
+                class="trinfo_delete">
+                [삭제]
+              </button>
+            </td>
             <td class="title">
-              <span class="category">{{ item.category }}</span>
+              <router-link :to="item.url">
+                <span class="title">{{ item.title }}</span>
+              </router-link>
+            </td>
+            <td class="date">{{ item.regDate }}</td>
+            <td class="view">{{ item.views }}</td>
+            <td class="like">{{ item.likes }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div v-show="community === true" class="community_list">
+      <p class="title_header">커뮤니티</p>
+      <table class="cmnts_table">
+        <colgroup>
+          <col width="10%" />
+          <col width="*%" />
+          <col width="10%" />
+          <col width="10%" />
+          <col width="10%" />
+        </colgroup>
+        <thead>
+          <th v-for="item in header" :key="item" class="thCls">{{ item }}</th>
+        </thead>
+        <tbody>
+          <tr v-for="item in tvInfo" :key="item" class="trCls">
+            <td class="num">
+              <button 
+                @click="openModal" 
+                class="trinfo_delete">
+                [삭제]
+              </button>
+            </td>
+            <td class="title">
               <router-link :to="item.url">
                 <span class="title">{{ item.title }}</span>
               </router-link>
@@ -112,14 +144,18 @@
 </template>
 
 <script>
+import Modal from '../../../../components/Modal/DeleteModel.vue'
+
 export default {
+  components : {
+    Modal
+  },
   data() {
     return {
-      header: ["번호","제목","작성일","조회수","추천수"] ,
+      header: ["삭제","댓글","제목","작성일","추천수"] ,
       tvInfo:[
         {
-          no : 10
-          , category : "# 게임"
+          category : "# 게임"
           , title : "띠부띠부"
           , regId : "admin"
           , regDate : "04-22"
@@ -128,8 +164,7 @@ export default {
           ,url : '/Client/Cmnty/Cmnty_Detail'
         },
         {
-          no : 9
-          , category : "# 게임"
+          category : "# 게임"
           , title : "띠부띠부"
           , regId : "admin"
           , regDate : "04-22"
@@ -138,8 +173,7 @@ export default {
           ,url : '/Client/Cmnty/Cmnty_Detail'
         },
         {
-          no : 8
-          , category : "# 게임"
+          category : "# 게임"
           , title : "띠부띠부"
           , regId : "admin"
           , regDate : "04-22"
@@ -148,8 +182,7 @@ export default {
           ,url : '/Client/Cmnty/Cmnty_Detail'
         },
         {
-          no : 7
-          , category : "# 게임"
+          category : "# 게임"
           , title : "띠부띠부"
           , regId : "admin"
           , regDate : "04-22"
@@ -158,8 +191,7 @@ export default {
           ,url : '/Client/Cmnty/Cmnty_Detail'
         },
         {
-          no : 6
-          , category : "# 게임"
+          category : "# 게임"
           , title : "띠부띠부"
           , regId : "admin"
           , regDate : "04-22"
@@ -168,8 +200,7 @@ export default {
           ,url : '/Client/Cmnty/Cmnty_Detail'
         },
         {
-          no : 5
-          , category : "# 게임"
+          category : "# 게임"
           , title : "띠부띠부"
           , regId : "admin"
           , regDate : "04-22"
@@ -178,8 +209,7 @@ export default {
           ,url : '/Client/Cmnty/Cmnty_Detail'
         },
         {
-          no : 4
-          , category : "# 게임"
+          category : "# 게임"
           , title : "띠부띠부"
           , regId : "admin"
           , regDate : "04-22"
@@ -188,8 +218,7 @@ export default {
           ,url : '/Client/Cmnty/Cmnty_Detail'
         },
         {
-          no : 3
-          , category : "# 게임"
+          category : "# 게임"
           , title : "띠부띠부"
           , regId : "admin"
           , regDate : "04-22"
@@ -198,8 +227,7 @@ export default {
           ,url : '/Client/Cmnty/Cmnty_Detail'
         },
         {
-          no : 2
-          , category : "# 게임"
+          category : "# 게임"
           , title : "띠부띠부"
           , regId : "admin"
           , regDate : "04-22"
@@ -208,8 +236,7 @@ export default {
           ,url : '/Client/Cmnty/Cmnty_Detail'
         },
         {
-          no : 1
-          , category : "# 게임"
+          category : "# 게임"
           , title : "띠부띠부"
           , regId : "admin"
           , regDate : "04-22"
@@ -255,8 +282,7 @@ export default {
       ],
       cmnTy:[
         {
-          no : 10
-          , category : "# 게임"
+          category : "# 게임"
           , title : "띠부띠부"
           , regId : "admin"
           , regDate : "04-22"
@@ -265,8 +291,7 @@ export default {
           ,url : '/Client/Cmnty/Cmnty_Detail'
         },
         {
-          no : 9
-          , category : "# 게임"
+          category : "# 게임"
           , title : "띠부띠부"
           , regId : "admin"
           , regDate : "04-22"
@@ -275,8 +300,7 @@ export default {
           ,url : '/Client/Cmnty/Cmnty_Detail'
         },
         {
-          no : 8
-          , category : "# 게임"
+          category : "# 게임"
           , title : "띠부띠부"
           , regId : "admin"
           , regDate : "04-22"
@@ -285,8 +309,7 @@ export default {
           ,url : '/Client/Cmnty/Cmnty_Detail'
         },
         {
-          no : 7
-          , category : "# 게임"
+          category : "# 게임"
           , title : "띠부띠부"
           , regId : "admin"
           , regDate : "04-22"
@@ -295,8 +318,7 @@ export default {
           ,url : '/Client/Cmnty/Cmnty_Detail'
         },
         {
-          no : 6
-          , category : "# 게임"
+          category : "# 게임"
           , title : "띠부띠부"
           , regId : "admin"
           , regDate : "04-22"
@@ -305,8 +327,7 @@ export default {
           ,url : '/Client/Cmnty/Cmnty_Detail'
         },
         {
-          no : 5
-          , category : "# 게임"
+          category : "# 게임"
           , title : "띠부띠부"
           , regId : "admin"
           , regDate : "04-22"
@@ -315,8 +336,7 @@ export default {
           ,url : '/Client/Cmnty/Cmnty_Detail'
         },
         {
-          no : 4
-          , category : "# 게임"
+          category : "# 게임"
           , title : "띠부띠부"
           , regId : "admin"
           , regDate : "04-22"
@@ -325,8 +345,7 @@ export default {
           ,url : '/Client/Cmnty/Cmnty_Detail'
         },
         {
-          no : 3
-          , category : "# 게임"
+          category : "# 게임"
           , title : "띠부띠부"
           , regId : "admin"
           , regDate : "04-22"
@@ -335,8 +354,7 @@ export default {
           ,url : '/Client/Cmnty/Cmnty_Detail'
         },
         {
-          no : 2
-          , category : "# 게임"
+          category : "# 게임"
           , title : "띠부띠부"
           , regId : "admin"
           , regDate : "04-22"
@@ -345,8 +363,7 @@ export default {
           ,url : '/Client/Cmnty/Cmnty_Detail'
         },
         {
-          no : 1
-          , category : "# 게임"
+          category : "# 게임"
           , title : "띠부띠부"
           , regId : "admin"
           , regDate : "04-22"
@@ -359,6 +376,7 @@ export default {
       travelInfo: true,
       travelReview: false,
       community: false,
+      modal: false
     }
   },
   methods: {
@@ -396,7 +414,13 @@ export default {
         cmnty.classList.add('active_c')
 
       }
-    }
+    },
+    openModal() {
+      this.modal = true;
+    },
+    closeModal() {
+      this.modal = false;
+    },
   }
 }
 </script>
@@ -466,10 +490,10 @@ export default {
     padding: 12px;
     margin-bottom: 8px;
   }
-  table {
+  .cmnts_table {
     width: 100%;
     margin: 0 auto;
-    border : 1px solid #eeeeef;
+    border : none !important;
     font-size: 12px;
     th {
       padding : 12px;
@@ -483,10 +507,14 @@ export default {
       }
       .num {
         font-weight: bold;
+        .trinfo_delete {
+          color: #ff0b0b;
+        }
       }
       .title {
         text-align: left;
         width: 450px;
+        padding-left: 20px;
       }
       .category {
         margin-right: 18px;
