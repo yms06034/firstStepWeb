@@ -9,12 +9,15 @@
                 src="https://kream-phinf.pstatic.net/MjAyMjA1MDNfMTM4/MDAxNjUxNTgxODc4ODAy.NCptk-UXm1_joPfojVGCGUgApT8uTLz6W_17ke1ILQIg.B_G33hEwk9tSrfO-ARVtRUmM7_WtGydvCM9653PShXEg.PNG/p_413e079a71ed4a0c86ef8be86149b05f.png" 
                 alt="userprofileimage"
                 class="user_img" />
-              <button>
-                <img
-                  class="user_correction" 
-                  src="https://i.ibb.co/h26vN0J/pen.png" 
-                  alt="user_correction" />
-              </button>
+              <RouterLink
+                to='/Client/Mypage/EditProfile'>
+                <button type="button">
+                  <img
+                    class="user_correction" 
+                    src="https://i.ibb.co/h26vN0J/pen.png" 
+                    alt="user_correction" />
+                </button>
+              </RouterLink>
             </div>
             <div class="user_profile_info">
               <div class="user_info_area">
