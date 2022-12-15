@@ -15,6 +15,7 @@ import LoginComponent from './Client/Signin/Login'
 import FindpasswordComponent from './Client/Signin/Findpassword'
 import SignUpComponent from './Client/SignUp/SignUp'
 import MypageComponent from './Client/Mypage/Mypage'
+import EditProfileComponent from './Client/Mypage/EditProfile'
 
 export default createRouter({
     history: createWebHashHistory(),
@@ -38,5 +39,6 @@ export default createRouter({
         { path: '/Client/Signin/Findpassword', component: FindpasswordComponent },
         { path: '/Client/SignUp/SignUp', component: SignUpComponent },
         { path: '/Client/Mypage/Mypage', component: MypageComponent },
+        { path: '/Client/Mypage/EditProfile', component: EditProfileComponent },
     ]
 })
