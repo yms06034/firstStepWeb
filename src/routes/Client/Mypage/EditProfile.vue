@@ -34,6 +34,26 @@
             </div>
           </div>
         </div>
+        <div class="user_edit_container">
+          <div class="email_edit_content">
+            <div class="email_title">
+              <p>이메일 주소</p>
+            </div>
+            <div class="user-email_address">
+              <p class="user_email">yeongjun1324@gmail.com</p>
+              <button class="email_edit_btn">변경</button>
+            </div>
+          </div>
+          <div class="password_edit_content">
+            <div class="password_title">
+              <p>비밀번호</p>
+            </div>
+            <div class="user-password_address">
+              <p class="password">●●●●●●●●●●●●</p>
+              <button class="password_edit_btn">변경</button>
+            </div>
+          </div>
+        </div>
 			</div>
     </form>
   </article>
@@ -42,7 +62,8 @@
 export default {
   data() {
     return {
-      imageData: ""
+      imageData: "",
+      imageMatilda: []
     }
   },
   methods: {
@@ -82,7 +103,7 @@ export default {
     border-radius: 10px;
     align-items: center;
     justify-content: left;
-    margin-bottom: 20px;
+    margin-bottom: 70px;
     .user_area {
       display: block;
       margin-right: 25px;
@@ -156,6 +177,84 @@ export default {
           align-items: center;
           padding: 0 10px;
         }
+      }
+    }
+  }
+  .user_edit_container {
+    max-width: 500px;
+    .email_edit_content {
+      text-align: left;
+      .email_title {
+        font-size: 15px;
+        font-weight: bold;
+        color: #ADADAD;
+      }
+      .user-email_address {
+        font-size: 15px;
+        padding-top: 5px;
+        color: #ADADAD;
+        border-bottom: 1px solid #ADADAD;
+        display: flex;
+        padding-bottom: 20px;
+        justify-content: space-between;
+        align-items: center;
+        .user_email {
+          
+        }
+        .email_edit_btn {
+          font-size: 13px;
+          letter-spacing: -0.3px;
+          display: inline-flex;
+          border-radius: 10px;
+          border: 1px solid #d3d3d3;
+          height: 25px;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          padding: 0 10px;
+          cursor: pointer;
+        }
+      }
+      .password_edit_content {
+        text-align: left;
+      }
+    }
+    .password_edit_content {
+      text-align: left;
+      padding-top: 25px;
+      .password_title {
+        font-size: 15px;
+        font-weight: bold;
+        color: #ADADAD;
+      }
+      .user-password_address {
+        font-size: 15px;
+        padding-top: 5px;
+        border-bottom: 1px solid #ADADAD;
+        display: flex;
+        padding-bottom: 20px;
+        justify-content: space-between;
+        align-items: center;
+        .password {
+          color: #5e5e5e;
+        }
+        .password_edit_btn {
+          font-size: 13px;
+          letter-spacing: -0.3px;
+          display: inline-flex;
+          border-radius: 10px;
+          border: 1px solid #d3d3d3;
+          height: 25px;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          padding: 0 10px;
+          cursor: pointer;
+          color: #ADADAD;
+        }
+      }
+      .password_edit_content {
+        text-align: left;
       }
     }
   }
