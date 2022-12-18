@@ -35,6 +35,7 @@
           </div>
         </div>
         <div class="user_edit_container">
+          <!-- User Email Edit -->
           <div class="email_edit_content">
             <div class="email_title">
               <p>이메일 주소</p>
@@ -44,13 +45,24 @@
               <button class="email_edit_btn">변경</button>
             </div>
           </div>
+          <!-- User Password Edit -->
           <div class="password_edit_content">
             <div class="password_title">
               <p>비밀번호</p>
             </div>
-            <div class="user-password_address">
+            <div class="user-password">
               <p class="password">●●●●●●●●●●●●</p>
               <button class="password_edit_btn">변경</button>
+            </div>
+          </div>
+          <!-- User NickName Edit -->
+          <div class="nickname_edit_content">
+            <div class="nickname_title">
+              <p>닉네임</p>
+            </div>
+            <div class="user-nickname">
+              <p class="nickname">Balang_11</p>
+              <button class="nickname_edit_btn">변경</button>
             </div>
           </div>
         </div>
@@ -195,7 +207,7 @@ export default {
         color: #ADADAD;
         border-bottom: 1px solid #ADADAD;
         display: flex;
-        padding-bottom: 20px;
+        padding-bottom: 10px;
         justify-content: space-between;
         align-items: center;
         .user_email {
@@ -215,24 +227,21 @@ export default {
           cursor: pointer;
         }
       }
-      .password_edit_content {
-        text-align: left;
-      }
     }
     .password_edit_content {
       text-align: left;
-      padding-top: 25px;
+      margin-top: 40px;
       .password_title {
         font-size: 15px;
         font-weight: bold;
         color: #ADADAD;
       }
-      .user-password_address {
+      .user-password {
         font-size: 15px;
         padding-top: 5px;
         border-bottom: 1px solid #ADADAD;
         display: flex;
-        padding-bottom: 20px;
+        padding-bottom: 10px;
         justify-content: space-between;
         align-items: center;
         .password {
@@ -253,8 +262,40 @@ export default {
           color: #ADADAD;
         }
       }
-      .password_edit_content {
-        text-align: left;
+    }
+    .nickname_edit_content {
+      text-align: left;
+      margin-top: 40px;
+      .nickname_title {
+        font-size: 15px;
+        font-weight: bold;
+        color: #ADADAD;
+      }
+      .user-nickname {
+        font-size: 15px;
+        padding-top: 5px;
+        border-bottom: 1px solid #ADADAD;
+        display: flex;
+        padding-bottom: 10px;
+        justify-content: space-between;
+        align-items: center;
+        .nickname {
+          color: #ADADAD;
+        }
+        .nickname_edit_btn {
+          font-size: 13px;
+          letter-spacing: -0.3px;
+          display: inline-flex;
+          border-radius: 10px;
+          border: 1px solid #d3d3d3;
+          height: 25px;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          padding: 0 10px;
+          cursor: pointer;
+          color: #ADADAD;
+        }
       }
     }
   }
