@@ -1,6 +1,10 @@
 <template>
   <article>
-    <form id="signUpForm" novalidate @submit.prevent="signUpForm" method="post">
+    <form
+      id="signUpForm"
+      novalidate
+      @submit.prevent="signUpForm"
+      method="post">
       <div class="firststep_form_signUp_area">
         <div class="signUp_form_area">
           <div class="default_signUp_top_text">
@@ -14,19 +18,22 @@
                 <label class="label required"> 이메일 </label>
                 <div class="form-control-wrap">
                   <input
-										form="signUpForm"
+                    form="signUpForm"
                     placeholder="example@firststep.com"
                     max="50"
                     maxlength="50"
                     v-model="email"
-										required
+                    required
                     type="email"
-										name="email"
-										ref="email"
+                    name="email"
+                    ref="email"
                     class="email_form-input" />
-                  <span ref="error_msg" class="error_msg" v-if="msg.email">{{
-                    msg.email
-                  }}</span>
+                  <span
+                    ref="error_msg"
+                    class="error_msg"
+                    v-if="msg.email">{{
+                      msg.email
+                    }}</span>
                 </div>
                 <div class="email-auth-wrap">
                   <button
@@ -37,24 +44,26 @@
                     이메일 인증
                   </button>
                 </div>
-                <div class="auth-num-chk" v-show="authNumShow === true">
+                <div
+                  class="auth-num-chk"
+                  v-show="authNumShow === true">
                   <input
-										form="signUpForm"
+                    form="signUpForm"
                     class="auth-num"
                     type="text"
-										required
+                    required
                     v-model="chkAuthNum"
                     maxlength="6" 
-										oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
                   <button
-										type="button"
+                    type="button"
                     class="email-chk"
                     name="email-chk-btn"
                     @click="email_chk_btn">
                     확인
                   </button>
-									<button
-										type="button"
+                  <button
+                    type="button"
                     class="email-auth-resend"
                     name="email-auth-resend-btn"
                     @click="email-auth-resend-btn">
@@ -70,19 +79,26 @@
                 <div class="form-control-password">
                   <div class="form-control-wrap_pass">
                     <input
-											form="signUpForm"
+                      form="signUpForm"
                       :type="filedType"
-											required
+                      required
                       placeholder="비밀번호 8자리 이상"
                       v-model="password"
                       class="form-control-wrap input_pass" />
-                    <span class="error_msg" v-if="msg.password">{{
-                      msg.password
-                    }}</span>
+                    <span
+                      class="error_msg"
+                      v-if="msg.password">{{
+                        msg.password
+                      }}</span>
                   </div>
                   <div class="password_control">
-                    <button class="password_control_btn" type="button" @click="toggleShow">
-                      <span ref="show_hide_icon" class="show_hide_icon"> </span>
+                    <button
+                      class="password_control_btn"
+                      type="button"
+                      @click="toggleShow">
+                      <span
+                        ref="show_hide_icon"
+                        class="show_hide_icon"> </span>
                     </button>
                   </div>
                 </div>
@@ -94,23 +110,27 @@
                 <div class="form-control-password-chk">
                   <div class="form-control-wrap_pass_chk">
                     <input
-											form="signUpForm"
+                      form="signUpForm"
                       placeholder="비밀번호 확인"
                       v-model="password_chk"
-											required
+                      required
                       :type="filedTypeChk"
                       id="password_chk"
                       class="form-control-wrap input_pass_chk" />
-                    <span class="error_msg_chk" v-if="msg.password_chk">{{
-                      msg.password_chk
-                    }}</span>
+                    <span
+                      class="error_msg_chk"
+                      v-if="msg.password_chk">{{
+                        msg.password_chk
+                      }}</span>
                   </div>
                   <div class="password_control_chk">
                     <button
-											type="button"
+                      type="button"
                       class="password_control_btn_chk"
                       @click="toggleShowChk">
-                      <span ref="show_hide_icon_chk" class="show_hide_icon_chk">
+                      <span
+                        ref="show_hide_icon_chk"
+                        class="show_hide_icon_chk">
                       </span>
                     </button>
                   </div>
@@ -118,33 +138,35 @@
               </div>
             </div>
 
-						<div class="signUp_form_container_nickname">
+            <div class="signUp_form_container_nickname">
               <div class="signUp_form_container-jc_nickname">
                 <label class="label required"> 닉네임 </label>
                 <div class="form-control-nickname">
                   <div class="form-control-wrap_nickname">
                     <input
-											form="signUpForm"
+                      form="signUpForm"
                       placeholder="닉네임"
                       v-model="nickname"
-											required
+                      required
                       type="text"
                       id="nickname"
                       class="form-control-wrap input_nickname" />
-                    <span class="error_msg_chk" v-if="msg.nickname">{{
-                      msg.nickname
-                    }}</span>
+                    <span
+                      class="error_msg_chk"
+                      v-if="msg.nickname">{{
+                        msg.nickname
+                      }}</span>
                   </div>
                   <div class="nickname-chk-wrap">
-										<button
-											type="button"
-											class="nickname-chk-btn"
-											name="nickname-chk-btn"
-											@click="nickname_chk()"
-											v-show="nicknameChk === true">
-											중복 확인
-										</button>
-									</div>
+                    <button
+                      type="button"
+                      class="nickname-chk-btn"
+                      name="nickname-chk-btn"
+                      @click="nickname_chk()"
+                      v-show="nicknameChk === true">
+                      중복 확인
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -153,15 +175,17 @@
               <div class="signUp_form_container_jc_agree_chk">
                 <div class="form-control-wrap_agree_chk">
                   <input
-										form="signUpForm"
+                    form="signUpForm"
                     type="checkbox"
                     name="agree_chk"
                     id="agree_chk"
-										ref="agreeChk"
-										v-model="agreeChk"
+                    ref="agreeChk"
+                    v-model="agreeChk"
                     true-value="Y"
                     false-value="N" />
-                  <label for="agree_chk" class="agree_chk"></label>
+                  <label
+                    for="agree_chk"
+                    class="agree_chk"></label>
                   <span class="agree_txt">[필수] 이용약관 동의</span>
                 </div>
                 <div class="form-control-wrap_agree_chk">
@@ -170,8 +194,10 @@
                     class="agree_contents_popup"
                     id="show-modal"
                     @click="openModal">내용보기
-									</a>
-                  <Modal @close="closeModal" v-if="modal">
+                  </a>
+                  <Modal
+                    @close="closeModal"
+                    v-if="modal">
                     <!-- sampleModel.vue에서 <slot /> 주석 해지 후 사용 -->
                     <!-- <p>Vue.js Modal Window!</p> -->
                   </Modal>
@@ -179,7 +205,11 @@
               </div>
             </div>
             <!-- MODAL -->
-            <button type="button" class="signUp-btn" id="toRegister" @click="registerUser">
+            <button
+              type="button"
+              class="signUp-btn"
+              id="toRegister"
+              @click="registerUser">
               가입하기
             </button>
 
@@ -189,13 +219,13 @@
                   <span class="member_txt">이미 FIRSTSTEP 회원이신가요?</span>
                 </div>
                 <div class="form-control-wrap_member_chk">
-									<RouterLink to="/Client/Signin/Login">
-										<button
-											type="submit"
-											class="go_to_login">
-											로그인하러가기
-										</button>
-									</RouterLink>
+                  <RouterLink to="/Client/Signin/Login">
+                    <button
+                      type="submit"
+                      class="go_to_login">
+                      로그인하러가기
+                    </button>
+                  </RouterLink>
                 </div>
               </div>
             </div>
