@@ -44,6 +44,12 @@
               <p class="user_email">yeongjun1324@gmail.com</p>
               <button class="email_edit_btn">변경</button>
             </div>
+            <!-- User Email Btn click -->
+            <div class="email_editbtn-chk">
+              <div class="email_edit_address">
+
+              </div>
+            </div>
           </div>
           <!-- User Password Edit -->
           <div class="password_edit_content">
@@ -225,6 +231,11 @@ export default {
           align-items: center;
           padding: 0 10px;
           cursor: pointer;
+        }
+      }
+      .email_editbtn-chk {
+        .email_edit_address {
+          
         }
       }
     }
