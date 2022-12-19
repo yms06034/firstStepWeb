@@ -37,6 +37,7 @@
                 </div>
                 <div class="email-auth-wrap">
                   <button
+                    type="button"
                     class="email-auth-btn"
                     name="email-auth-btn"
                     @click="email_auth()"
@@ -162,8 +163,7 @@
                       type="button"
                       class="nickname-chk-btn"
                       name="nickname-chk-btn"
-                      @click="nickname_chk()"
-                      v-show="nicknameChk === true">
+                      @click="nicknameChk()">
                       중복 확인
                     </button>
                   </div>
@@ -291,7 +291,7 @@ export default {
       this.password_chk = value;
       this.validatePasswordChk(value);
     },
-		nickname_chk(value){
+    nicknameChk(value){
 			this.nickname = value;
 			this.validateNickName(value);
 		},
@@ -391,9 +391,12 @@ export default {
     closeModal() {
       this.modal = false;
     },
-		async validateNickName(){
-				let nicknameChk = this.nickname;
-				console.log("nicknameChk = " + nicknameChk);
+    validateNickName(value){
+      if (value.length === null) {
+        this.msg["nickname"] = "닉네임을 입력해주세요";
+      } else {
+        this.msg["nickname"] = "";
+      }
 		},
     async registerUser() {
 			
@@ -754,25 +757,21 @@ export default {
 
           .form-control-nickname {
             display: flex;
-            justify-content: flex-start;
-
-            .form-control-wrap_nickname {
-              display: flex;
-              flex-direction: column;
-              width: 100%;
+            flex-direction: column;
+            width: 100%;
 
               .input_nickname {
                 height: 44px;
                 min-height: 44px;
                 width: 315px;
-                border-top-left-radius: 5px;
-                border-bottom-left-radius: 5px;
-                border-top-right-radius: 5px;
-                border-bottom-right-radius: 5px;
                 border: 1px solid rgb(207, 213, 219);
                 text-align: left;
                 padding-left: 15px;
                 padding-bottom: 5px;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
 
                 &:focus {
                   border: 1px solid $primary;
@@ -783,38 +782,28 @@ export default {
                   color: rgb(208, 208, 208);
                 }
               }
-            }
-
-            .nickname_control_chk {
-              box-sizing: border-box;
-              clear: both;
-              font-size: 1rem;
-              position: relative;
-              text-align: inherit;
-            }
           }
-
           .error_msg_chk {
             font-size: 13px;
             color: red;
             text-align: left;
             margin-top: 5px;
           }
+        }
+      }
 
-					.nickname-chk-wrap {
-						margin-top: 10px;
+      .nickname-chk-wrap {
+        margin-top: 10px;
 
-						.nickname-chk-btn {
-							width: 100px;
-							height: 15px;
-							float: right;
-							padding: 5px 5px 8px 5px;
-							font-size: 13px;
-							border-radius: 5px;
-							margin-right: 10px;
-							border: 1px solid rgb(207, 213, 219);
-						}
-					}
+        .nickname-chk-btn {
+          width: 100px;
+          height: 15px;
+          float: right;
+          padding: 5px 5px 8px 5px;
+          font-size: 13px;
+          border-radius: 5px;
+          margin-right: 10px;
+          border: 1px solid rgb(207, 213, 219);
         }
       }
 
