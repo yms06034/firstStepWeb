@@ -42,13 +42,36 @@
             </div>
             <div class="user-email_address">
               <p class="user_email">yeongjun1324@gmail.com</p>
-              <button class="email_edit_btn">변경</button>
+              <button 
+                @click="chEmail != chEmail"
+                type="button" 
+                ref="EmailBtn" 
+                class="email_edit_btn">변경</button>
             </div>
             <!-- User Email Btn click -->
-            <div class="email_editbtn-chk">
+            <div class="email_editbtn-chk" v-if="chEmail">
               <div class="email_edit_address">
-
+                <input 
+                  placeholder="example@firststep.com"
+                  max="50"
+                  maxlength="50"
+                  v-model="email"
+                  required
+                  type="email"
+                  name="email"
+                  ref="email"
+                  class="email_form-input" />
+                <button
+                  ref="emailEditBtn" 
+                  class="email_edit-btn" 
+                  type="button">이메일 인증</button>
               </div>
+              <span
+                ref="error_msg"
+                class="err_msg"
+                v-if="msg.email">
+                {{msg.email}}
+              </span>
             </div>
           </div>
           <!-- User Password Edit -->
@@ -71,6 +94,14 @@
               <button class="nickname_edit_btn">변경</button>
             </div>
           </div>
+          <!-- Membership Withdrawal -->
+          <div class="mmbrsWthdr">
+            <div class="mmbrsWthdr_area">
+              <button type="button" class="mw_btn">
+                회원탈퇴
+              </button>
+            </div>
+          </div>
         </div>
 			</div>
     </form>
@@ -81,7 +112,15 @@ export default {
   data() {
     return {
       imageData: "",
-      imageMatilda: []
+      imageMatilda: [],
+      email: "",
+      msg: [],
+    }
+  },
+  watch: {
+    email(value) {
+      this.email = value;
+      this.validateEmail(value);
     }
   },
   methods: {
@@ -98,7 +137,14 @@ export default {
     },
     removeimg() {
       this.imageData = "" 
-    }
+    },
+    validateEmail(value) {
+      if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
+        this.msg["email"] = "";
+      } else {
+        this.msg["email"] = "이메일 주소를 정확히 입력해주세요";
+      }
+    },
   }
 }
 </script>
@@ -111,6 +157,7 @@ export default {
   margin: 0 auto;
   max-width: 800px;
   padding: 22px;
+  height: 900px;
   .top_title {
     font-size: 24px;
     font-weight: bold;
@@ -210,14 +257,13 @@ export default {
       .user-email_address {
         font-size: 15px;
         padding-top: 5px;
-        color: #ADADAD;
         border-bottom: 1px solid #ADADAD;
         display: flex;
         padding-bottom: 10px;
         justify-content: space-between;
         align-items: center;
         .user_email {
-          
+          color: #ADADAD;
         }
         .email_edit_btn {
           font-size: 13px;
@@ -231,11 +277,42 @@ export default {
           align-items: center;
           padding: 0 10px;
           cursor: pointer;
+          color: #ADADAD;
         }
       }
       .email_editbtn-chk {
+        padding-top: 5px;
         .email_edit_address {
-          
+          border-bottom: 1px solid #ADADAD;
+          padding-bottom: 10px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          color: #ADADAD;
+          .email_input_edit {
+            font-size: 15px;
+            width: 80%;
+            &::placeholder {
+            color: rgba(178, 178, 178, .5) !important;
+            }
+          }
+          .email_edit-btn {
+            font-size: 13px;
+            letter-spacing: -.3px;
+            display: inline-flex;
+            border-radius: 10px;
+            border: 1px solid #d3d3d3;
+            height: 25px;
+            padding: 0 10px;
+            align-items: center;
+          }
+        }
+        .err_msg {
+          font-size: 13px;
+          line-height: 15px;
+          color: red;
+          margin-top: 10px;
+          text-align: left;
         }
       }
     }
@@ -306,6 +383,17 @@ export default {
           padding: 0 10px;
           cursor: pointer;
           color: #ADADAD;
+        }
+      }
+    }
+    .mmbrsWthdr {
+      margin-top: 40px;
+      .mmbrsWthdr_area {
+        text-align: left;
+        font-size: 14px;
+        .mw_btn {
+          color: #ADADAD;
+          border-bottom: 1px solid #ADADAD;
         }
       }
     }
