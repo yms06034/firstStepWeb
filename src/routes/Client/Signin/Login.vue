@@ -1,6 +1,11 @@
 <template>
   <article>
-		<form id="signInForm" novalidate @submit.prevent="signInForm" method="post">
+		<form 
+      id="signInForm" 
+      novalidate 
+      @submit.prevent="signInForm" 
+      method="post"
+      autocomplete="off">
 			<div class="firststep_form_login_area">
 				<div class="login_form_area">
 					<div class="default_login_top_text">
@@ -239,6 +244,7 @@ export default {
               text-align: left;
               padding-left: 15px;
               padding-bottom: 5px;
+              border-radius: 5px;
               &:focus {
                 border: 1px solid $primary;
               }
@@ -292,6 +298,7 @@ export default {
                 text-align: left;
                 padding-left: 15px;
                 padding-bottom: 5px;
+                border-radius: 5px;
                 &:focus {
                   border: 1px solid $primary;
                 }
@@ -352,6 +359,7 @@ export default {
         font-weight: bold;
         margin-top: 40px;
         cursor: pointer;
+        border-radius: 5px;
       }
     }
     .signup_form {

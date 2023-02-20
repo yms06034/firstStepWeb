@@ -3,8 +3,9 @@
     <form
       id="signUpForm"
       novalidate
+      method="post"
       @submit.prevent="signUpForm"
-      method="post">
+      autocomplete="off">
       <div class="firststep_form_signUp_area">
         <div class="signUp_form_area">
           <div class="default_signUp_top_text">
@@ -891,6 +892,7 @@ export default {
       .auth-num-chk {
         margin-top: 10px;
 				margin-right: auto;
+        display: flex;
         .auth-num {
 					padding: 5px 5px 8px 5px;
 					width: 200px;

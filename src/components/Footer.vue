@@ -8,11 +8,11 @@
       <li class="footer__link-list-item">청소년 보호정책</li>
     </ul>
     <p>010-0000-0000 | yms06034@gmail.com</p>
-    <a 
-      href="/"
+    <p 
+      class="footer_firststep"
       target="_self">
       (c) {{ new Date().getFullYear() }} FIRSTSTEP. All Rights Reserved.
-    </a>
+    </p>
   </footer>
 </template>
 
@@ -33,9 +33,10 @@ export default {
     text-decoration: none;
     text-align: center;
     margin-top: 100px;
-    a {
+    .footer_firststep {
       color: #666666;
-      margin: auto;
+      border: none;
+      padding-top: 0;
     }
     p {
       margin-bottom:10px;

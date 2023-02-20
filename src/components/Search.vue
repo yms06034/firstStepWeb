@@ -64,6 +64,7 @@ export default {
     background-color: #F5F5F5;
     border: none;
     border-radius: 13px;
+    text-align: left;
     &::placeholder {
       text-align: center;
       color: #CACACA;

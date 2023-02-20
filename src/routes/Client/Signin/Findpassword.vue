@@ -1,5 +1,7 @@
 <template>
-  <form>
+  <form 
+    autocomplete="off" 
+    method="post">
     <div style="height:700px">
       <div class="find_password" ref="find_ps_btn">
         <div class="find_ps_send_img">
